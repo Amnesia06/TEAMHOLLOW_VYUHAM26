@@ -140,6 +140,28 @@ export const api = {
           }
         }
 
+        // Process any remaining data in the buffer after stream completes
+        if (buffer.trim()) {
+          const block = buffer.trim();
+          let eventType = "message";
+          let dataStr = "";
+          const lines = block.split("\n");
+          for (const line of lines) {
+            if (line.startsWith("event: ")) eventType = line.replace("event: ", "").trim();
+            else if (line.startsWith("data: ")) dataStr = line.replace("data: ", "").trim();
+          }
+          if (dataStr) {
+            try {
+              const parsed = JSON.parse(dataStr);
+              if (eventType === "complete") {
+                completePayload = parsed;
+              }
+            } catch (e) {
+              console.warn("Error parsing trailing SSE block:", e);
+            }
+          }
+        }
+
         if (completePayload && completePayload.roadmap) {
           return {
             profile: completePayload.profile,

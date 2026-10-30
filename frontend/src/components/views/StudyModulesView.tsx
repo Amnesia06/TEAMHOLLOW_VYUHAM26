@@ -27,6 +27,41 @@ interface StudyModulesViewProps {
 
 const USD_TO_INR = 85.0;
 
+const SKILL_ALIASES: Record<string, string[]> = {
+  skill_pg_04: ["skill_postgresql", "skill_sql"],
+  skill_postgresql: ["skill_pg_04", "skill_sql"],
+  skill_postgres: ["skill_postgresql", "skill_sql"],
+  skill_sql_01: ["skill_sql", "skill_postgresql"],
+  skill_sql: ["skill_postgresql", "skill_sql_01"],
+  skill_ts_01: ["skill_typescript", "skill_javascript"],
+  skill_typescript: ["skill_ts_01", "skill_javascript"],
+  skill_react_02: ["skill_react", "skill_javascript", "skill_nextjs"],
+  skill_react: ["skill_react_02", "skill_javascript", "skill_nextjs"],
+  skill_node_03: ["skill_nodejs", "skill_javascript", "skill_rest_apis"],
+  skill_nodejs: ["skill_node_03", "skill_javascript", "skill_rest_apis"],
+  skill_nextjs: ["skill_react", "skill_typescript"],
+  skill_python: ["skill_fastapi", "skill_django", "skill_pandas", "skill_data_engineering"],
+  skill_docker: ["skill_kubernetes", "skill_devops", "skill_ci_cd"],
+  skill_aws: ["skill_cloud", "skill_devops", "skill_terraform"],
+  skill_git: ["skill_github", "skill_devops"],
+};
+
+const KEYWORD_TO_SKILLS: Record<string, string[]> = {
+  postgres: ["skill_postgresql", "skill_sql"],
+  postgresql: ["skill_postgresql", "skill_sql"],
+  sql: ["skill_sql", "skill_postgresql"],
+  react: ["skill_react", "skill_javascript"],
+  next: ["skill_nextjs", "skill_react"],
+  node: ["skill_nodejs", "skill_rest_apis"],
+  typescript: ["skill_typescript"],
+  git: ["skill_git"],
+  docker: ["skill_docker", "skill_linux"],
+  aws: ["skill_aws", "skill_cloud"],
+  python: ["skill_python"],
+  kubernetes: ["skill_kubernetes"],
+  terraform: ["skill_terraform"],
+};
+
 export const StudyModulesView: React.FC<StudyModulesViewProps> = ({
   roadmap,
   onNavigateToChat,
@@ -57,16 +92,32 @@ export const StudyModulesView: React.FC<StudyModulesViewProps> = ({
     };
   }, []);
 
-  // Collect all unique skills needed across all roadmap items
+  // Collect all unique skills needed across all roadmap items, expanded with aliases & title keywords
   const roadmapSkillIds = useMemo(() => {
     if (!roadmap?.items) return new Set<string>();
     const skills = new Set<string>();
     for (const item of roadmap.items) {
       for (const s of item.course.skills_covered || []) {
-        skills.add(s.toLowerCase());
+        const lower = s.toLowerCase();
+        skills.add(lower);
+        if (SKILL_ALIASES[lower]) {
+          SKILL_ALIASES[lower].forEach((alias) => skills.add(alias));
+        }
       }
       for (const g of item.gaps_covered || []) {
-        if (g.skill_id) skills.add(g.skill_id.toLowerCase());
+        if (g.skill_id) {
+          const lower = g.skill_id.toLowerCase();
+          skills.add(lower);
+          if (SKILL_ALIASES[lower]) {
+            SKILL_ALIASES[lower].forEach((alias) => skills.add(alias));
+          }
+        }
+      }
+      const titleLower = item.course.title.toLowerCase();
+      for (const [kw, mappedSkills] of Object.entries(KEYWORD_TO_SKILLS)) {
+        if (titleLower.includes(kw)) {
+          mappedSkills.forEach((ms) => skills.add(ms));
+        }
       }
     }
     return skills;
@@ -87,18 +138,39 @@ export const StudyModulesView: React.FC<StudyModulesViewProps> = ({
   const isEdX = (c: Course) => c.platform.toLowerCase().includes("edx");
   const isFreeCodeCamp = (c: Course) => c.platform.toLowerCase().includes("freecodecamp");
 
-  // Get matching catalog courses for specific skills
-  const getCoursesForSkills = (skillList: string[]) => {
-    const set = new Set(skillList.map((s) => s.toLowerCase()));
-    return catalog.filter((c) => c.skills_covered.some((s) => set.has(s.toLowerCase())));
+  // Helper to find courses for a module using exact skills, aliases, and title keywords
+  const getCoursesForModule = (course: Course) => {
+    const targetSkills = new Set<string>();
+    (course.skills_covered || []).forEach((s) => {
+      const lower = s.toLowerCase();
+      targetSkills.add(lower);
+      if (SKILL_ALIASES[lower]) {
+        SKILL_ALIASES[lower].forEach((a) => targetSkills.add(a));
+      }
+    });
+    const titleLower = course.title.toLowerCase();
+    for (const [kw, mappedSkills] of Object.entries(KEYWORD_TO_SKILLS)) {
+      if (titleLower.includes(kw)) {
+        mappedSkills.forEach((ms) => targetSkills.add(ms));
+      }
+    }
+    return catalog.filter((c) =>
+      c.skills_covered.some((s) => targetSkills.has(s.toLowerCase()))
+    );
   };
 
-  // Find all free and paid courses relevant to the user's roadmap
+  // Find all free and paid courses relevant to the user's roadmap, with broad catalog fallback
   const allRoadmapCourses = useMemo(() => {
     if (roadmapSkillIds.size === 0) return catalog;
-    return catalog.filter((c) =>
+    const matched = catalog.filter((c) =>
       c.skills_covered.some((s) => roadmapSkillIds.has(s.toLowerCase()))
     );
+    if (matched.length < 8) {
+      const matchedIds = new Set(matched.map((m) => m.id));
+      const additional = catalog.filter((c) => !matchedIds.has(c.id));
+      return [...matched, ...additional];
+    }
+    return matched;
   }, [catalog, roadmapSkillIds]);
 
   const allFreeCourses = useMemo(() => {
@@ -598,11 +670,19 @@ export const StudyModulesView: React.FC<StudyModulesViewProps> = ({
               const primarySkill = course.skills_covered[0] || "core_skill";
 
               // Find alternative free options and paid certs matching this module's skills
-              const moduleCourses = getCoursesForSkills(course.skills_covered);
-              const ytOption = moduleCourses.find((c) => isYouTube(c) && c.id !== course.id);
-              const edxOption = moduleCourses.find((c) => isEdX(c) && c.id !== course.id);
-              const fccOption = moduleCourses.find((c) => isFreeCodeCamp(c) && c.id !== course.id);
-              const paidOption = moduleCourses.find((c) => c.cost > 0);
+              const moduleCourses = getCoursesForModule(course);
+              const ytOption =
+                moduleCourses.find((c) => isYouTube(c) && c.id !== course.id) ||
+                (isYouTube(course) ? course : catalog.find((c) => isYouTube(c)));
+              const edxOption =
+                moduleCourses.find((c) => isEdX(c) && c.id !== course.id) ||
+                (isEdX(course) ? course : catalog.find((c) => isEdX(c)));
+              const fccOption =
+                moduleCourses.find((c) => isFreeCodeCamp(c) && c.id !== course.id) ||
+                (isFreeCodeCamp(course) ? course : catalog.find((c) => isFreeCodeCamp(c)));
+              const paidOption =
+                moduleCourses.find((c) => c.cost > 0 && c.id !== course.id) ||
+                (course.cost > 0 ? course : catalog.find((c) => c.cost > 0));
 
               const cardContent = (
                 <article className="module-card flex flex-col justify-between rounded-xl bg-white p-5 border border-slate-200/80 hover:border-[#4648d4]/40 hover:shadow-md transition-all duration-200 h-full space-y-4">
