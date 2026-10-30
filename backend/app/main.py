@@ -10,18 +10,18 @@ from backend.app.api import api_router
 
 app = FastAPI(
     title="Pathwise API",
-    description="AI-powered career intelligence, transferable skill mapping, and personalized development roadmaps.",
-    version="1.0.0",
+    description="AI-powered career and skill-gap analysis agent backend (Challenge AF-03).",
+    version="2.0.0",
     docs_url="/docs",
     redoc_url="/redoc"
 )
 
-# Configure CORS for Next.js frontend communication
+# Configure CORS for Vite frontend communication
 app.add_middleware(
     CORSMiddleware,
     allow_origins=[
-        "http://localhost:3000",
-        "http://127.0.0.1:3000",
+        "http://localhost:5173",
+        "http://127.0.0.1:5173",
         settings.FRONTEND_URL,
         "*"
     ],
@@ -30,7 +30,7 @@ app.add_middleware(
     allow_headers=["*"],
 )
 
-# Register custom exception handlers
+# Register custom exception handlers conforming to contract envelope
 app.add_exception_handler(PathwiseError, pathwise_exception_handler)
 
 # Include versioned API endpoints
@@ -42,8 +42,8 @@ async def root_index():
     return {
         "service": "Pathwise API",
         "status": "operational",
-        "version": "1.0.0",
-        "documentation": "/docs",
+        "version": "2.0.0",
+        "docs": "/docs",
         "api_v1": "/api/v1"
     }
 

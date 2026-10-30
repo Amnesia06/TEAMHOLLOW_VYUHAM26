@@ -1,0 +1,17 @@
+{
+  "id": "course_pg_01",
+  "title": "PostgreSQL Tutorial for Beginners",
+  "platform": "freeCodeCamp",
+  "url": "https://www.freecodecamp.org/news/postgresql-tutorial/",
+  "cost": 0.0,
+  "currency": "USD",
+  "hours": 12.0,
+  "level": 2,
+  "skills_covered": [
+    "skill_pg_04"
+  ],
+  "prerequisite_skills": [
+    "skill_sql_01"
+  ],
+  "verified": false
+}

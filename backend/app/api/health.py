@@ -1,11 +1,12 @@
 """
-Health check and environment status endpoint.
+Health check and dependency status endpoint conforming to contracts/api/spec.md.
 """
 
+import os
 from fastapi import APIRouter
 from backend.app.core.config import settings
 from backend.app.database.supabase_client import db_client
-from backend.app.schemas.common import APIResponse
+from contracts.schemas.common import APIResponse
 
 router = APIRouter(tags=["Health"])
 
@@ -13,19 +14,25 @@ router = APIRouter(tags=["Health"])
 @router.get("/health", response_model=APIResponse[dict])
 async def check_health():
     """
-    Returns system status, active database state, and LLM configuration.
+    Returns live service status for database, LLM provider, and search.
+    No demo mode reporting.
     """
+    has_gemini = bool(os.getenv("GEMINI_API_KEY"))
+    has_tavily = bool(os.getenv("TAVILY_API_KEY"))
+
+    services = {
+        "database": "connected" if db_client.is_connected else "unconfigured",
+        "llm_provider": "available" if has_gemini else "unconfigured",
+        "search": "available" if has_tavily else "unconfigured"
+    }
+
+    all_healthy = db_client.is_connected and has_gemini and has_tavily
+    system_status = "healthy" if all_healthy else "degraded"
+
     return APIResponse(
         data={
-            "status": "healthy",
-            "version": "1.0.0",
-            "demo_mode": settings.is_demo,
-            "llm_provider": settings.LLM_PROVIDER,
-            "services": {
-                "database": "supabase_cloud" if db_client.is_connected else "in_memory_datastore",
-                "llm": "demo_simulation" if settings.is_demo else f"{settings.LLM_PROVIDER}_api",
-                "career_dataset": "curated_v1",
-                "resource_catalog": "verified_v1"
-            }
+            "status": system_status,
+            "version": "2.0.0",
+            "services": services
         }
     )

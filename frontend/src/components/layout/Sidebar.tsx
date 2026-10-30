@@ -1,0 +1,127 @@
+import React from "react";
+import { MessageSquare, Briefcase, Map, BookOpen } from "lucide-react";
+
+export type TabKey = "chat" | "careers" | "roadmap" | "modules";
+
+interface SidebarProps {
+  isOpen: boolean;
+  onToggle: () => void;
+  activeTab: TabKey;
+  onTabChange: (tab: TabKey) => void;
+  hasRoadmap: boolean;
+  hasProfile: boolean;
+  moduleCount?: number;
+}
+
+export const Sidebar: React.FC<SidebarProps> = ({
+  isOpen,
+  activeTab,
+  onTabChange,
+  hasRoadmap,
+  hasProfile,
+  moduleCount,
+}) => {
+  const navItems: Array<{ key: TabKey; label: string; icon: React.ReactNode; badge?: string }> = [
+    {
+      key: "chat",
+      label: "Chat Assistant",
+      icon: <MessageSquare className="w-5 h-5" />,
+      badge: "AI Agent",
+    },
+    {
+      key: "careers",
+      label: "Careers",
+      icon: <Briefcase className="w-5 h-5" />,
+      badge: hasProfile ? "Matched" : undefined,
+    },
+    {
+      key: "roadmap",
+      label: "Roadmap",
+      icon: <Map className="w-5 h-5" />,
+      badge: hasRoadmap ? "Active" : undefined,
+    },
+    {
+      key: "modules",
+      label: "Study Modules",
+      icon: <BookOpen className="w-5 h-5" />,
+      badge: moduleCount && moduleCount > 0 ? `${moduleCount} Curated` : undefined,
+    },
+  ];
+
+  return (
+    <aside
+      className={`fixed left-0 top-0 h-full w-[280px] bg-white border-r border-slate-200/80 shadow-[0_1px_8px_rgba(0,0,0,0.04)] z-50 flex flex-col justify-between transition-transform duration-300 ease-in-out select-none ${
+        isOpen ? "translate-x-0" : "-translate-x-full"
+      }`}
+    >
+      <div className="flex flex-col">
+        {/* Brand Header */}
+        <div className="px-6 pt-6 pb-4 flex flex-col gap-1 border-b border-slate-100">
+          <div className="flex items-center gap-2.5 w-full justify-between">
+            <div className="flex items-center gap-2.5">
+              <div className="w-8 h-8 rounded-xl bg-gradient-to-tr from-[#4648d4] to-indigo-600 flex items-center justify-center text-white font-extrabold text-base shadow-sm">
+                P
+              </div>
+              <span className="font-extrabold text-lg text-slate-900 tracking-tight">PATHWISE</span>
+            </div>
+            <span className="px-2 py-0.5 rounded-full bg-[#e9ddff] text-[#23005c] text-[11px] font-bold">
+              v2.0
+            </span>
+          </div>
+          <p className="text-xs text-slate-500 pl-0.5">Career &amp; Skill-Gap Agent</p>
+        </div>
+
+        {/* Navigation Items */}
+        <div className="px-4 mt-4">
+          <div className="px-3 pb-2">
+            <span className="text-[11px] font-bold uppercase tracking-wider text-slate-400">
+              Main Navigation
+            </span>
+          </div>
+          <nav className="flex flex-col gap-1">
+            {navItems.map((item) => {
+              const isActive = activeTab === item.key;
+              return (
+                <button
+                  key={item.key}
+                  onClick={() => onTabChange(item.key)}
+                  className={`w-full flex items-center justify-between px-3.5 py-2.5 rounded-xl text-sm font-semibold transition-all duration-150 ${
+                    isActive
+                      ? "bg-[#4648d4] text-white shadow-[0_4px_14px_0_rgba(99,102,241,0.35)]"
+                      : "text-slate-600 hover:bg-slate-100 hover:text-slate-900"
+                  }`}
+                >
+                  <div className="flex items-center gap-3">
+                    <span className={isActive ? "text-white" : "text-slate-500"}>
+                      {item.icon}
+                    </span>
+                    <span>{item.label}</span>
+                  </div>
+
+                  {item.badge && (
+                    <span
+                      className={`text-[10px] font-bold px-2 py-0.5 rounded-full ${
+                        isActive
+                          ? "bg-white/20 text-white"
+                          : item.badge === "Active" || item.badge === "Matched"
+                          ? "bg-emerald-50 text-emerald-700 border border-emerald-200"
+                          : "bg-indigo-50 text-indigo-700 border border-indigo-200"
+                      }`}
+                    >
+                      {item.badge}
+                    </span>
+                  )}
+                </button>
+              );
+            })}
+          </nav>
+        </div>
+      </div>
+
+      {/* Footer Info */}
+      <div className="p-4 border-t border-slate-100 text-[11px] text-slate-400 text-center">
+        <span>Pathwise v2.0</span>
+      </div>
+    </aside>
+  );
+};

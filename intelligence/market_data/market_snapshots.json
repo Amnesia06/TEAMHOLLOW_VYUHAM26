@@ -1,0 +1,1332 @@
+[
+  {
+    "role": "Full-Stack Developer",
+    "skill": "React",
+    "frequency": 0.72,
+    "snapshot_date": "2024-11-01",
+    "posting_count": 250
+  },
+  {
+    "role": "Full-Stack Developer",
+    "skill": "Next.js",
+    "frequency": 0.45,
+    "snapshot_date": "2024-11-01",
+    "posting_count": 250
+  },
+  {
+    "role": "Full-Stack Developer",
+    "skill": "Node.js",
+    "frequency": 0.68,
+    "snapshot_date": "2024-11-01",
+    "posting_count": 250
+  },
+  {
+    "role": "Full-Stack Developer",
+    "skill": "jQuery",
+    "frequency": 0.35,
+    "snapshot_date": "2024-11-01",
+    "posting_count": 250
+  },
+  {
+    "role": "Full-Stack Developer",
+    "skill": "PostgreSQL",
+    "frequency": 0.58,
+    "snapshot_date": "2024-11-01",
+    "posting_count": 250
+  },
+  {
+    "role": "Full-Stack Developer",
+    "skill": "React",
+    "frequency": 0.75,
+    "snapshot_date": "2026-03-01",
+    "posting_count": 380
+  },
+  {
+    "role": "Full-Stack Developer",
+    "skill": "Next.js",
+    "frequency": 0.78,
+    "snapshot_date": "2026-03-01",
+    "posting_count": 380
+  },
+  {
+    "role": "Full-Stack Developer",
+    "skill": "Node.js",
+    "frequency": 0.7,
+    "snapshot_date": "2026-03-01",
+    "posting_count": 380
+  },
+  {
+    "role": "Full-Stack Developer",
+    "skill": "jQuery",
+    "frequency": 0.08,
+    "snapshot_date": "2026-03-01",
+    "posting_count": 380
+  },
+  {
+    "role": "Full-Stack Developer",
+    "skill": "PostgreSQL",
+    "frequency": 0.72,
+    "snapshot_date": "2026-03-01",
+    "posting_count": 380
+  },
+  {
+    "role": "Data Engineer",
+    "skill": "Python",
+    "frequency": 0.85,
+    "snapshot_date": "2024-11-01",
+    "posting_count": 220
+  },
+  {
+    "role": "Data Engineer",
+    "skill": "Apache Spark",
+    "frequency": 0.55,
+    "snapshot_date": "2024-11-01",
+    "posting_count": 220
+  },
+  {
+    "role": "Data Engineer",
+    "skill": "Airflow",
+    "frequency": 0.5,
+    "snapshot_date": "2024-11-01",
+    "posting_count": 220
+  },
+  {
+    "role": "Data Engineer",
+    "skill": "MapReduce",
+    "frequency": 0.3,
+    "snapshot_date": "2024-11-01",
+    "posting_count": 220
+  },
+  {
+    "role": "Data Engineer",
+    "skill": "Python",
+    "frequency": 0.92,
+    "snapshot_date": "2026-03-01",
+    "posting_count": 340
+  },
+  {
+    "role": "Data Engineer",
+    "skill": "Apache Spark",
+    "frequency": 0.78,
+    "snapshot_date": "2026-03-01",
+    "posting_count": 340
+  },
+  {
+    "role": "Data Engineer",
+    "skill": "Airflow",
+    "frequency": 0.74,
+    "snapshot_date": "2026-03-01",
+    "posting_count": 340
+  },
+  {
+    "role": "Data Engineer",
+    "skill": "MapReduce",
+    "frequency": 0.05,
+    "snapshot_date": "2026-03-01",
+    "posting_count": 340
+  },
+  {
+    "role": "Machine Learning Engineer",
+    "skill": "Python",
+    "frequency": 0.9,
+    "snapshot_date": "2024-11-01",
+    "posting_count": 200
+  },
+  {
+    "role": "Machine Learning Engineer",
+    "skill": "PyTorch",
+    "frequency": 0.55,
+    "snapshot_date": "2024-11-01",
+    "posting_count": 200
+  },
+  {
+    "role": "Machine Learning Engineer",
+    "skill": "Theano",
+    "frequency": 0.2,
+    "snapshot_date": "2024-11-01",
+    "posting_count": 200
+  },
+  {
+    "role": "Machine Learning Engineer",
+    "skill": "Python",
+    "frequency": 0.95,
+    "snapshot_date": "2026-03-01",
+    "posting_count": 350
+  },
+  {
+    "role": "Machine Learning Engineer",
+    "skill": "PyTorch",
+    "frequency": 0.88,
+    "snapshot_date": "2026-03-01",
+    "posting_count": 350
+  },
+  {
+    "role": "Machine Learning Engineer",
+    "skill": "Theano",
+    "frequency": 0.01,
+    "snapshot_date": "2026-03-01",
+    "posting_count": 350
+  },
+  {
+    "role": "Rust Embedded Systems",
+    "skill": "C/C++",
+    "frequency": 0.85,
+    "snapshot_date": "2024-11-01",
+    "posting_count": 80
+  },
+  {
+    "role": "Rust Embedded Systems",
+    "skill": "Rust",
+    "frequency": 0.35,
+    "snapshot_date": "2024-11-01",
+    "posting_count": 80
+  },
+  {
+    "role": "Rust Embedded Systems",
+    "skill": "RTOS",
+    "frequency": 0.65,
+    "snapshot_date": "2024-11-01",
+    "posting_count": 80
+  },
+  {
+    "role": "Rust Embedded Systems",
+    "skill": "C/C++",
+    "frequency": 0.8,
+    "snapshot_date": "2026-03-01",
+    "posting_count": 120
+  },
+  {
+    "role": "Rust Embedded Systems",
+    "skill": "Rust",
+    "frequency": 0.68,
+    "snapshot_date": "2026-03-01",
+    "posting_count": 120
+  },
+  {
+    "role": "Rust Embedded Systems",
+    "skill": "RTOS",
+    "frequency": 0.7,
+    "snapshot_date": "2026-03-01",
+    "posting_count": 120
+  },
+  {
+    "role": "Cybersecurity",
+    "skill": "Cloud Security & Zero Trust",
+    "frequency": 0.42,
+    "snapshot_date": "2024-11-01",
+    "posting_count": 150
+  },
+  {
+    "role": "Cybersecurity",
+    "skill": "Cloud Security & Zero Trust",
+    "frequency": 0.85,
+    "snapshot_date": "2026-03-01",
+    "posting_count": 250
+  },
+  {
+    "role": "Cybersecurity",
+    "skill": "SIEM & AI Threat Hunting",
+    "frequency": 0.48,
+    "snapshot_date": "2024-11-01",
+    "posting_count": 150
+  },
+  {
+    "role": "Cybersecurity",
+    "skill": "SIEM & AI Threat Hunting",
+    "frequency": 0.82,
+    "snapshot_date": "2026-03-01",
+    "posting_count": 250
+  },
+  {
+    "role": "Cybersecurity",
+    "skill": "Network Penetration Testing",
+    "frequency": 0.6,
+    "snapshot_date": "2024-11-01",
+    "posting_count": 150
+  },
+  {
+    "role": "Cybersecurity",
+    "skill": "Network Penetration Testing",
+    "frequency": 0.68,
+    "snapshot_date": "2026-03-01",
+    "posting_count": 250
+  },
+  {
+    "role": "Cybersecurity",
+    "skill": "Python for Security Automation",
+    "frequency": 0.52,
+    "snapshot_date": "2024-11-01",
+    "posting_count": 150
+  },
+  {
+    "role": "Cybersecurity",
+    "skill": "Python for Security Automation",
+    "frequency": 0.6,
+    "snapshot_date": "2026-03-01",
+    "posting_count": 250
+  },
+  {
+    "role": "Cybersecurity",
+    "skill": "Legacy Perimeter Firewalls",
+    "frequency": 0.68,
+    "snapshot_date": "2024-11-01",
+    "posting_count": 150
+  },
+  {
+    "role": "Cybersecurity",
+    "skill": "Legacy Perimeter Firewalls",
+    "frequency": 0.32,
+    "snapshot_date": "2026-03-01",
+    "posting_count": 250
+  },
+  {
+    "role": "AI/ML Engineer",
+    "skill": "Modern Ai/Ml Engineer Technologies",
+    "frequency": 0.4,
+    "snapshot_date": "2024-11-01",
+    "posting_count": 150
+  },
+  {
+    "role": "AI/ML Engineer",
+    "skill": "Modern Ai/Ml Engineer Technologies",
+    "frequency": 0.82,
+    "snapshot_date": "2026-03-01",
+    "posting_count": 250
+  },
+  {
+    "role": "AI/ML Engineer",
+    "skill": "Core Ai/Ml Engineer Methodology",
+    "frequency": 0.68,
+    "snapshot_date": "2024-11-01",
+    "posting_count": 150
+  },
+  {
+    "role": "AI/ML Engineer",
+    "skill": "Core Ai/Ml Engineer Methodology",
+    "frequency": 0.75,
+    "snapshot_date": "2026-03-01",
+    "posting_count": 250
+  },
+  {
+    "role": "AI/ML Engineer",
+    "skill": "Data & Automation in Ai/Ml Engineer",
+    "frequency": 0.35,
+    "snapshot_date": "2024-11-01",
+    "posting_count": 150
+  },
+  {
+    "role": "AI/ML Engineer",
+    "skill": "Data & Automation in Ai/Ml Engineer",
+    "frequency": 0.7,
+    "snapshot_date": "2026-03-01",
+    "posting_count": 250
+  },
+  {
+    "role": "AI/ML Engineer",
+    "skill": "Industry Best Practices",
+    "frequency": 0.6,
+    "snapshot_date": "2024-11-01",
+    "posting_count": 150
+  },
+  {
+    "role": "AI/ML Engineer",
+    "skill": "Industry Best Practices",
+    "frequency": 0.65,
+    "snapshot_date": "2026-03-01",
+    "posting_count": 250
+  },
+  {
+    "role": "AI/ML Engineer",
+    "skill": "Legacy Manual Techniques",
+    "frequency": 0.65,
+    "snapshot_date": "2024-11-01",
+    "posting_count": 150
+  },
+  {
+    "role": "AI/ML Engineer",
+    "skill": "Legacy Manual Techniques",
+    "frequency": 0.25,
+    "snapshot_date": "2026-03-01",
+    "posting_count": 250
+  },
+  {
+    "role": "AI Engineer",
+    "skill": "Modern Ai Engineer Technologies",
+    "frequency": 0.4,
+    "snapshot_date": "2024-11-01",
+    "posting_count": 150
+  },
+  {
+    "role": "AI Engineer",
+    "skill": "Modern Ai Engineer Technologies",
+    "frequency": 0.82,
+    "snapshot_date": "2026-03-01",
+    "posting_count": 250
+  },
+  {
+    "role": "AI Engineer",
+    "skill": "Core Ai Engineer Methodology",
+    "frequency": 0.68,
+    "snapshot_date": "2024-11-01",
+    "posting_count": 150
+  },
+  {
+    "role": "AI Engineer",
+    "skill": "Core Ai Engineer Methodology",
+    "frequency": 0.75,
+    "snapshot_date": "2026-03-01",
+    "posting_count": 250
+  },
+  {
+    "role": "AI Engineer",
+    "skill": "Data & Automation in Ai Engineer",
+    "frequency": 0.35,
+    "snapshot_date": "2024-11-01",
+    "posting_count": 150
+  },
+  {
+    "role": "AI Engineer",
+    "skill": "Data & Automation in Ai Engineer",
+    "frequency": 0.7,
+    "snapshot_date": "2026-03-01",
+    "posting_count": 250
+  },
+  {
+    "role": "AI Engineer",
+    "skill": "Industry Best Practices",
+    "frequency": 0.6,
+    "snapshot_date": "2024-11-01",
+    "posting_count": 150
+  },
+  {
+    "role": "AI Engineer",
+    "skill": "Industry Best Practices",
+    "frequency": 0.65,
+    "snapshot_date": "2026-03-01",
+    "posting_count": 250
+  },
+  {
+    "role": "AI Engineer",
+    "skill": "Legacy Manual Techniques",
+    "frequency": 0.65,
+    "snapshot_date": "2024-11-01",
+    "posting_count": 150
+  },
+  {
+    "role": "AI Engineer",
+    "skill": "Legacy Manual Techniques",
+    "frequency": 0.25,
+    "snapshot_date": "2026-03-01",
+    "posting_count": 250
+  },
+  {
+    "role": "Rust Embedded Systems Engineer",
+    "skill": "Modern Rust Embedded Systems Engineer Technologies",
+    "frequency": 0.4,
+    "snapshot_date": "2024-11-01",
+    "posting_count": 150
+  },
+  {
+    "role": "Rust Embedded Systems Engineer",
+    "skill": "Modern Rust Embedded Systems Engineer Technologies",
+    "frequency": 0.82,
+    "snapshot_date": "2026-03-01",
+    "posting_count": 250
+  },
+  {
+    "role": "Rust Embedded Systems Engineer",
+    "skill": "Core Rust Embedded Systems Engineer Methodology",
+    "frequency": 0.68,
+    "snapshot_date": "2024-11-01",
+    "posting_count": 150
+  },
+  {
+    "role": "Rust Embedded Systems Engineer",
+    "skill": "Core Rust Embedded Systems Engineer Methodology",
+    "frequency": 0.75,
+    "snapshot_date": "2026-03-01",
+    "posting_count": 250
+  },
+  {
+    "role": "Rust Embedded Systems Engineer",
+    "skill": "Data & Automation in Rust Embedded Systems Engineer",
+    "frequency": 0.35,
+    "snapshot_date": "2024-11-01",
+    "posting_count": 150
+  },
+  {
+    "role": "Rust Embedded Systems Engineer",
+    "skill": "Data & Automation in Rust Embedded Systems Engineer",
+    "frequency": 0.7,
+    "snapshot_date": "2026-03-01",
+    "posting_count": 250
+  },
+  {
+    "role": "Rust Embedded Systems Engineer",
+    "skill": "Industry Best Practices",
+    "frequency": 0.6,
+    "snapshot_date": "2024-11-01",
+    "posting_count": 150
+  },
+  {
+    "role": "Rust Embedded Systems Engineer",
+    "skill": "Industry Best Practices",
+    "frequency": 0.65,
+    "snapshot_date": "2026-03-01",
+    "posting_count": 250
+  },
+  {
+    "role": "Rust Embedded Systems Engineer",
+    "skill": "Legacy Manual Techniques",
+    "frequency": 0.65,
+    "snapshot_date": "2024-11-01",
+    "posting_count": 150
+  },
+  {
+    "role": "Rust Embedded Systems Engineer",
+    "skill": "Legacy Manual Techniques",
+    "frequency": 0.25,
+    "snapshot_date": "2026-03-01",
+    "posting_count": 250
+  },
+  {
+    "role": "Deep Learning Engineer",
+    "skill": "Modern Deep Learning Engineer Technologies",
+    "frequency": 0.4,
+    "snapshot_date": "2024-11-01",
+    "posting_count": 150
+  },
+  {
+    "role": "Deep Learning Engineer",
+    "skill": "Modern Deep Learning Engineer Technologies",
+    "frequency": 0.82,
+    "snapshot_date": "2026-03-01",
+    "posting_count": 250
+  },
+  {
+    "role": "Deep Learning Engineer",
+    "skill": "Core Deep Learning Engineer Methodology",
+    "frequency": 0.68,
+    "snapshot_date": "2024-11-01",
+    "posting_count": 150
+  },
+  {
+    "role": "Deep Learning Engineer",
+    "skill": "Core Deep Learning Engineer Methodology",
+    "frequency": 0.75,
+    "snapshot_date": "2026-03-01",
+    "posting_count": 250
+  },
+  {
+    "role": "Deep Learning Engineer",
+    "skill": "Data & Automation in Deep Learning Engineer",
+    "frequency": 0.35,
+    "snapshot_date": "2024-11-01",
+    "posting_count": 150
+  },
+  {
+    "role": "Deep Learning Engineer",
+    "skill": "Data & Automation in Deep Learning Engineer",
+    "frequency": 0.7,
+    "snapshot_date": "2026-03-01",
+    "posting_count": 250
+  },
+  {
+    "role": "Deep Learning Engineer",
+    "skill": "Industry Best Practices",
+    "frequency": 0.6,
+    "snapshot_date": "2024-11-01",
+    "posting_count": 150
+  },
+  {
+    "role": "Deep Learning Engineer",
+    "skill": "Industry Best Practices",
+    "frequency": 0.65,
+    "snapshot_date": "2026-03-01",
+    "posting_count": 250
+  },
+  {
+    "role": "Deep Learning Engineer",
+    "skill": "Legacy Manual Techniques",
+    "frequency": 0.65,
+    "snapshot_date": "2024-11-01",
+    "posting_count": 150
+  },
+  {
+    "role": "Deep Learning Engineer",
+    "skill": "Legacy Manual Techniques",
+    "frequency": 0.25,
+    "snapshot_date": "2026-03-01",
+    "posting_count": 250
+  },
+  {
+    "role": "AI Systems Engineer",
+    "skill": "Modern Ai Systems Engineer Technologies",
+    "frequency": 0.4,
+    "snapshot_date": "2024-11-01",
+    "posting_count": 150
+  },
+  {
+    "role": "AI Systems Engineer",
+    "skill": "Modern Ai Systems Engineer Technologies",
+    "frequency": 0.82,
+    "snapshot_date": "2026-03-01",
+    "posting_count": 250
+  },
+  {
+    "role": "AI Systems Engineer",
+    "skill": "Core Ai Systems Engineer Methodology",
+    "frequency": 0.68,
+    "snapshot_date": "2024-11-01",
+    "posting_count": 150
+  },
+  {
+    "role": "AI Systems Engineer",
+    "skill": "Core Ai Systems Engineer Methodology",
+    "frequency": 0.75,
+    "snapshot_date": "2026-03-01",
+    "posting_count": 250
+  },
+  {
+    "role": "AI Systems Engineer",
+    "skill": "Data & Automation in Ai Systems Engineer",
+    "frequency": 0.35,
+    "snapshot_date": "2024-11-01",
+    "posting_count": 150
+  },
+  {
+    "role": "AI Systems Engineer",
+    "skill": "Data & Automation in Ai Systems Engineer",
+    "frequency": 0.7,
+    "snapshot_date": "2026-03-01",
+    "posting_count": 250
+  },
+  {
+    "role": "AI Systems Engineer",
+    "skill": "Industry Best Practices",
+    "frequency": 0.6,
+    "snapshot_date": "2024-11-01",
+    "posting_count": 150
+  },
+  {
+    "role": "AI Systems Engineer",
+    "skill": "Industry Best Practices",
+    "frequency": 0.65,
+    "snapshot_date": "2026-03-01",
+    "posting_count": 250
+  },
+  {
+    "role": "AI Systems Engineer",
+    "skill": "Legacy Manual Techniques",
+    "frequency": 0.65,
+    "snapshot_date": "2024-11-01",
+    "posting_count": 150
+  },
+  {
+    "role": "AI Systems Engineer",
+    "skill": "Legacy Manual Techniques",
+    "frequency": 0.25,
+    "snapshot_date": "2026-03-01",
+    "posting_count": 250
+  },
+  {
+    "role": "Full-Stack Product Engineer",
+    "skill": "Modern Full-Stack Product Engineer Technologies",
+    "frequency": 0.4,
+    "snapshot_date": "2024-11-01",
+    "posting_count": 150
+  },
+  {
+    "role": "Full-Stack Product Engineer",
+    "skill": "Modern Full-Stack Product Engineer Technologies",
+    "frequency": 0.82,
+    "snapshot_date": "2026-03-01",
+    "posting_count": 250
+  },
+  {
+    "role": "Full-Stack Product Engineer",
+    "skill": "Core Full-Stack Product Engineer Methodology",
+    "frequency": 0.68,
+    "snapshot_date": "2024-11-01",
+    "posting_count": 150
+  },
+  {
+    "role": "Full-Stack Product Engineer",
+    "skill": "Core Full-Stack Product Engineer Methodology",
+    "frequency": 0.75,
+    "snapshot_date": "2026-03-01",
+    "posting_count": 250
+  },
+  {
+    "role": "Full-Stack Product Engineer",
+    "skill": "Data & Automation in Full-Stack Product Engineer",
+    "frequency": 0.35,
+    "snapshot_date": "2024-11-01",
+    "posting_count": 150
+  },
+  {
+    "role": "Full-Stack Product Engineer",
+    "skill": "Data & Automation in Full-Stack Product Engineer",
+    "frequency": 0.7,
+    "snapshot_date": "2026-03-01",
+    "posting_count": 250
+  },
+  {
+    "role": "Full-Stack Product Engineer",
+    "skill": "Industry Best Practices",
+    "frequency": 0.6,
+    "snapshot_date": "2024-11-01",
+    "posting_count": 150
+  },
+  {
+    "role": "Full-Stack Product Engineer",
+    "skill": "Industry Best Practices",
+    "frequency": 0.65,
+    "snapshot_date": "2026-03-01",
+    "posting_count": 250
+  },
+  {
+    "role": "Full-Stack Product Engineer",
+    "skill": "Legacy Manual Techniques",
+    "frequency": 0.65,
+    "snapshot_date": "2024-11-01",
+    "posting_count": 150
+  },
+  {
+    "role": "Full-Stack Product Engineer",
+    "skill": "Legacy Manual Techniques",
+    "frequency": 0.25,
+    "snapshot_date": "2026-03-01",
+    "posting_count": 250
+  },
+  {
+    "role": "Cloud Solutions Architect",
+    "skill": "Modern Cloud Solutions Architect Technologies",
+    "frequency": 0.4,
+    "snapshot_date": "2024-11-01",
+    "posting_count": 150
+  },
+  {
+    "role": "Cloud Solutions Architect",
+    "skill": "Modern Cloud Solutions Architect Technologies",
+    "frequency": 0.82,
+    "snapshot_date": "2026-03-01",
+    "posting_count": 250
+  },
+  {
+    "role": "Cloud Solutions Architect",
+    "skill": "Core Cloud Solutions Architect Methodology",
+    "frequency": 0.68,
+    "snapshot_date": "2024-11-01",
+    "posting_count": 150
+  },
+  {
+    "role": "Cloud Solutions Architect",
+    "skill": "Core Cloud Solutions Architect Methodology",
+    "frequency": 0.75,
+    "snapshot_date": "2026-03-01",
+    "posting_count": 250
+  },
+  {
+    "role": "Cloud Solutions Architect",
+    "skill": "Data & Automation in Cloud Solutions Architect",
+    "frequency": 0.35,
+    "snapshot_date": "2024-11-01",
+    "posting_count": 150
+  },
+  {
+    "role": "Cloud Solutions Architect",
+    "skill": "Data & Automation in Cloud Solutions Architect",
+    "frequency": 0.7,
+    "snapshot_date": "2026-03-01",
+    "posting_count": 250
+  },
+  {
+    "role": "Cloud Solutions Architect",
+    "skill": "Industry Best Practices",
+    "frequency": 0.6,
+    "snapshot_date": "2024-11-01",
+    "posting_count": 150
+  },
+  {
+    "role": "Cloud Solutions Architect",
+    "skill": "Industry Best Practices",
+    "frequency": 0.65,
+    "snapshot_date": "2026-03-01",
+    "posting_count": 250
+  },
+  {
+    "role": "Cloud Solutions Architect",
+    "skill": "Legacy Manual Techniques",
+    "frequency": 0.65,
+    "snapshot_date": "2024-11-01",
+    "posting_count": 150
+  },
+  {
+    "role": "Cloud Solutions Architect",
+    "skill": "Legacy Manual Techniques",
+    "frequency": 0.25,
+    "snapshot_date": "2026-03-01",
+    "posting_count": 250
+  },
+  {
+    "role": "Cloud Architect",
+    "skill": "Modern Cloud Architect Technologies",
+    "frequency": 0.4,
+    "snapshot_date": "2024-11-01",
+    "posting_count": 150
+  },
+  {
+    "role": "Cloud Architect",
+    "skill": "Modern Cloud Architect Technologies",
+    "frequency": 0.82,
+    "snapshot_date": "2026-03-01",
+    "posting_count": 250
+  },
+  {
+    "role": "Cloud Architect",
+    "skill": "Core Cloud Architect Methodology",
+    "frequency": 0.68,
+    "snapshot_date": "2024-11-01",
+    "posting_count": 150
+  },
+  {
+    "role": "Cloud Architect",
+    "skill": "Core Cloud Architect Methodology",
+    "frequency": 0.75,
+    "snapshot_date": "2026-03-01",
+    "posting_count": 250
+  },
+  {
+    "role": "Cloud Architect",
+    "skill": "Data & Automation in Cloud Architect",
+    "frequency": 0.35,
+    "snapshot_date": "2024-11-01",
+    "posting_count": 150
+  },
+  {
+    "role": "Cloud Architect",
+    "skill": "Data & Automation in Cloud Architect",
+    "frequency": 0.7,
+    "snapshot_date": "2026-03-01",
+    "posting_count": 250
+  },
+  {
+    "role": "Cloud Architect",
+    "skill": "Industry Best Practices",
+    "frequency": 0.6,
+    "snapshot_date": "2024-11-01",
+    "posting_count": 150
+  },
+  {
+    "role": "Cloud Architect",
+    "skill": "Industry Best Practices",
+    "frequency": 0.65,
+    "snapshot_date": "2026-03-01",
+    "posting_count": 250
+  },
+  {
+    "role": "Cloud Architect",
+    "skill": "Legacy Manual Techniques",
+    "frequency": 0.65,
+    "snapshot_date": "2024-11-01",
+    "posting_count": 150
+  },
+  {
+    "role": "Cloud Architect",
+    "skill": "Legacy Manual Techniques",
+    "frequency": 0.25,
+    "snapshot_date": "2026-03-01",
+    "posting_count": 250
+  },
+  {
+    "role": "Data Platform Engineer",
+    "skill": "Modern Data Platform Engineer Technologies",
+    "frequency": 0.4,
+    "snapshot_date": "2024-11-01",
+    "posting_count": 150
+  },
+  {
+    "role": "Data Platform Engineer",
+    "skill": "Modern Data Platform Engineer Technologies",
+    "frequency": 0.82,
+    "snapshot_date": "2026-03-01",
+    "posting_count": 250
+  },
+  {
+    "role": "Data Platform Engineer",
+    "skill": "Core Data Platform Engineer Methodology",
+    "frequency": 0.68,
+    "snapshot_date": "2024-11-01",
+    "posting_count": 150
+  },
+  {
+    "role": "Data Platform Engineer",
+    "skill": "Core Data Platform Engineer Methodology",
+    "frequency": 0.75,
+    "snapshot_date": "2026-03-01",
+    "posting_count": 250
+  },
+  {
+    "role": "Data Platform Engineer",
+    "skill": "Data & Automation in Data Platform Engineer",
+    "frequency": 0.35,
+    "snapshot_date": "2024-11-01",
+    "posting_count": 150
+  },
+  {
+    "role": "Data Platform Engineer",
+    "skill": "Data & Automation in Data Platform Engineer",
+    "frequency": 0.7,
+    "snapshot_date": "2026-03-01",
+    "posting_count": 250
+  },
+  {
+    "role": "Data Platform Engineer",
+    "skill": "Industry Best Practices",
+    "frequency": 0.6,
+    "snapshot_date": "2024-11-01",
+    "posting_count": 150
+  },
+  {
+    "role": "Data Platform Engineer",
+    "skill": "Industry Best Practices",
+    "frequency": 0.65,
+    "snapshot_date": "2026-03-01",
+    "posting_count": 250
+  },
+  {
+    "role": "Data Platform Engineer",
+    "skill": "Legacy Manual Techniques",
+    "frequency": 0.65,
+    "snapshot_date": "2024-11-01",
+    "posting_count": 150
+  },
+  {
+    "role": "Data Platform Engineer",
+    "skill": "Legacy Manual Techniques",
+    "frequency": 0.25,
+    "snapshot_date": "2026-03-01",
+    "posting_count": 250
+  },
+  {
+    "role": "Python Developer",
+    "skill": "Modern Python Developer Technologies",
+    "frequency": 0.4,
+    "snapshot_date": "2024-11-01",
+    "posting_count": 150
+  },
+  {
+    "role": "Python Developer",
+    "skill": "Modern Python Developer Technologies",
+    "frequency": 0.82,
+    "snapshot_date": "2026-03-01",
+    "posting_count": 250
+  },
+  {
+    "role": "Python Developer",
+    "skill": "Core Python Developer Methodology",
+    "frequency": 0.68,
+    "snapshot_date": "2024-11-01",
+    "posting_count": 150
+  },
+  {
+    "role": "Python Developer",
+    "skill": "Core Python Developer Methodology",
+    "frequency": 0.75,
+    "snapshot_date": "2026-03-01",
+    "posting_count": 250
+  },
+  {
+    "role": "Python Developer",
+    "skill": "Data & Automation in Python Developer",
+    "frequency": 0.35,
+    "snapshot_date": "2024-11-01",
+    "posting_count": 150
+  },
+  {
+    "role": "Python Developer",
+    "skill": "Data & Automation in Python Developer",
+    "frequency": 0.7,
+    "snapshot_date": "2026-03-01",
+    "posting_count": 250
+  },
+  {
+    "role": "Python Developer",
+    "skill": "Industry Best Practices",
+    "frequency": 0.6,
+    "snapshot_date": "2024-11-01",
+    "posting_count": 150
+  },
+  {
+    "role": "Python Developer",
+    "skill": "Industry Best Practices",
+    "frequency": 0.65,
+    "snapshot_date": "2026-03-01",
+    "posting_count": 250
+  },
+  {
+    "role": "Python Developer",
+    "skill": "Legacy Manual Techniques",
+    "frequency": 0.65,
+    "snapshot_date": "2024-11-01",
+    "posting_count": 150
+  },
+  {
+    "role": "Python Developer",
+    "skill": "Legacy Manual Techniques",
+    "frequency": 0.25,
+    "snapshot_date": "2026-03-01",
+    "posting_count": 250
+  },
+  {
+    "role": "Network Engineer",
+    "skill": "Modern Network Engineer Technologies",
+    "frequency": 0.4,
+    "snapshot_date": "2024-11-01",
+    "posting_count": 150
+  },
+  {
+    "role": "Network Engineer",
+    "skill": "Modern Network Engineer Technologies",
+    "frequency": 0.82,
+    "snapshot_date": "2026-03-01",
+    "posting_count": 250
+  },
+  {
+    "role": "Network Engineer",
+    "skill": "Core Network Engineer Methodology",
+    "frequency": 0.68,
+    "snapshot_date": "2024-11-01",
+    "posting_count": 150
+  },
+  {
+    "role": "Network Engineer",
+    "skill": "Core Network Engineer Methodology",
+    "frequency": 0.75,
+    "snapshot_date": "2026-03-01",
+    "posting_count": 250
+  },
+  {
+    "role": "Network Engineer",
+    "skill": "Data & Automation in Network Engineer",
+    "frequency": 0.35,
+    "snapshot_date": "2024-11-01",
+    "posting_count": 150
+  },
+  {
+    "role": "Network Engineer",
+    "skill": "Data & Automation in Network Engineer",
+    "frequency": 0.7,
+    "snapshot_date": "2026-03-01",
+    "posting_count": 250
+  },
+  {
+    "role": "Network Engineer",
+    "skill": "Industry Best Practices",
+    "frequency": 0.6,
+    "snapshot_date": "2024-11-01",
+    "posting_count": 150
+  },
+  {
+    "role": "Network Engineer",
+    "skill": "Industry Best Practices",
+    "frequency": 0.65,
+    "snapshot_date": "2026-03-01",
+    "posting_count": 250
+  },
+  {
+    "role": "Network Engineer",
+    "skill": "Legacy Manual Techniques",
+    "frequency": 0.65,
+    "snapshot_date": "2024-11-01",
+    "posting_count": 150
+  },
+  {
+    "role": "Network Engineer",
+    "skill": "Legacy Manual Techniques",
+    "frequency": 0.25,
+    "snapshot_date": "2026-03-01",
+    "posting_count": 250
+  },
+  {
+    "role": "Cybersecurity Analyst",
+    "skill": "Cloud Security & Zero Trust",
+    "frequency": 0.42,
+    "snapshot_date": "2024-11-01",
+    "posting_count": 150
+  },
+  {
+    "role": "Cybersecurity Analyst",
+    "skill": "Cloud Security & Zero Trust",
+    "frequency": 0.85,
+    "snapshot_date": "2026-03-01",
+    "posting_count": 250
+  },
+  {
+    "role": "Cybersecurity Analyst",
+    "skill": "SIEM & AI Threat Hunting",
+    "frequency": 0.48,
+    "snapshot_date": "2024-11-01",
+    "posting_count": 150
+  },
+  {
+    "role": "Cybersecurity Analyst",
+    "skill": "SIEM & AI Threat Hunting",
+    "frequency": 0.82,
+    "snapshot_date": "2026-03-01",
+    "posting_count": 250
+  },
+  {
+    "role": "Cybersecurity Analyst",
+    "skill": "Network Penetration Testing",
+    "frequency": 0.6,
+    "snapshot_date": "2024-11-01",
+    "posting_count": 150
+  },
+  {
+    "role": "Cybersecurity Analyst",
+    "skill": "Network Penetration Testing",
+    "frequency": 0.68,
+    "snapshot_date": "2026-03-01",
+    "posting_count": 250
+  },
+  {
+    "role": "Cybersecurity Analyst",
+    "skill": "Python for Security Automation",
+    "frequency": 0.52,
+    "snapshot_date": "2024-11-01",
+    "posting_count": 150
+  },
+  {
+    "role": "Cybersecurity Analyst",
+    "skill": "Python for Security Automation",
+    "frequency": 0.6,
+    "snapshot_date": "2026-03-01",
+    "posting_count": 250
+  },
+  {
+    "role": "Cybersecurity Analyst",
+    "skill": "Legacy Perimeter Firewalls",
+    "frequency": 0.68,
+    "snapshot_date": "2024-11-01",
+    "posting_count": 150
+  },
+  {
+    "role": "Cybersecurity Analyst",
+    "skill": "Legacy Perimeter Firewalls",
+    "frequency": 0.32,
+    "snapshot_date": "2026-03-01",
+    "posting_count": 250
+  },
+  {
+    "role": "Technical Lead",
+    "skill": "Modern Technical Lead Technologies",
+    "frequency": 0.4,
+    "snapshot_date": "2024-11-01",
+    "posting_count": 150
+  },
+  {
+    "role": "Technical Lead",
+    "skill": "Modern Technical Lead Technologies",
+    "frequency": 0.82,
+    "snapshot_date": "2026-03-01",
+    "posting_count": 250
+  },
+  {
+    "role": "Technical Lead",
+    "skill": "Core Technical Lead Methodology",
+    "frequency": 0.68,
+    "snapshot_date": "2024-11-01",
+    "posting_count": 150
+  },
+  {
+    "role": "Technical Lead",
+    "skill": "Core Technical Lead Methodology",
+    "frequency": 0.75,
+    "snapshot_date": "2026-03-01",
+    "posting_count": 250
+  },
+  {
+    "role": "Technical Lead",
+    "skill": "Data & Automation in Technical Lead",
+    "frequency": 0.35,
+    "snapshot_date": "2024-11-01",
+    "posting_count": 150
+  },
+  {
+    "role": "Technical Lead",
+    "skill": "Data & Automation in Technical Lead",
+    "frequency": 0.7,
+    "snapshot_date": "2026-03-01",
+    "posting_count": 250
+  },
+  {
+    "role": "Technical Lead",
+    "skill": "Industry Best Practices",
+    "frequency": 0.6,
+    "snapshot_date": "2024-11-01",
+    "posting_count": 150
+  },
+  {
+    "role": "Technical Lead",
+    "skill": "Industry Best Practices",
+    "frequency": 0.65,
+    "snapshot_date": "2026-03-01",
+    "posting_count": 250
+  },
+  {
+    "role": "Technical Lead",
+    "skill": "Legacy Manual Techniques",
+    "frequency": 0.65,
+    "snapshot_date": "2024-11-01",
+    "posting_count": 150
+  },
+  {
+    "role": "Technical Lead",
+    "skill": "Legacy Manual Techniques",
+    "frequency": 0.25,
+    "snapshot_date": "2026-03-01",
+    "posting_count": 250
+  },
+  {
+    "role": "iOS Developer",
+    "skill": "Modern Ios Developer Technologies",
+    "frequency": 0.4,
+    "snapshot_date": "2024-11-01",
+    "posting_count": 150
+  },
+  {
+    "role": "iOS Developer",
+    "skill": "Modern Ios Developer Technologies",
+    "frequency": 0.82,
+    "snapshot_date": "2026-03-01",
+    "posting_count": 250
+  },
+  {
+    "role": "iOS Developer",
+    "skill": "Core Ios Developer Methodology",
+    "frequency": 0.68,
+    "snapshot_date": "2024-11-01",
+    "posting_count": 150
+  },
+  {
+    "role": "iOS Developer",
+    "skill": "Core Ios Developer Methodology",
+    "frequency": 0.75,
+    "snapshot_date": "2026-03-01",
+    "posting_count": 250
+  },
+  {
+    "role": "iOS Developer",
+    "skill": "Data & Automation in Ios Developer",
+    "frequency": 0.35,
+    "snapshot_date": "2024-11-01",
+    "posting_count": 150
+  },
+  {
+    "role": "iOS Developer",
+    "skill": "Data & Automation in Ios Developer",
+    "frequency": 0.7,
+    "snapshot_date": "2026-03-01",
+    "posting_count": 250
+  },
+  {
+    "role": "iOS Developer",
+    "skill": "Industry Best Practices",
+    "frequency": 0.6,
+    "snapshot_date": "2024-11-01",
+    "posting_count": 150
+  },
+  {
+    "role": "iOS Developer",
+    "skill": "Industry Best Practices",
+    "frequency": 0.65,
+    "snapshot_date": "2026-03-01",
+    "posting_count": 250
+  },
+  {
+    "role": "iOS Developer",
+    "skill": "Legacy Manual Techniques",
+    "frequency": 0.65,
+    "snapshot_date": "2024-11-01",
+    "posting_count": 150
+  },
+  {
+    "role": "iOS Developer",
+    "skill": "Legacy Manual Techniques",
+    "frequency": 0.25,
+    "snapshot_date": "2026-03-01",
+    "posting_count": 250
+  },
+  {
+    "role": "Computer Vision Engineer",
+    "skill": "Modern Computer Vision Engineer Technologies",
+    "frequency": 0.4,
+    "snapshot_date": "2024-11-01",
+    "posting_count": 150
+  },
+  {
+    "role": "Computer Vision Engineer",
+    "skill": "Modern Computer Vision Engineer Technologies",
+    "frequency": 0.82,
+    "snapshot_date": "2026-03-01",
+    "posting_count": 250
+  },
+  {
+    "role": "Computer Vision Engineer",
+    "skill": "Core Computer Vision Engineer Methodology",
+    "frequency": 0.68,
+    "snapshot_date": "2024-11-01",
+    "posting_count": 150
+  },
+  {
+    "role": "Computer Vision Engineer",
+    "skill": "Core Computer Vision Engineer Methodology",
+    "frequency": 0.75,
+    "snapshot_date": "2026-03-01",
+    "posting_count": 250
+  },
+  {
+    "role": "Computer Vision Engineer",
+    "skill": "Data & Automation in Computer Vision Engineer",
+    "frequency": 0.35,
+    "snapshot_date": "2024-11-01",
+    "posting_count": 150
+  },
+  {
+    "role": "Computer Vision Engineer",
+    "skill": "Data & Automation in Computer Vision Engineer",
+    "frequency": 0.7,
+    "snapshot_date": "2026-03-01",
+    "posting_count": 250
+  },
+  {
+    "role": "Computer Vision Engineer",
+    "skill": "Industry Best Practices",
+    "frequency": 0.6,
+    "snapshot_date": "2024-11-01",
+    "posting_count": 150
+  },
+  {
+    "role": "Computer Vision Engineer",
+    "skill": "Industry Best Practices",
+    "frequency": 0.65,
+    "snapshot_date": "2026-03-01",
+    "posting_count": 250
+  },
+  {
+    "role": "Computer Vision Engineer",
+    "skill": "Legacy Manual Techniques",
+    "frequency": 0.65,
+    "snapshot_date": "2024-11-01",
+    "posting_count": 150
+  },
+  {
+    "role": "Computer Vision Engineer",
+    "skill": "Legacy Manual Techniques",
+    "frequency": 0.25,
+    "snapshot_date": "2026-03-01",
+    "posting_count": 250
+  }
+]

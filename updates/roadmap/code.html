@@ -1,0 +1,1220 @@
+<!DOCTYPE html><html lang="en"><head>
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1.0" name="viewport">
+<meta content="web_dashboard" name="shell-type">
+<title>Synapse.AI - Engineering Path Roadmap</title>
+<link href="https://fonts.googleapis.com" rel="preconnect">
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect">
+<link href="https://fonts.googleapis.com/css2?family=Geist:wght@300;400;500;600;700&amp;family=Inter:wght@300;400;500;600;700&amp;family=JetBrains+Mono:wght@400;500;600&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+  tailwind.config = {
+    darkMode: "class",
+    theme: {
+      extend: {
+        colors: {
+          "background": "#f8fafc",
+          "surface": "#ffffff",
+          "surface-dim": "#f1f5f9",
+          "surface-bright": "#ffffff",
+          "surface-container-lowest": "#ffffff",
+          "surface-container-low": "#f8fafc",
+          "surface-container": "#f1f5f9",
+          "surface-container-high": "#e2e8f0",
+          "surface-container-highest": "#cbd5e1",
+          "primary": "#1d4ed8",
+          "primary-hover": "#1e40af",
+          "primary-container": "#2563eb",
+          "primary-fixed": "#dbeafe",
+          "primary-light": "#eff6ff",
+          "secondary": "#0284c7",
+          "secondary-container": "#0369a1",
+          "on-surface": "#0f172a",
+          "on-surface-variant": "#475569",
+          "outline": "#94a3b8",
+          "outline-variant": "#e2e8f0",
+          "error": "#ef4444"
+        },
+        fontFamily: {
+          "display": ["Geist", "sans-serif"],
+          "headline-lg": ["Geist", "sans-serif"],
+          "headline-md": ["Geist", "sans-serif"],
+          "headline-sm": ["Geist", "sans-serif"],
+          "body-lg": ["Inter", "sans-serif"],
+          "body-md": ["Inter", "sans-serif"],
+          "body-sm": ["Inter", "sans-serif"],
+          "label-code": ["JetBrains Mono", "monospace"],
+          "label-caps": ["JetBrains Mono", "monospace"]
+        }
+      }
+    }
+  };
+</script>
+<style>
+  @layer base {
+    html, body {
+      margin: 0;
+      padding: 0;
+      background-color: #f8fafc;
+      color: #0f172a;
+      overflow-x: hidden;
+    }
+    body { overscroll-behavior: none; }
+    ::-webkit-scrollbar { display: none; }
+  }
+
+  /* Camera Canvas Smooth Glide Transitions */
+  .canvas-smooth-stage {
+    will-change: transform;
+  }
+  .canvas-glide-slow {
+    transition: transform 2800ms cubic-bezier(0.25, 1, 0.35, 1);
+  }
+  .canvas-glide-snappy {
+    transition: transform 300ms cubic-bezier(0.16, 1, 0.3, 1);
+  }
+
+  /* Active Flow Wire Animation */
+  @keyframes flowingWire {
+    0% { stroke-dashoffset: 48; }
+    100% { stroke-dashoffset: 0; }
+  }
+  .flow-wire-active {
+    stroke-dasharray: 6 6;
+    animation: flowingWire 2s linear infinite;
+  }
+
+  /* Light card styling */
+  .linear-card {
+    background: #ffffff;
+    border: 1px solid #e2e8f0;
+    box-shadow: 0 4px 16px -2px rgba(15, 23, 42, 0.05), 0 1px 3px 0 rgba(15, 23, 42, 0.03);
+  }
+  .linear-card:hover {
+    border-color: #93c5fd;
+    box-shadow: 0 10px 25px -4px rgba(37, 99, 235, 0.08), 0 2px 6px 0 rgba(15, 23, 42, 0.04);
+  }
+  .linear-card-active {
+    background: #ffffff;
+    border: 2px solid #2563eb;
+    box-shadow: 0 12px 30px -4px rgba(37, 99, 235, 0.16), 0 0 0 4px rgba(37, 99, 235, 0.1);
+  }
+
+  /* Node 1 Focus Halo Pulsing */
+  @keyframes activeHaloGlow {
+    0%, 100% {
+      box-shadow: 0 12px 32px -4px rgba(37, 99, 235, 0.22), 0 0 0 5px rgba(37, 99, 235, 0.18);
+    }
+    50% {
+      box-shadow: 0 16px 42px -2px rgba(37, 99, 235, 0.32), 0 0 0 10px rgba(37, 99, 235, 0.1);
+    }
+  }
+  .halo-pulse-active {
+    animation: activeHaloGlow 2.4s ease-in-out infinite;
+  }
+</style>
+</head>
+<body class="bg-background font-body-md text-on-surface antialiased min-h-screen selection:bg-blue-600 selection:text-white">
+<!-- Left Sidebar Navigation (Crisp White & Blue Accent) -->
+<aside class="fixed left-0 top-0 h-full w-64 bg-surface border-r border-outline-variant z-50 flex flex-col justify-between py-4 shadow-sm">
+<div class="flex flex-col gap-4">
+<!-- App Brand -->
+<div class="px-5 flex items-center gap-3">
+<div class="w-9 h-9 rounded-xl bg-blue-600 flex items-center justify-center text-white shadow-md shadow-blue-500/20">
+<span class="material-symbols-outlined text-[20px]">account_tree</span>
+</div>
+<div class="flex flex-col">
+<span class="font-headline-sm text-sm tracking-tight font-bold text-slate-900">SYNAPSE.AI</span>
+<span class="font-label-caps text-[10px] text-blue-600 font-semibold tracking-wider uppercase">ENGINEERING PATH</span>
+</div>
+</div>
+<!-- Curriculum Progress widget -->
+<div class="px-4">
+<div class="bg-slate-50 border border-slate-200/80 p-3 rounded-xl flex flex-col gap-2">
+<div class="flex items-center justify-between">
+<span class="font-label-caps text-[10px] uppercase tracking-wider text-slate-500 font-semibold">Curriculum</span>
+<span class="font-label-caps text-[11px] text-blue-700 font-bold bg-blue-100/70 px-1.5 py-0.5 rounded">STAGE 1 / 6</span>
+</div>
+<div class="h-2 w-full bg-slate-200/80 rounded-full overflow-hidden">
+<div class="h-full bg-gradient-to-r from-blue-600 to-sky-500 rounded-full w-[14%]" id="sidebar-progress-fill"></div>
+</div>
+</div>
+</div>
+<!-- Navigation links -->
+<nav class="flex flex-col gap-1 px-3">
+<a aria-current="page" class="flex items-center gap-3 px-3 py-2.5 rounded-lg text-sm transition-all bg-blue-50/80 border border-blue-200 text-blue-700 font-semibold shadow-xs" data-path="interactive-roadmap" href="#">
+<span class="material-symbols-outlined text-[19px] text-blue-600">account_tree</span>
+<span class="">Roadmap Canvas</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2 rounded-lg text-sm text-slate-600 hover:bg-slate-100 hover:text-slate-900 transition-all font-medium" data-path="linear-syllabus" href="#">
+<span class="material-symbols-outlined text-[19px] text-slate-400">checklist</span>
+<span class="">Curriculum List</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2 rounded-lg text-sm text-slate-600 hover:bg-slate-100 hover:text-slate-900 transition-all font-medium" data-path="study-notes" href="#">
+<span class="material-symbols-outlined text-[19px] text-slate-400">terminal</span>
+<span class="">Notebooks &amp; Code</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2 rounded-lg text-sm text-slate-600 hover:bg-slate-100 hover:text-slate-900 transition-all font-medium" data-path="knowledge-graph" href="#">
+<span class="material-symbols-outlined text-[19px] text-slate-400">scatter_plot</span>
+<span class="">Domain Matrix</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2 rounded-lg text-sm text-slate-600 hover:bg-slate-100 hover:text-slate-900 transition-all font-medium" data-path="analytics-progress" href="#">
+<span class="material-symbols-outlined text-[19px] text-slate-400">query_stats</span>
+<span class="">Mastery Metrics</span>
+</a>
+</nav>
+</div>
+<!-- Status footer -->
+<div class="px-4 flex flex-col gap-2">
+<div class="p-2.5 rounded-lg bg-slate-50 border border-slate-200 flex items-center justify-between">
+<div class="flex flex-col">
+<span class="font-label-caps text-[10px] text-slate-400 uppercase tracking-wider">Cluster Status</span>
+<span class="font-label-caps text-[11px] text-emerald-600 font-semibold flex items-center gap-1.5">
+<span class="w-1.5 h-1.5 rounded-full bg-emerald-500 animate-pulse"></span>
+          ONLINE • SYNCED
+        </span>
+</div>
+<span class="material-symbols-outlined text-emerald-600 text-[18px]">cloud_done</span>
+</div>
+<div class="flex items-center justify-between text-slate-400 px-1 font-label-caps text-[10px]">
+<span class="">v4.2.0-BLUE</span>
+<span class="">LATENCY 12ms</span>
+</div>
+</div>
+</aside>
+<!-- Main View Frame -->
+<div class="pl-64">
+<!-- Top Header Bar -->
+<header class="fixed top-0 left-64 right-0 h-16 bg-surface/90 backdrop-blur-md border-b border-outline-variant z-40 flex items-center justify-between px-6 shadow-xs">
+<div class="flex items-center gap-4"><div class="flex items-center gap-3"><div class="flex items-center gap-2"><span class="w-2 h-2 rounded-full bg-blue-600"></span><h1 class="font-headline-sm text-sm font-bold text-slate-900 tracking-tight">Foundations &amp; Transformers</h1></div><span class="text-slate-300">•</span><span class="font-label-code text-xs text-slate-500 font-medium">Deep Learning Track</span></div></div>
+<!-- Action items -->
+<div class="flex items-center gap-2.5">
+<!-- Fast Replay Animation Button in Header -->
+<button class="hidden sm:flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-xs font-semibold text-blue-700 bg-blue-50 border border-blue-200 hover:bg-blue-100 transition-all shadow-xs" onclick="triggerAutomatedFlyIn()" title="Play overview-to-node zoom again">
+<span class="material-symbols-outlined text-[16px] text-blue-600">videocam</span>
+<span class="">Replay Fly-in</span>
+</button>
+<div class="relative hidden md:flex items-center">
+<span class="material-symbols-outlined text-[16px] text-slate-400 absolute left-3 pointer-events-none">search</span>
+<input class="bg-slate-50 border border-slate-200 text-slate-800 placeholder:text-slate-400 text-xs pl-8 pr-12 py-1.5 rounded-lg outline-none focus:border-blue-500 focus:bg-white focus:ring-1 focus:ring-blue-500 transition-all w-60" placeholder="Search modules (e.g. SVD)..." type="text">
+<span class="absolute right-2 font-label-caps text-[9px] text-slate-400 bg-white px-1 py-0.5 rounded border border-slate-200">⌘K</span>
+</div>
+<div class="bg-slate-100 p-0.5 rounded-lg border border-slate-200 flex items-center">
+<button class="px-2.5 py-1 rounded text-xs font-label-code text-blue-700 bg-white font-semibold shadow-xs border border-slate-200/60 flex items-center gap-1.5">
+<span class="material-symbols-outlined text-[14px]">account_tree</span>Graph
+        </button>
+<button class="px-2.5 py-1 rounded text-xs font-label-code text-slate-600 hover:text-slate-900 flex items-center gap-1.5 transition-all">
+<span class="material-symbols-outlined text-[14px]">view_list</span>List
+        </button>
+</div>
+<button class="bg-white hover:bg-slate-50 border border-slate-200 text-slate-600 hover:text-slate-900 p-1.5 rounded-lg transition-colors flex items-center justify-center shadow-xs" title="Share Roadmap">
+<span class="material-symbols-outlined text-[18px]">share</span>
+</button>
+<button class="bg-white hover:bg-slate-50 border border-slate-200 text-slate-600 hover:text-slate-900 p-1.5 rounded-lg transition-colors flex items-center justify-center shadow-xs" title="System Settings">
+<span class="material-symbols-outlined text-[18px]">settings</span>
+</button>
+<div class="w-8 h-8 rounded-lg bg-blue-100 border border-blue-200 flex items-center justify-center ml-1 text-blue-700 font-semibold text-xs shadow-xs">
+        JD
+      </div>
+</div>
+</header>
+<main class="w-full pt-16 bg-[#f8fafc]">
+<div class="flex flex-col w-full relative select-none">
+<!-- HUD Information Strip -->
+<div class="w-full bg-white/95 backdrop-blur-md px-6 py-2.5 border-b border-outline-variant flex flex-col md:flex-row items-start md:items-center justify-between gap-3 relative z-30 shadow-xs"><div class="flex items-center gap-3.5"><div class="w-8 h-8 rounded-lg bg-blue-50 border border-blue-200 flex items-center justify-center text-blue-600"><span class="material-symbols-outlined text-[18px]">alt_route</span></div><div class="flex items-baseline gap-2.5"><h2 class="font-headline-sm text-sm font-bold text-slate-900 tracking-tight">Mathematical Foundations</h2><span class="font-label-caps text-[11px] font-semibold text-slate-500 bg-slate-100 px-2 py-0.5 rounded border border-slate-200">Stage 1 of 6</span></div></div><div class="flex items-center gap-6"><div class="flex items-center gap-3"><span class="font-label-code text-xs text-blue-700 font-bold" id="mastery-percent">7.1% (1/14 Nodes)</span><div class="w-28 h-2 bg-slate-100 border border-slate-200 rounded-full overflow-hidden relative"><div class="h-full bg-gradient-to-r from-blue-600 to-sky-500 transition-all duration-700 w-[7.1%]" id="mastery-bar-fill"></div></div></div><div class="hidden sm:flex items-center gap-1.5 text-slate-500 font-label-code text-xs"><span class="material-symbols-outlined text-[15px] text-blue-600">schedule</span><span class="">Est. 28 Weeks</span></div></div></div>
+<!-- Infinite Canvas Area -->
+<div class="relative w-full h-[calc(100vh-7rem)] overflow-hidden cursor-grab active:cursor-grabbing bg-[#f8fafc]" id="viewport-container">
+<!-- Subtle Crisp Blueprint Dot Grid Background -->
+<svg class="absolute inset-0 w-full h-full pointer-events-none opacity-60" xmlns="http://www.w3.org/2000/svg">
+<defs>
+<pattern height="28" id="grid-dots-blue" patternUnits="userSpaceOnUse" width="28">
+<circle cx="2" cy="2" fill="#cbd5e1" r="1.1"></circle>
+<circle cx="16" cy="16" fill="#e2e8f0" r="0.9"></circle>
+</pattern>
+</defs>
+<rect fill="url(#grid-dots-blue)" height="100%" width="100%"></rect>
+</svg>
+<!-- Dynamic Floating Camera Trajectory Status Banner -->
+<div class="absolute top-4 left-1/2 -translate-x-1/2 z-30 transition-all duration-500 pointer-events-none opacity-100 translate-y-0 opacity-0 translate-y-[-10px]" id="camera-status-pill">
+<div class="bg-white/95 border border-blue-200 px-4 py-2 rounded-full shadow-lg flex items-center gap-2.5">
+<span class="w-2.5 h-2.5 rounded-full bg-blue-600 animate-ping"></span>
+<span class="font-label-code text-xs text-blue-900 font-semibold" id="camera-status-text">Focus Locked: Step 1 / Active Milestone</span>
+</div>
+</div>
+<!-- Canvas Stage: Smooth Camera Pan & Zoom Element -->
+<div class="canvas-smooth-stage absolute left-0 top-0 origin-top-left canvas-glide-slow" id="canvas-stage" style="width: 2200px; height: 3100px; transform: translate(-380.5px, 25.5px) scale(1.05);">
+<!-- SVG Connector Layer with Crisp Blue and Neutral Lines -->
+<svg class="absolute inset-0 w-full h-full pointer-events-none z-0" id="connector-canvas">
+<defs>
+<linearGradient id="activeBlueGrad" x1="0%" x2="0%" y1="0%" y2="100%">
+<stop offset="0%" stop-color="#2563eb" stop-opacity="1"></stop>
+<stop offset="100%" stop-color="#38bdf8" stop-opacity="1"></stop>
+</linearGradient>
+</defs>
+<!-- Gateway to Stage 1.1 (Active Path) -->
+<path class="flow-wire-active" d="M 1100 130 C 1100 200, 850 210, 850 290" fill="none" stroke="url(#activeBlueGrad)" stroke-width="2.5"></path>
+<!-- Gateway to Stage 1.2 -->
+<path d="M 1100 130 C 1100 200, 1350 210, 1350 290" fill="none" stroke="#cbd5e1" stroke-dasharray="4 4" stroke-width="1.8"></path>
+<!-- Stage 1 to Stage 2 -->
+<path d="M 850 490 C 850 560, 950 570, 950 640" fill="none" stroke="#94a3b8" stroke-width="1.8"></path>
+<path d="M 1350 490 C 1350 560, 1250 570, 1250 640" fill="none" stroke="#cbd5e1" stroke-dasharray="4 4" stroke-width="1.8"></path>
+<!-- Stage 2 to Stage 3 -->
+<path d="M 950 830 C 950 920, 680 920, 680 1000" fill="none" stroke="#cbd5e1" stroke-dasharray="4 4" stroke-width="1.8"></path>
+<path d="M 1100 830 C 1100 920, 1100 920, 1100 1000" fill="none" stroke="#cbd5e1" stroke-dasharray="4 4" stroke-width="1.8"></path>
+<path d="M 1250 830 C 1250 920, 1520 920, 1520 1000" fill="none" stroke="#cbd5e1" stroke-dasharray="4 4" stroke-width="1.8"></path>
+<!-- Stage 3 to Stage 4 -->
+<path d="M 680 1200 C 680 1290, 750 1300, 750 1380" fill="none" stroke="#cbd5e1" stroke-dasharray="4 4" stroke-width="1.8"></path>
+<path d="M 1100 1200 C 1100 1290, 1100 1300, 1100 1380" fill="none" stroke="#cbd5e1" stroke-dasharray="4 4" stroke-width="1.8"></path>
+<path d="M 1520 1200 C 1520 1290, 1450 1300, 1450 1380" fill="none" stroke="#cbd5e1" stroke-dasharray="4 4" stroke-width="1.8"></path>
+<!-- Stage 4 to Stage 5 -->
+<path d="M 750 1590 C 750 1670, 800 1680, 800 1760" fill="none" stroke="#cbd5e1" stroke-dasharray="4 4" stroke-width="1.8"></path>
+<path d="M 1100 1590 C 1100 1670, 1100 1680, 1100 1760" fill="none" stroke="#cbd5e1" stroke-dasharray="4 4" stroke-width="1.8"></path>
+<path d="M 1450 1590 C 1450 1670, 1400 1680, 1400 1760" fill="none" stroke="#cbd5e1" stroke-dasharray="4 4" stroke-width="1.8"></path>
+<!-- Stage 5 to Stage 6 -->
+<path d="M 800 1970 C 800 2060, 1100 2050, 1100 2130" fill="none" stroke="#cbd5e1" stroke-dasharray="4 4" stroke-width="1.8"></path>
+<path d="M 1100 1970 C 1100 2060, 1100 2050, 1100 2130" fill="none" stroke="#cbd5e1" stroke-dasharray="4 4" stroke-width="1.8"></path>
+<path d="M 1400 1970 C 1400 2060, 1100 2050, 1100 2130" fill="none" stroke="#cbd5e1" stroke-dasharray="4 4" stroke-width="1.8"></path>
+</svg>
+<!-- ========================================== -->
+<!-- LEVEL 0: ROOT START GATEWAY               -->
+<!-- ========================================== -->
+<div class="absolute left-[1100px] top-[70px] -translate-x-1/2 flex flex-col items-center z-10">
+<div class="relative group cursor-pointer" onclick="selectNode('root-start')">
+<div class="relative bg-white border border-blue-200 hover:border-blue-500 px-7 py-3 rounded-full flex items-center gap-3 shadow-md hover:shadow-lg transition-all duration-300">
+<span class="w-2.5 h-2.5 rounded-full bg-blue-600 shadow-[0_0_8px_rgba(37,99,235,0.6)]"></span>
+<span class="font-headline-sm text-xs font-bold tracking-wider text-slate-900 uppercase">START AI &amp; ML PATHWAY</span>
+<span class="material-symbols-outlined text-blue-600 text-[18px]">north_east</span>
+</div>
+</div>
+<span class="font-label-caps text-[10px] text-slate-500 uppercase tracking-wider mt-2 font-semibold">Prerequisite Tier Zero</span>
+</div>
+<!-- ========================================== -->
+<!-- LEVEL 1: MATHEMATICAL FOUNDATIONS          -->
+<!-- ========================================== -->
+<div class="absolute left-0 top-[290px] w-full flex justify-center gap-[220px] z-10">
+<!-- Node 1.1: Probability & Basic Statistics [ACTIVE PRIMARY TARGET] -->
+<div class="w-[360px] cursor-pointer roadmap-node" id="node-1-1" onclick="selectNode('stats-prob')">
+<div class="linear-card-active halo-pulse-active rounded-xl p-5 transition-all duration-300 hover:scale-[1.015] relative">
+<!-- Focus Start Indicator Flag -->
+<div class="absolute -top-3.5 left-5 bg-blue-600 text-white font-label-caps text-[10px] font-bold px-2.5 py-0.5 rounded-full shadow-md flex items-center gap-1">
+<span class="material-symbols-outlined text-[13px]">play_circle</span>
+<span class="">STEP 1: START HERE</span>
+</div>
+<div class="flex items-center justify-between mb-3 mt-1">
+<span class="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-md bg-blue-50 border border-blue-200 text-blue-700 font-label-caps text-[10px] font-bold tracking-wider uppercase">
+<span class="w-1.5 h-1.5 rounded-full bg-blue-600 animate-pulse"></span>
+                    IN PROGRESS • ACTIVE
+                  </span>
+<span class="font-label-code text-xs text-slate-500 font-semibold">2.0 WEEKS</span>
+</div>
+<div class="flex flex-col mb-2">
+<span class="font-label-caps text-[10px] text-blue-600 tracking-wider uppercase font-bold">Stage 01 • Node 01</span>
+<h3 class="font-headline-sm text-base text-slate-900 font-bold leading-snug mt-0.5">Probability &amp; Basic Statistics</h3>
+</div>
+<p class="font-body-sm text-xs text-slate-600 line-clamp-2 leading-relaxed">
+                  Fundamental axioms, likelihood models, bayesian deduction, and inference essential for training dynamics.
+                </p>
+<div class="flex flex-wrap gap-1.5 pt-3">
+<span class="font-label-caps text-[10px] bg-slate-100 border border-slate-200 px-2 py-0.5 rounded text-slate-700 font-medium">Distributions</span>
+<span class="font-label-caps text-[10px] bg-slate-100 border border-slate-200 px-2 py-0.5 rounded text-slate-700 font-medium">Bayes Theorem</span>
+<span class="font-label-caps text-[10px] bg-slate-100 border border-slate-200 px-2 py-0.5 rounded text-slate-700 font-medium">Hypothesis Testing</span>
+</div>
+<div class="mt-4 pt-3 border-t border-slate-100 flex items-center justify-between">
+<div class="flex items-center gap-1.5 text-blue-700 text-xs font-label-code font-semibold">
+<span class="material-symbols-outlined text-[16px] text-blue-600">menu_book</span>
+<span class="">6 Curated Modules</span>
+</div>
+<span class="font-label-caps text-[11px] text-slate-500 font-semibold">1/4 Done</span>
+</div>
+</div>
+</div>
+<!-- Node 1.2: Linear Algebra -->
+<div class="w-[360px] cursor-pointer roadmap-node" id="node-1-2" onclick="selectNode('linear-algebra')">
+<div class="linear-card rounded-xl p-5 transition-all duration-300 hover:scale-[1.015]">
+<div class="flex items-center justify-between mb-3">
+<span class="inline-flex items-center gap-1.5 px-2 py-0.5 rounded-md bg-slate-100 border border-slate-200 text-slate-600 font-label-caps text-[10px] tracking-wider uppercase font-medium">
+<span class="material-symbols-outlined text-[12px] text-slate-400">lock</span>
+                    UPCOMING
+                  </span>
+<span class="font-label-code text-xs text-slate-400">2.5 WEEKS</span>
+</div>
+<div class="flex flex-col mb-2">
+<span class="font-label-caps text-[10px] text-slate-400 tracking-wider uppercase">Stage 01 • Node 02</span>
+<h3 class="font-headline-sm text-base text-slate-900 font-semibold leading-snug mt-0.5">Linear Algebra &amp; Matrix Calculus</h3>
+</div>
+<p class="font-body-sm text-xs text-slate-600 line-clamp-2 leading-relaxed">
+                  High-dimensional vector spaces, spectral decomposition, SVD, and multivariate Jacobians for backprop.
+                </p>
+<div class="flex flex-wrap gap-1.5 pt-3">
+<span class="font-label-caps text-[10px] bg-slate-100 border border-slate-200 px-2 py-0.5 rounded text-slate-500">Eigenvectors</span>
+<span class="font-label-caps text-[10px] bg-slate-100 border border-slate-200 px-2 py-0.5 rounded text-slate-500">Tensors</span>
+<span class="font-label-caps text-[10px] bg-slate-100 border border-slate-200 px-2 py-0.5 rounded text-slate-500">Gradients</span>
+</div>
+<div class="mt-4 pt-3 border-t border-slate-100 flex items-center justify-between text-slate-400 text-xs">
+<span class="font-label-caps text-[10px]">Prereq: Stage 01.1</span>
+<span class="material-symbols-outlined text-[15px]">chevron_right</span>
+</div>
+</div>
+</div>
+</div>
+<!-- ========================================== -->
+<!-- LEVEL 2: DATA ENGINEERING & PYTHON         -->
+<!-- ========================================== -->
+<div class="absolute left-0 top-[640px] w-full flex justify-center gap-[180px] z-10">
+<!-- Node 2.1: Python Core -->
+<div class="w-[340px] cursor-pointer roadmap-node" id="node-2-1" onclick="selectNode('python-vector')">
+<div class="linear-card rounded-xl p-5 transition-all duration-300 hover:scale-[1.015]">
+<div class="flex items-center justify-between mb-2">
+<span class="inline-flex items-center gap-1 px-2 py-0.5 rounded bg-slate-100 border border-slate-200 text-slate-500 font-label-caps text-[10px]">
+<span class="material-symbols-outlined text-[12px]">lock</span> LOCKED
+                  </span>
+<span class="font-label-code text-xs text-slate-400">1.5 WEEKS</span>
+</div>
+<span class="font-label-caps text-[10px] text-slate-400 uppercase tracking-wider">Stage 02 • Node 01</span>
+<h3 class="font-headline-sm text-base text-slate-900 font-semibold leading-snug mt-0.5">Python Core &amp; Vectorization</h3>
+<p class="font-body-sm text-xs text-slate-600 line-clamp-2 mt-1">
+                  Memory optimization, SIMD concepts, parallel compute with NumPy arrays and Polars frames.
+                </p>
+<div class="flex flex-wrap gap-1.5 pt-3">
+<span class="font-label-caps text-[10px] bg-slate-100 border border-slate-200 px-2 py-0.5 rounded text-slate-500">NumPy C-API</span>
+<span class="font-label-caps text-[10px] bg-slate-100 border border-slate-200 px-2 py-0.5 rounded text-slate-500">Polars</span>
+</div>
+</div>
+</div>
+<!-- Node 2.2: Data Wrangling -->
+<div class="w-[340px] cursor-pointer roadmap-node" id="node-2-2" onclick="selectNode('data-wrangling')">
+<div class="linear-card rounded-xl p-5 transition-all duration-300 hover:scale-[1.015]">
+<div class="flex items-center justify-between mb-2">
+<span class="inline-flex items-center gap-1 px-2 py-0.5 rounded bg-slate-100 border border-slate-200 text-slate-500 font-label-caps text-[10px]">
+<span class="material-symbols-outlined text-[12px]">lock</span> LOCKED
+                  </span>
+<span class="font-label-code text-xs text-slate-400">2.0 WEEKS</span>
+</div>
+<span class="font-label-caps text-[10px] text-slate-400 uppercase tracking-wider">Stage 02 • Node 02</span>
+<h3 class="font-headline-sm text-base text-slate-900 font-semibold leading-snug mt-0.5">Data Wrangling &amp; EDA</h3>
+<p class="font-body-sm text-xs text-slate-600 line-clamp-2 mt-1">
+                  Missing value imputation strategies, categorical encoding schemes, outlier diagnostics.
+                </p>
+<div class="flex flex-wrap gap-1.5 pt-3">
+<span class="font-label-caps text-[10px] bg-slate-100 border border-slate-200 px-2 py-0.5 rounded text-slate-500">Matplotlib</span>
+<span class="font-label-caps text-[10px] bg-slate-100 border border-slate-200 px-2 py-0.5 rounded text-slate-500">Feature Scaling</span>
+</div>
+</div>
+</div>
+</div>
+<!-- ========================================== -->
+<!-- LEVEL 3: MACHINE LEARNING                  -->
+<!-- ========================================== -->
+<div class="absolute left-0 top-[1000px] w-full flex justify-center gap-[60px] z-10">
+<!-- Node 3.1 -->
+<div class="w-[330px] cursor-pointer roadmap-node" id="node-3-1" onclick="selectNode('supervised-learning')">
+<div class="linear-card rounded-xl p-5 transition-all duration-300 hover:scale-[1.015]">
+<div class="flex items-center justify-between mb-2">
+<span class="inline-flex items-center gap-1 px-2 py-0.5 rounded bg-slate-100 border border-slate-200 text-slate-500 font-label-caps text-[10px]">
+<span class="material-symbols-outlined text-[12px]">lock</span> LOCKED
+                  </span>
+<span class="font-label-code text-xs text-slate-400">3.0 WEEKS</span>
+</div>
+<span class="font-label-caps text-[10px] text-slate-400 uppercase tracking-wider">Stage 03 • Node 01</span>
+<h3 class="font-headline-sm text-base text-slate-900 font-semibold leading-snug mt-0.5">Supervised Classification</h3>
+<p class="font-body-sm text-xs text-slate-600 line-clamp-2 mt-1">
+                  Convex loss functions, margin maximizers, tree partitioning, and gradient boosted ensembles.
+                </p>
+<div class="flex flex-wrap gap-1.5 pt-3">
+<span class="font-label-caps text-[10px] bg-slate-100 border border-slate-200 px-2 py-0.5 rounded text-slate-500">Logistic Reg</span>
+<span class="font-label-caps text-[10px] bg-slate-100 border border-slate-200 px-2 py-0.5 rounded text-slate-500">XGBoost</span>
+</div>
+</div>
+</div>
+<!-- Node 3.2 -->
+<div class="w-[330px] cursor-pointer roadmap-node" id="node-3-2" onclick="selectNode('unsupervised-learning')">
+<div class="linear-card rounded-xl p-5 transition-all duration-300 hover:scale-[1.015]">
+<div class="flex items-center justify-between mb-2">
+<span class="inline-flex items-center gap-1 px-2 py-0.5 rounded bg-slate-100 border border-slate-200 text-slate-500 font-label-caps text-[10px]">
+<span class="material-symbols-outlined text-[12px]">lock</span> LOCKED
+                  </span>
+<span class="font-label-code text-xs text-slate-400">2.0 WEEKS</span>
+</div>
+<span class="font-label-caps text-[10px] text-slate-400 uppercase tracking-wider">Stage 03 • Node 02</span>
+<h3 class="font-headline-sm text-base text-slate-900 font-semibold leading-snug mt-0.5">Unsupervised &amp; Clustering</h3>
+<p class="font-body-sm text-xs text-slate-600 line-clamp-2 mt-1">
+                  Manifold learning, latent factor density estimation, and high-dimensional projection algorithms.
+                </p>
+<div class="flex flex-wrap gap-1.5 pt-3">
+<span class="font-label-caps text-[10px] bg-slate-100 border border-slate-200 px-2 py-0.5 rounded text-slate-500">K-Means</span>
+<span class="font-label-caps text-[10px] bg-slate-100 border border-slate-200 px-2 py-0.5 rounded text-slate-500">PCA &amp; t-SNE</span>
+</div>
+</div>
+</div>
+<!-- Node 3.3 -->
+<div class="w-[330px] cursor-pointer roadmap-node" id="node-3-3" onclick="selectNode('model-evaluation')">
+<div class="linear-card rounded-xl p-5 transition-all duration-300 hover:scale-[1.015]">
+<div class="flex items-center justify-between mb-2">
+<span class="inline-flex items-center gap-1 px-2 py-0.5 rounded bg-slate-100 border border-slate-200 text-slate-500 font-label-caps text-[10px]">
+<span class="material-symbols-outlined text-[12px]">lock</span> LOCKED
+                  </span>
+<span class="font-label-code text-xs text-slate-400">1.5 WEEKS</span>
+</div>
+<span class="font-label-caps text-[10px] text-slate-400 uppercase tracking-wider">Stage 03 • Node 03</span>
+<h3 class="font-headline-sm text-base text-slate-900 font-semibold leading-snug mt-0.5">Model Evaluation &amp; Metrics</h3>
+<p class="font-body-sm text-xs text-slate-600 line-clamp-2 mt-1">
+                  Imbalanced class strategies, calibration curves, statistical significance tests, data leakage audits.
+                </p>
+<div class="flex flex-wrap gap-1.5 pt-3">
+<span class="font-label-caps text-[10px] bg-slate-100 border border-slate-200 px-2 py-0.5 rounded text-slate-500">ROC-AUC</span>
+<span class="font-label-caps text-[10px] bg-slate-100 border border-slate-200 px-2 py-0.5 rounded text-slate-500">Stratified K-Fold</span>
+</div>
+</div>
+</div>
+</div>
+<!-- ========================================== -->
+<!-- LEVEL 4: DEEP LEARNING CORE               -->
+<!-- ========================================== -->
+<div class="absolute left-0 top-[1380px] w-full flex justify-center gap-[60px] z-10">
+<!-- Node 4.1 -->
+<div class="w-[330px] cursor-pointer roadmap-node" id="node-4-1" onclick="selectNode('deep-learning-nn')">
+<div class="linear-card rounded-xl p-5 transition-all duration-300 hover:scale-[1.015]">
+<div class="flex items-center justify-between mb-2">
+<span class="inline-flex items-center gap-1 px-2 py-0.5 rounded bg-slate-100 border border-slate-200 text-slate-500 font-label-caps text-[10px]">
+<span class="material-symbols-outlined text-[12px]">lock</span> LOCKED
+                  </span>
+<span class="font-label-code text-xs text-slate-400">3.5 WEEKS</span>
+</div>
+<span class="font-label-caps text-[10px] text-slate-400 uppercase tracking-wider">Stage 04 • Node 01</span>
+<h3 class="font-headline-sm text-base text-slate-900 font-semibold leading-snug mt-0.5">Neural Networks &amp; Autograd</h3>
+<p class="font-body-sm text-xs text-slate-600 line-clamp-2 mt-1">
+                  Reverse-mode auto-differentiation, gradient vanishing/exploding remedies, custom PyTorch modules.
+                </p>
+<div class="flex flex-wrap gap-1.5 pt-3">
+<span class="font-label-caps text-[10px] bg-slate-100 border border-slate-200 px-2 py-0.5 rounded text-slate-500">PyTorch</span>
+<span class="font-label-caps text-[10px] bg-slate-100 border border-slate-200 px-2 py-0.5 rounded text-slate-500">AdamW</span>
+</div>
+</div>
+</div>
+<!-- Node 4.2 -->
+<div class="w-[330px] cursor-pointer roadmap-node" id="node-4-2" onclick="selectNode('cv-cnn')">
+<div class="linear-card rounded-xl p-5 transition-all duration-300 hover:scale-[1.015]">
+<div class="flex items-center justify-between mb-2">
+<span class="inline-flex items-center gap-1 px-2 py-0.5 rounded bg-slate-100 border border-slate-200 text-slate-500 font-label-caps text-[10px]">
+<span class="material-symbols-outlined text-[12px]">lock</span> LOCKED
+                  </span>
+<span class="font-label-code text-xs text-slate-400">2.5 WEEKS</span>
+</div>
+<span class="font-label-caps text-[10px] text-slate-400 uppercase tracking-wider">Stage 04 • Node 02</span>
+<h3 class="font-headline-sm text-base text-slate-900 font-semibold leading-snug mt-0.5">Computer Vision (CNNs &amp; ViT)</h3>
+<p class="font-body-sm text-xs text-slate-600 line-clamp-2 mt-1">
+                  Spatial convolution filters, residual skipping connections, YOLO anchor boxes, and vision transformers.
+                </p>
+<div class="flex flex-wrap gap-1.5 pt-3">
+<span class="font-label-caps text-[10px] bg-slate-100 border border-slate-200 px-2 py-0.5 rounded text-slate-500">ResNet</span>
+<span class="font-label-caps text-[10px] bg-slate-100 border border-slate-200 px-2 py-0.5 rounded text-slate-500">ViT Patches</span>
+</div>
+</div>
+</div>
+<!-- Node 4.3 -->
+<div class="w-[330px] cursor-pointer roadmap-node" id="node-4-3" onclick="selectNode('nlp-attention')">
+<div class="linear-card rounded-xl p-5 transition-all duration-300 hover:scale-[1.015]">
+<div class="flex items-center justify-between mb-2">
+<span class="inline-flex items-center gap-1 px-2 py-0.5 rounded bg-slate-100 border border-slate-200 text-slate-500 font-label-caps text-[10px]">
+<span class="material-symbols-outlined text-[12px]">lock</span> LOCKED
+                  </span>
+<span class="font-label-code text-xs text-slate-400">3.0 WEEKS</span>
+</div>
+<span class="font-label-caps text-[10px] text-slate-400 uppercase tracking-wider">Stage 04 • Node 03</span>
+<h3 class="font-headline-sm text-base text-slate-900 font-semibold leading-snug mt-0.5">NLP &amp; Sequence Models</h3>
+<p class="font-body-sm text-xs text-slate-600 line-clamp-2 mt-1">
+                  Gated recurrent mechanisms, query-key-value dot products, and multi-head attention derivation.
+                </p>
+<div class="flex flex-wrap gap-1.5 pt-3">
+<span class="font-label-caps text-[10px] bg-slate-100 border border-slate-200 px-2 py-0.5 rounded text-slate-500">LSTM/GRU</span>
+<span class="font-label-caps text-[10px] bg-slate-100 border border-slate-200 px-2 py-0.5 rounded text-slate-500">BERT/GPT</span>
+</div>
+</div>
+</div>
+</div>
+<!-- ========================================== -->
+<!-- LEVEL 5: GENERATIVE AI & LLMs             -->
+<!-- ========================================== -->
+<div class="absolute left-0 top-[1760px] w-full flex justify-center gap-[60px] z-10">
+<!-- Node 5.1 -->
+<div class="w-[330px] cursor-pointer roadmap-node" id="node-5-1" onclick="selectNode('llm-transformers')">
+<div class="linear-card rounded-xl p-5 transition-all duration-300 hover:scale-[1.015]">
+<div class="flex items-center justify-between mb-2">
+<span class="inline-flex items-center gap-1 px-2 py-0.5 rounded bg-slate-100 border border-slate-200 text-slate-500 font-label-caps text-[10px]">
+<span class="material-symbols-outlined text-[12px]">lock</span> LOCKED
+                  </span>
+<span class="font-label-code text-xs text-slate-400">4.0 WEEKS</span>
+</div>
+<span class="font-label-caps text-[10px] text-slate-400 uppercase tracking-wider">Stage 05 • Node 01</span>
+<h3 class="font-headline-sm text-base text-slate-900 font-semibold leading-snug mt-0.5">Transformer Architectures</h3>
+<p class="font-body-sm text-xs text-slate-600 line-clamp-2 mt-1">
+                  Decoder-only autoregression, rotary position embeddings (RoPE), KV cache mechanics, FlashAttention.
+                </p>
+<div class="flex flex-wrap gap-1.5 pt-3">
+<span class="font-label-caps text-[10px] bg-slate-100 border border-slate-200 px-2 py-0.5 rounded text-slate-500">Llama / Mistral</span>
+<span class="font-label-caps text-[10px] bg-slate-100 border border-slate-200 px-2 py-0.5 rounded text-slate-500">KV Cache</span>
+</div>
+</div>
+</div>
+<!-- Node 5.2 -->
+<div class="w-[330px] cursor-pointer roadmap-node" id="node-5-2" onclick="selectNode('rag-vectordb')">
+<div class="linear-card rounded-xl p-5 transition-all duration-300 hover:scale-[1.015]">
+<div class="flex items-center justify-between mb-2">
+<span class="inline-flex items-center gap-1 px-2 py-0.5 rounded bg-slate-100 border border-slate-200 text-slate-500 font-label-caps text-[10px]">
+<span class="material-symbols-outlined text-[12px]">lock</span> LOCKED
+                  </span>
+<span class="font-label-code text-xs text-slate-400">2.5 WEEKS</span>
+</div>
+<span class="font-label-caps text-[10px] text-slate-400 uppercase tracking-wider">Stage 05 • Node 02</span>
+<h3 class="font-headline-sm text-base text-slate-900 font-semibold leading-snug mt-0.5">RAG &amp; Vector Databases</h3>
+<p class="font-body-sm text-xs text-slate-600 line-clamp-2 mt-1">
+                  Semantic chunking, HNSW graph indexing, reranker cross-encoders, and hybrid BM25 dense search.
+                </p>
+<div class="flex flex-wrap gap-1.5 pt-3">
+<span class="font-label-caps text-[10px] bg-slate-100 border border-slate-200 px-2 py-0.5 rounded text-slate-500">Milvus / Qdrant</span>
+<span class="font-label-caps text-[10px] bg-slate-100 border border-slate-200 px-2 py-0.5 rounded text-slate-500">HyDE Rerank</span>
+</div>
+</div>
+</div>
+<!-- Node 5.3 -->
+<div class="w-[330px] cursor-pointer roadmap-node" id="node-5-3" onclick="selectNode('finetune-peft')">
+<div class="linear-card rounded-xl p-5 transition-all duration-300 hover:scale-[1.015]">
+<div class="flex items-center justify-between mb-2">
+<span class="inline-flex items-center gap-1 px-2 py-0.5 rounded bg-slate-100 border border-slate-200 text-slate-500 font-label-caps text-[10px]">
+<span class="material-symbols-outlined text-[12px]">lock</span> LOCKED
+                  </span>
+<span class="font-label-code text-xs text-slate-400">3.0 WEEKS</span>
+</div>
+<span class="font-label-caps text-[10px] text-slate-400 uppercase tracking-wider">Stage 05 • Node 03</span>
+<h3 class="font-headline-sm text-base text-slate-900 font-semibold leading-snug mt-0.5">Fine-Tuning &amp; Alignment</h3>
+<p class="font-body-sm text-xs text-slate-600 line-clamp-2 mt-1">
+                  Parameter-efficient adapters (LoRA/QLoRA), Direct Preference Optimization (DPO), AWQ quantization.
+                </p>
+<div class="flex flex-wrap gap-1.5 pt-3">
+<span class="font-label-caps text-[10px] bg-slate-100 border border-slate-200 px-2 py-0.5 rounded text-slate-500">PEFT / LoRA</span>
+<span class="font-label-caps text-[10px] bg-slate-100 border border-slate-200 px-2 py-0.5 rounded text-slate-500">DPO Alignment</span>
+</div>
+</div>
+</div>
+</div>
+<!-- ========================================== -->
+<!-- LEVEL 6: MLOPS & CAPSTONE                 -->
+<!-- ========================================== -->
+<div class="absolute left-0 top-[2130px] w-full flex justify-center z-10">
+<div class="w-[420px] cursor-pointer roadmap-node" id="node-6-1" onclick="selectNode('mlops-prod')">
+<div class="linear-card rounded-xl p-5 transition-all duration-300 hover:scale-[1.015]">
+<div class="flex items-center justify-between mb-2">
+<span class="inline-flex items-center gap-1 px-2.5 py-0.5 rounded bg-blue-50 border border-blue-200 text-blue-700 font-label-caps text-[10px] font-bold">
+<span class="material-symbols-outlined text-[13px]">flag</span> CAPSTONE TARGET
+                  </span>
+<span class="font-label-code text-xs text-slate-400">3.5 WEEKS</span>
+</div>
+<span class="font-label-caps text-[10px] text-slate-400 uppercase tracking-wider">Stage 06 • Final Node</span>
+<h3 class="font-headline-sm text-base text-slate-900 font-bold leading-snug mt-0.5">MLOps, vLLM Serving &amp; Drift Guardrails</h3>
+<p class="font-body-sm text-xs text-slate-600 line-clamp-2 mt-1">
+                  Continuous model tracking, Triton server deployment, continuous integration for weights, telemetry.
+                </p>
+<div class="flex flex-wrap gap-1.5 pt-3">
+<span class="font-label-caps text-[10px] bg-slate-100 border border-slate-200 px-2 py-0.5 rounded text-slate-500">vLLM / Triton</span>
+<span class="font-label-caps text-[10px] bg-slate-100 border border-slate-200 px-2 py-0.5 rounded text-slate-500">Docker &amp; K8s</span>
+<span class="font-label-caps text-[10px] bg-slate-100 border border-slate-200 px-2 py-0.5 rounded text-slate-500">Evidently AI</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- FLOATING CAMERA HUD TOOLBAR (Crisp White & Blue) -->
+<div class="absolute left-6 top-6 z-20 flex flex-col gap-2">
+<div class="bg-white/95 backdrop-blur-xl p-1.5 rounded-xl border border-slate-200 shadow-lg flex flex-col gap-1 text-slate-600">
+<button class="w-8 h-8 rounded-lg flex items-center justify-center hover:bg-blue-50 hover:text-blue-600 transition-all" onclick="zoomCanvas(0.18)" title="Zoom In (+)">
+<span class="material-symbols-outlined text-[18px]">add</span>
+</button>
+<button class="w-8 h-8 rounded-lg flex items-center justify-center hover:bg-blue-50 hover:text-blue-600 transition-all" onclick="zoomCanvas(-0.18)" title="Zoom Out (-)">
+<span class="material-symbols-outlined text-[18px]">remove</span>
+</button>
+<div class="h-px bg-slate-200 mx-1"></div>
+<!-- Replay Overview Fly-in Animation Button -->
+<button class="w-8 h-8 rounded-lg flex items-center justify-center text-blue-600 bg-blue-50 hover:bg-blue-100 border border-blue-200 transition-all" onclick="triggerAutomatedFlyIn()" title="Replay Full Overview &amp; Auto Zoom">
+<span class="material-symbols-outlined text-[18px]">restart_alt</span>
+</button>
+<!-- Focus Active Node Button -->
+<button class="w-8 h-8 rounded-lg flex items-center justify-center hover:bg-blue-50 hover:text-blue-600 transition-all" onclick="glideToActiveNode(true)" title="Focus Active Node">
+<span class="material-symbols-outlined text-[18px]">my_location</span>
+</button>
+<button class="w-8 h-8 rounded-lg flex items-center justify-center hover:bg-blue-50 hover:text-blue-600 transition-all" onclick="fitFullRoadmapOverview(true)" title="View Full Pathway Tree">
+<span class="material-symbols-outlined text-[18px]">fit_screen</span>
+</button>
+</div>
+<div class="bg-white/95 backdrop-blur-md px-3 py-1.5 rounded-xl border border-slate-200 shadow-sm flex items-center gap-2">
+<span class="font-label-caps text-[10px] text-slate-400 font-semibold">ZOOM:</span>
+<span class="font-label-code text-xs text-blue-700 font-bold" id="zoom-indicator">105%</span>
+</div>
+</div>
+<!-- MINIMAP RADAR (Crisp Light Theme) -->
+<div class="absolute right-6 bottom-6 z-20 hidden md:flex flex-col gap-1 items-end">
+<div class="bg-white/95 backdrop-blur-xl p-2.5 rounded-xl border border-slate-200 shadow-xl flex flex-col gap-1.5">
+<div class="flex items-center justify-between px-1 mb-0.5">
+<span class="font-label-caps text-[10px] text-slate-500 font-bold tracking-wider uppercase">Path Topology</span>
+<span class="w-2 h-2 rounded-full bg-blue-600"></span>
+</div>
+<div class="relative w-[180px] h-[120px] bg-slate-50 border border-slate-200 rounded-lg overflow-hidden" id="minimap-container">
+<!-- Minimap node dots -->
+<div class="absolute w-2 h-2 rounded-full bg-blue-600 top-[4%] left-[48%] -translate-x-1/2"></div>
+<div class="absolute w-2.5 h-2.5 rounded-full bg-blue-600 ring-2 ring-blue-300 top-[12%] left-[36%] -translate-x-1/2"></div>
+<div class="absolute w-2 h-2 rounded bg-slate-300 top-[12%] left-[60%] -translate-x-1/2"></div>
+<div class="absolute w-2 h-2 rounded bg-slate-300 top-[26%] left-[41%] -translate-x-1/2"></div>
+<div class="absolute w-2 h-2 rounded bg-slate-300 top-[26%] left-[55%] -translate-x-1/2"></div>
+<div class="absolute w-2 h-2 rounded bg-slate-300 top-[41%] left-[30%] -translate-x-1/2"></div>
+<div class="absolute w-2 h-2 rounded bg-slate-300 top-[41%] left-[48%] -translate-x-1/2"></div>
+<div class="absolute w-2 h-2 rounded bg-slate-300 top-[41%] left-[66%] -translate-x-1/2"></div>
+<div class="absolute w-2 h-2 rounded bg-slate-300 top-[57%] left-[33%] -translate-x-1/2"></div>
+<div class="absolute w-2 h-2 rounded bg-slate-300 top-[57%] left-[48%] -translate-x-1/2"></div>
+<div class="absolute w-2 h-2 rounded bg-slate-300 top-[57%] left-[63%] -translate-x-1/2"></div>
+<div class="absolute w-2 h-2 rounded bg-slate-300 top-[72%] left-[35%] -translate-x-1/2"></div>
+<div class="absolute w-2 h-2 rounded bg-slate-300 top-[72%] left-[48%] -translate-x-1/2"></div>
+<div class="absolute w-2 h-2 rounded bg-slate-300 top-[72%] left-[61%] -translate-x-1/2"></div>
+<div class="absolute w-2.5 h-2 rounded bg-blue-700 top-[88%] left-[48%] -translate-x-1/2"></div>
+<!-- Lens indicator -->
+<div class="absolute border-2 border-blue-600 bg-blue-500/10 rounded transition-all duration-300 pointer-events-none" id="minimap-lens" style="width: 79.7922px; height: 33.6221px; left: 29.6494px; top: 0px;"></div>
+</div>
+</div>
+</div>
+<!-- SLIDE-IN NODE CURRICULUM INSPECTOR DRAWER -->
+<div class="absolute top-0 right-0 bottom-0 w-full sm:w-[480px] bg-white/98 backdrop-blur-2xl border-l border-slate-200 z-40 shadow-2xl transform translate-x-full opacity-0 transition-all duration-300 ease-out flex flex-col" id="node-drawer">
+<!-- Drawer Header -->
+<div class="px-6 py-4 flex items-center justify-between border-b border-slate-200 bg-slate-50">
+<div class="flex items-center gap-3">
+<div class="w-8 h-8 rounded-lg bg-blue-50 border border-blue-200 flex items-center justify-center text-blue-700">
+<span class="material-symbols-outlined text-[18px]">account_tree</span>
+</div>
+<div class="flex flex-col">
+<span class="font-label-caps text-[10px] text-blue-700 font-bold uppercase tracking-wider" id="drawer-stage-tag">STAGE 01 • NODE 01</span>
+<span class="font-headline-sm text-xs text-slate-500">Curriculum Inspector</span>
+</div>
+</div>
+<button class="p-1.5 rounded-lg bg-white border border-slate-200 hover:bg-slate-100 text-slate-600 transition-colors" onclick="closeDrawer()">
+<span class="material-symbols-outlined text-[18px]">close</span>
+</button>
+</div>
+<!-- Drawer Body -->
+<div class="flex-1 overflow-y-auto px-6 py-5 flex flex-col gap-6" id="drawer-body-container">
+<!-- Title and Description -->
+<div class="flex flex-col gap-1.5">
+<div class="flex items-center gap-2">
+<span class="px-2 py-0.5 rounded text-blue-700 bg-blue-50 border border-blue-200 font-label-caps text-[10px] font-bold uppercase" id="drawer-status-chip">ACTIVE MODULE</span>
+<span class="font-label-code text-xs text-slate-500" id="drawer-duration">EST. 2.0 WEEKS (24 HRS)</span>
+</div>
+<h2 class="font-headline-md text-lg text-slate-900 font-bold mt-1" id="drawer-title">Probability &amp; Basic Statistics</h2>
+<p class="font-body-md text-xs text-slate-600 leading-relaxed" id="drawer-desc">
+                The mathematical backbone of machine learning. Learn probability distributions, random variables, Bayes' rule, and hypothesis testing foundational to statistical learning models.
+              </p>
+</div>
+<!-- Module Checkpoint Progress -->
+<div class="bg-slate-50 border border-slate-200 p-4 rounded-xl flex flex-col gap-2">
+<div class="flex items-center justify-between">
+<span class="font-label-caps text-[10px] text-slate-500 uppercase tracking-wider font-semibold">Module Checkpoint</span>
+<span class="font-label-code text-xs text-blue-700 font-bold" id="drawer-progress-text">1/4 Tasks Completed</span>
+</div>
+<div class="w-full h-1.5 bg-slate-200 rounded-full overflow-hidden">
+<div class="h-full bg-gradient-to-r from-blue-600 to-sky-500 w-[25%] transition-all duration-500" id="drawer-progress-fill"></div>
+</div>
+</div>
+<!-- Required Competencies Checklist -->
+<div class="flex flex-col gap-2">
+<span class="font-label-caps text-[10px] text-slate-500 uppercase tracking-wider font-bold">Required Competencies</span>
+<div class="flex flex-col gap-2" id="drawer-tasks">
+<!-- Task items dynamically rendered -->
+</div>
+</div>
+<!-- Curated Literature -->
+<div class="flex flex-col gap-2">
+<span class="font-label-caps text-[10px] text-slate-500 uppercase tracking-wider font-bold">Curated Literature &amp; Code</span>
+<div class="flex flex-col gap-2">
+<a class="p-3 rounded-lg bg-slate-50 border border-slate-200 hover:border-blue-400 hover:bg-white transition-all flex items-center justify-between group shadow-2xs" href="#">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-[19px] text-blue-600">article</span>
+<div class="flex flex-col">
+<span class="font-body-sm text-xs text-slate-800 font-semibold group-hover:text-blue-700 transition-colors">Mathematics for Machine Learning (Ch. 6)</span>
+<span class="font-label-code text-[11px] text-slate-400">Deisenroth, Faisal, Ong • PDF Reference</span>
+</div>
+</div>
+<span class="material-symbols-outlined text-[16px] text-slate-400 group-hover:text-blue-600 transition-colors">open_in_new</span>
+</a>
+<a class="p-3 rounded-lg bg-slate-50 border border-slate-200 hover:border-blue-400 hover:bg-white transition-all flex items-center justify-between group shadow-2xs" href="#">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-[19px] text-sky-600">terminal</span>
+<div class="flex flex-col">
+<span class="font-body-sm text-xs text-slate-800 font-semibold group-hover:text-sky-700 transition-colors">Jupyter Notebook: Empirical Distributions</span>
+<span class="font-label-code text-[11px] text-slate-400">Interactive Code Sandbox • 4 Exercises</span>
+</div>
+</div>
+<span class="material-symbols-outlined text-[16px] text-slate-400 group-hover:text-sky-600 transition-colors">open_in_new</span>
+</a>
+</div>
+</div>
+</div>
+<!-- Drawer Bottom Actions -->
+<div class="p-5 border-t border-slate-200 bg-slate-50 flex items-center gap-3">
+<button class="flex-1 py-2.5 px-4 rounded-lg bg-blue-600 hover:bg-blue-700 text-white font-label-caps text-xs font-bold uppercase tracking-wider flex items-center justify-center gap-2 shadow-md shadow-blue-500/20 transition-all" id="btn-toggle-complete" onclick="toggleNodeCompletion()">
+<span class="material-symbols-outlined text-[17px]">check_circle</span>
+<span id="btn-complete-text" class="">Mark Module Complete</span>
+</button>
+<button class="p-2.5 rounded-lg bg-white border border-slate-200 hover:bg-slate-100 text-slate-600 transition-colors" onclick="closeDrawer()" title="Dismiss Panel">
+<span class="material-symbols-outlined text-[18px]">keyboard_tab</span>
+</button>
+</div>
+</div>
+</div>
+</div>
+</main>
+</div>
+<script>
+  // Camera State Engine
+  const canvasState = {
+    zoom: 0.55,
+    panX: 0,
+    panY: 0,
+    isDragging: false,
+    startX: 0,
+    startY: 0,
+    activeNodeId: 'stats-prob',
+    completedNodes: new Set()
+  };
+
+  const stageEl = document.getElementById('canvas-stage');
+  const viewportEl = document.getElementById('viewport-container');
+  const zoomIndicator = document.getElementById('zoom-indicator');
+  const minimapLens = document.getElementById('minimap-lens');
+  const cameraStatusPill = document.getElementById('camera-status-pill');
+  const cameraStatusText = document.getElementById('camera-status-text');
+
+  // Node Database
+  const nodeDatabase = {
+    'root-start': {
+      stage: 'STAGE 00 • GATEWAY',
+      title: 'AI & ML Pathway Entrance',
+      duration: 'PREREQUISITE AUDIT',
+      status: 'GATEWAY UNLOCKED',
+      progressText: 'Diagnostic Complete',
+      progressPercent: 100,
+      desc: 'The baseline technical prerequisites before engaging mathematical deep dives: terminal proficiency, differential calculus familiarity, and programming fundamentals.',
+      tasks: [
+        { label: 'Unix shell navigation & git workflow', desc: 'Version control, environment flags, bash piping.' },
+        { label: 'Differential calculus refresher', desc: 'Derivatives, chain rule intuition, partial derivatives.' },
+        { label: 'Object-oriented programming habits', desc: 'Clean coding patterns, unit tests, debugger usage.' }
+      ]
+    },
+    'stats-prob': {
+      stage: 'STAGE 01 • NODE 01',
+      title: 'Probability & Basic Statistics',
+      duration: 'EST. 2.0 WEEKS (24 HRS)',
+      status: 'ACTIVE MODULE',
+      progressText: '1/4 Tasks Completed',
+      progressPercent: 25,
+      desc: 'Fundamental mathematical axioms, continuous & discrete probability distributions, likelihood models, bayesian deduction, and hypothesis testing foundational to statistical learning.',
+      tasks: [
+        { label: 'Discrete & Continuous Distributions', desc: 'Gaussian, Bernoulli, Poisson, Exponential and cumulative density functions.' },
+        { label: 'Bayes Theorem & MAP Estimation', desc: 'Maximum Likelihood vs Maximum A Posteriori optimization formulation.' },
+        { label: 'Hypothesis Testing & p-values', desc: 'Z-tests, Student t-tests, Type I & II errors.' },
+        { label: 'Covariance Matrices & Independence', desc: 'Joint distributions, marginalization, variance calculation.' }
+      ]
+    },
+    'linear-algebra': {
+      stage: 'STAGE 01 • NODE 02',
+      title: 'Linear Algebra & Matrix Calculus',
+      duration: 'EST. 2.5 WEEKS (30 HRS)',
+      status: 'UPCOMING MODULE',
+      progressText: '0/4 Tasks Completed',
+      progressPercent: 0,
+      desc: 'Linear transformations, vector spaces, dot products, singular value decomposition (SVD), eigenvalues, and vector-matrix calculus necessary for backpropagation.',
+      tasks: [
+        { label: 'Matrix Multiplication & Tensors', desc: 'Dimensions matching, outer product, tensor rank concepts.' },
+        { label: 'Eigenvectors & Eigenvalues', desc: 'Characteristic polynomials, spectral analysis, diagonalizing matrices.' },
+        { label: 'Singular Value Decomposition (SVD)', desc: 'Low-rank approximation, pseudoinverses, principal component derivation.' },
+        { label: 'Jacobian & Hessian Operators', desc: 'Multivariate calculus and curvature representations for optimization.' }
+      ]
+    },
+    'python-vector': {
+      stage: 'STAGE 02 • NODE 01',
+      title: 'Python Core & Vectorization',
+      duration: 'EST. 1.5 WEEKS (18 HRS)',
+      status: 'LOCKED MODULE',
+      progressText: '0/3 Tasks Completed',
+      progressPercent: 0,
+      desc: 'High-performance computing with NumPy arrays, vectorization avoiding explicit loops, memory layouts (C-contiguous vs Fortran), and high-throughput Polars queries.',
+      tasks: [
+        { label: 'Vectorized Array Arithmetic', desc: 'Broadcasting rules, strides, in-place operations.' },
+        { label: 'Polars LazyFrame Queries', desc: 'Apache Arrow memory format and query plan optimization.' },
+        { label: 'Profiling & Memory Bounds', desc: 'Using cProfile, line_profiler, and memory limits.' }
+      ]
+    },
+    'data-wrangling': {
+      stage: 'STAGE 02 • NODE 02',
+      title: 'Data Wrangling & Exploratory Analysis',
+      duration: 'EST. 2.0 WEEKS (22 HRS)',
+      status: 'LOCKED MODULE',
+      progressText: '0/3 Tasks Completed',
+      progressPercent: 0,
+      desc: 'Systematic statistical data cleaning, imputation techniques, feature transformations, exploratory visual synthesis, and automated data profile reporting.',
+      tasks: [
+        { label: 'Missing Data Imputation Policies', desc: 'KNN imputer, iterative MICE, and indicator flags.' },
+        { label: 'Feature Scaling & Standardization', desc: 'RobustScaler, QuantileTransformer, PowerTransformer.' },
+        { label: 'High Cardinality Encoding', desc: 'Target encoding, weight-of-evidence, categorical embeddings.' }
+      ]
+    },
+    'supervised-learning': {
+      stage: 'STAGE 03 • NODE 01',
+      title: 'Supervised Learning & Classification',
+      duration: 'EST. 3.0 WEEKS (36 HRS)',
+      status: 'LOCKED MODULE',
+      progressText: '0/4 Tasks Completed',
+      progressPercent: 0,
+      desc: 'Convex linear regressions to high-capacity gradient boosted decision trees. Bias-variance tradeoff and tree-splitting heuristics.',
+      tasks: [
+        { label: 'Logistic Regression & Regularization', desc: 'L1/L2 penalties, elastic net, decision boundaries.' },
+        { label: 'Support Vector Machines (SVM)', desc: 'Kernel trick, slack variables, support vector geometry.' },
+        { label: 'Random Forests & Bagging', desc: 'Out-of-bag error estimation and feature importance metrics.' },
+        { label: 'Gradient Boosting (XGBoost / LightGBM)', desc: 'Residual boosting, histogram binning, learning rate tuning.' }
+      ]
+    },
+    'unsupervised-learning': {
+      stage: 'STAGE 03 • NODE 02',
+      title: 'Unsupervised & Clustering',
+      duration: 'EST. 2.0 WEEKS (24 HRS)',
+      status: 'LOCKED MODULE',
+      progressText: '0/3 Tasks Completed',
+      progressPercent: 0,
+      desc: 'Discover latent structures without labels. Dimensionality reduction via PCA and manifold learning with t-SNE / UMAP for visualization.',
+      tasks: [
+        { label: 'K-Means & DBSCAN', desc: 'Distance metrics, elbow curves, density-based noise handling.' },
+        { label: 'PCA & t-SNE Embeddings', desc: 'Variance explained ratios and high-dimensional projection.' },
+        { label: 'Anomaly Detection Frameworks', desc: 'Isolation forests, Local Outlier Factor (LOF).' }
+      ]
+    },
+    'model-evaluation': {
+      stage: 'STAGE 03 • NODE 03',
+      title: 'Model Evaluation & Metrics',
+      duration: 'EST. 1.5 WEEKS (18 HRS)',
+      status: 'LOCKED MODULE',
+      progressText: '0/3 Tasks Completed',
+      progressPercent: 0,
+      desc: 'Auditing statistical validity, preventing test-set contamination, analyzing calibration curves, and selecting appropriate objective metrics.',
+      tasks: [
+        { label: 'Stratified Cross-Validation', desc: 'Grouped folds, time-series splitting, leakage prevention.' },
+        { label: 'ROC-AUC vs PR-AUC curves', desc: 'Optimal thresholds under severe class imbalances.' },
+        { label: 'Brier Score & Calibration', desc: 'Platt scaling and isotonic probability regression.' }
+      ]
+    },
+    'deep-learning-nn': {
+      stage: 'STAGE 04 • NODE 01',
+      title: 'Neural Networks & Backpropagation',
+      duration: 'EST. 3.5 WEEKS (42 HRS)',
+      status: 'LOCKED MODULE',
+      progressText: '0/3 Tasks Completed',
+      progressPercent: 0,
+      desc: 'Computational graphs, manual reverse-mode autodiff derivation, activation topologies, learning rate schedules, and modern PyTorch engineering.',
+      tasks: [
+        { label: 'Manual Micrograd Implementation', desc: 'Building scalar and tensor autodiff engines from scratch.' },
+        { label: 'Optimizers: AdamW & Cosine Decay', desc: 'First and second moment updates, decoupled weight decay.' },
+        { label: 'PyTorch Custom Modules & Hooks', desc: 'Forward/backward hooks, tensor memory management.' }
+      ]
+    },
+    'cv-cnn': {
+      stage: 'STAGE 04 • NODE 02',
+      title: 'Computer Vision (CNNs to ViT)',
+      duration: 'EST. 2.5 WEEKS (30 HRS)',
+      status: 'LOCKED MODULE',
+      progressText: '0/3 Tasks Completed',
+      progressPercent: 0,
+      desc: 'Convolution operations, receptive fields, modern backbone design (ResNet, ConvNeXt), object detection, and Vision Transformers (ViT).',
+      tasks: [
+        { label: 'Residual Block Mechanics', desc: 'Skip connections, gradient flow preservation.' },
+        { label: 'Object Detection & YOLO', desc: 'Bounding box regression, IoU loss, non-maximum suppression.' },
+        { label: 'Vision Transformer (ViT)', desc: 'Patch extraction, class tokens, spatial attention maps.' }
+      ]
+    },
+    'nlp-attention': {
+      stage: 'STAGE 04 • NODE 03',
+      title: 'NLP & Sequence Attention',
+      duration: 'EST. 3.0 WEEKS (36 HRS)',
+      status: 'LOCKED MODULE',
+      progressText: '0/3 Tasks Completed',
+      progressPercent: 0,
+      desc: 'Token embeddings, recurrent gating units (LSTM/GRU), and the pivotal Scaled Dot-Product Attention mechanism.',
+      tasks: [
+        { label: 'Word2Vec & Subword Tokenization', desc: 'Byte-pair encoding (BPE), SentencePiece algorithms.' },
+        { label: 'Scaled Dot-Product Attention', desc: 'Q, K, V matrix projections, softmax scaling factor.' },
+        { label: 'Bidirectional vs Causal Encoders', desc: 'Masked language modeling (BERT) vs generative prefixes.' }
+      ]
+    },
+    'llm-transformers': {
+      stage: 'STAGE 05 • NODE 01',
+      title: 'Transformer Architecture & LLMs',
+      duration: 'EST. 4.0 WEEKS (50 HRS)',
+      status: 'LOCKED MODULE',
+      progressText: '0/4 Tasks Completed',
+      progressPercent: 0,
+      desc: 'Autoregressive decoder engines, rotary positional embeddings (RoPE), KV cache mechanics, multi-query attention (MQA), and high-throughput inference.',
+      tasks: [
+        { label: 'Rotary Position Embedding (RoPE)', desc: 'Complex conjugate rotations, length generalization.' },
+        { label: 'KV Cache Management', desc: 'Pre-allocation, memory footprint arithmetic in inference.' },
+        { label: 'FlashAttention-2 Architecture', desc: 'IO-aware GPU SRAM tile computation, eliminating HBM roundtrips.' },
+        { label: 'Pretraining Loss Scaling Laws', desc: 'Chinchilla optimal token-to-parameter budgets.' }
+      ]
+    },
+    'rag-vectordb': {
+      stage: 'STAGE 05 • NODE 02',
+      title: 'RAG & Vector Databases',
+      duration: 'EST. 2.5 WEEKS (30 HRS)',
+      status: 'LOCKED MODULE',
+      progressText: '0/3 Tasks Completed',
+      progressPercent: 0,
+      desc: 'Building production-grade Retrieval-Augmented Generation systems. Dense embedding indexing (HNSW), reciprocal rank fusion, and hallucination reduction.',
+      tasks: [
+        { label: 'Hierarchical Navigable Small World (HNSW)', desc: 'Proximity graph indexing, cosine distance metrics.' },
+        { label: 'Hybrid Dense + BM25 Sparse Search', desc: 'Reciprocal rank fusion (RRF) algorithms.' },
+        { label: 'Cross-Encoder Rerankers', desc: 'Scoring passages with high-precision classifier heads.' }
+      ]
+    },
+    'finetune-peft': {
+      stage: 'STAGE 05 • NODE 03',
+      title: 'Fine-Tuning & Alignment (LoRA & DPO)',
+      duration: 'EST. 3.0 WEEKS (36 HRS)',
+      status: 'LOCKED MODULE',
+      progressText: '0/3 Tasks Completed',
+      progressPercent: 0,
+      desc: 'Parameter-efficient fine-tuning (PEFT), QLoRA 4-bit quantization, and preference alignment via Direct Preference Optimization (DPO).',
+      tasks: [
+        { label: 'LoRA Matrix Factorization', desc: 'Rank r projection matrices, zero initialization of B.' },
+        { label: 'Quantized LoRA (QLoRA NF4)', desc: 'NormalFloat4 data format, double quantization schemes.' },
+        { label: 'Direct Preference Optimization (DPO)', desc: 'Implicit reward derivation without separate critic networks.' }
+      ]
+    },
+    'mlops-prod': {
+      stage: 'STAGE 06 • FINAL NODE',
+      title: 'MLOps, vLLM Serving & Drift Guardrails',
+      duration: 'EST. 3.5 WEEKS (42 HRS)',
+      status: 'CAPSTONE TARGET',
+      progressText: '0/4 Tasks Completed',
+      progressPercent: 0,
+      desc: 'Deploying robust models to production: Docker, Triton inference server, continuous integration, streaming metrics, and drift monitoring.',
+      tasks: [
+        { label: 'vLLM PagedAttention Deployment', desc: 'Serving batched LLMs with continuous batching.' },
+        { label: 'Triton Server Ensemble Pipelines', desc: 'Dynamic model concurrency, GPU queueing.' },
+        { label: 'Data Drift & Covariate Shift Audits', desc: 'Evidently AI, population stability index (PSI).' },
+        { label: 'CI/CD Automated Model Registry', desc: 'Model versioning, automatic canary deployments.' }
+      ]
+    }
+  };
+
+  function applyTransform() {
+    stageEl.style.transform = `translate(${canvasState.panX}px, ${canvasState.panY}px) scale(${canvasState.zoom})`;
+    zoomIndicator.textContent = `${Math.round(canvasState.zoom * 100)}%`;
+    updateMinimapLens();
+  }
+
+  function updateMinimapLens() {
+    const vpWidth = viewportEl.clientWidth;
+    const vpHeight = viewportEl.clientHeight;
+    const totalW = 2200 * canvasState.zoom;
+    const totalH = 3100 * canvasState.zoom;
+    
+    const lensW = Math.max(22, Math.min(180, (vpWidth / totalW) * 180));
+    const lensH = Math.max(16, Math.min(120, (vpHeight / totalH) * 120));
+    const lensX = Math.max(0, Math.min(180 - lensW, (-canvasState.panX / totalW) * 180));
+    const lensY = Math.max(0, Math.min(120 - lensH, (-canvasState.panY / totalH) * 120));
+
+    minimapLens.style.width = `${lensW}px`;
+    minimapLens.style.height = `${lensH}px`;
+    minimapLens.style.left = `${lensX}px`;
+    minimapLens.style.top = `${lensY}px`;
+  }
+
+  function zoomCanvas(delta) {
+    stageEl.className = 'canvas-smooth-stage absolute left-0 top-0 origin-top-left canvas-glide-snappy';
+    const prevZoom = canvasState.zoom;
+    canvasState.zoom = Math.min(1.6, Math.max(0.35, canvasState.zoom + delta));
+    const vpCenterX = viewportEl.clientWidth / 2;
+    const vpCenterY = viewportEl.clientHeight / 2;
+    canvasState.panX = vpCenterX - (vpCenterX - canvasState.panX) * (canvasState.zoom / prevZoom);
+    canvasState.panY = vpCenterY - (vpCenterY - canvasState.panY) * (canvasState.zoom / prevZoom);
+    applyTransform();
+  }
+
+  function fitFullRoadmapOverview(smooth = false) {
+    if (smooth) {
+      stageEl.className = 'canvas-smooth-stage absolute left-0 top-0 origin-top-left canvas-glide-snappy';
+    } else {
+      stageEl.className = 'canvas-smooth-stage absolute left-0 top-0 origin-top-left';
+    }
+    const vpWidth = viewportEl.clientWidth;
+    const vpHeight = viewportEl.clientHeight;
+    // Overview zoom factor showing tree from top to bottom
+    canvasState.zoom = Math.min(vpWidth / 2200, vpHeight / 2500, 0.56);
+    canvasState.panX = (vpWidth - 2200 * canvasState.zoom) / 2;
+    canvasState.panY = 24;
+    applyTransform();
+  }
+
+  function glideToActiveNode(snappy = false) {
+    if (snappy) {
+      stageEl.className = 'canvas-smooth-stage absolute left-0 top-0 origin-top-left canvas-glide-snappy';
+    } else {
+      // 2.8s smooth glide into Node 1
+      stageEl.className = 'canvas-smooth-stage absolute left-0 top-0 origin-top-left canvas-glide-slow';
+    }
+    const vpWidth = viewportEl.clientWidth;
+    const vpHeight = viewportEl.clientHeight;
+    // Target Node 1.1 coordinates centered around (850, 420)
+    canvasState.zoom = 1.05;
+    canvasState.panX = (vpWidth / 2) - (850 * canvasState.zoom);
+    canvasState.panY = (vpHeight / 2) - (410 * canvasState.zoom);
+    applyTransform();
+  }
+
+  // AUTOMATED INTRO ZOOM ANIMATION SEQUENCE
+  function triggerAutomatedFlyIn() {
+    // 1. Immediately place camera at full overview showing the complete tree
+    stageEl.className = 'canvas-smooth-stage absolute left-0 top-0 origin-top-left';
+    fitFullRoadmapOverview(false);
+
+    cameraStatusPill.classList.remove('opacity-0', 'translate-y-[-10px]');
+    cameraStatusPill.classList.add('opacity-100', 'translate-y-0');
+    cameraStatusText.textContent = 'Overview • Preparing Trajectory...';
+
+    // 2. Brief intentional pause (~1.3s) allowing user to absorb the full tree
+    setTimeout(() => {
+      cameraStatusText.textContent = 'Navigating to Step 1: Probability & Stats...';
+      
+      // 3. Slowly zoom in with a smooth 2.8s transition into Node 1
+      glideToActiveNode(false);
+
+      // 4. On arrival: complete status and badge
+      setTimeout(() => {
+        cameraStatusText.textContent = 'Focus Locked: Step 1 / Active Milestone';
+        const nodeCard = document.getElementById('node-1-1');
+        if (nodeCard) {
+          nodeCard.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+        }
+        setTimeout(() => {
+          cameraStatusPill.classList.add('opacity-0', 'translate-y-[-10px]');
+        }, 2200);
+      }, 2900);
+    }, 1300);
+  }
+
+  // Mouse drag panning
+  viewportEl.addEventListener('mousedown', (e) => {
+    if (e.target.closest('#node-drawer') || e.target.closest('button')) return;
+    stageEl.className = 'canvas-smooth-stage absolute left-0 top-0 origin-top-left';
+    canvasState.isDragging = true;
+    canvasState.startX = e.clientX - canvasState.panX;
+    canvasState.startY = e.clientY - canvasState.panY;
+  });
+
+  window.addEventListener('mousemove', (e) => {
+    if (!canvasState.isDragging) return;
+    canvasState.panX = e.clientX - canvasState.startX;
+    canvasState.panY = e.clientY - canvasState.startY;
+    applyTransform();
+  });
+
+  window.addEventListener('mouseup', () => {
+    canvasState.isDragging = false;
+  });
+
+  viewportEl.addEventListener('wheel', (e) => {
+    e.preventDefault();
+    const zoomDelta = e.deltaY < 0 ? 0.08 : -0.08;
+    zoomCanvas(zoomDelta);
+  }, { passive: false });
+
+  // Drawer curriculum selection
+  function selectNode(nodeId) {
+    const data = nodeDatabase[nodeId];
+    if (!data) return;
+
+    canvasState.activeNodeId = nodeId;
+    const drawer = document.getElementById('node-drawer');
+    const bodyContainer = document.getElementById('drawer-body-container');
+
+    bodyContainer.style.opacity = '0';
+    bodyContainer.style.transform = 'translateY(6px)';
+
+    setTimeout(() => {
+      document.getElementById('drawer-stage-tag').textContent = data.stage;
+      document.getElementById('drawer-title').textContent = data.title;
+      document.getElementById('drawer-desc').textContent = data.desc;
+      document.getElementById('drawer-duration').textContent = data.duration;
+      document.getElementById('drawer-status-chip').textContent = canvasState.completedNodes.has(nodeId) ? 'COMPLETED' : data.status;
+      document.getElementById('drawer-progress-text').textContent = data.progressText;
+      document.getElementById('drawer-progress-fill').style.width = `${data.progressPercent}%`;
+
+      const tasksContainer = document.getElementById('drawer-tasks');
+      tasksContainer.innerHTML = data.tasks.map((task, idx) => `
+        <label class="flex items-start gap-3 p-3 rounded-lg bg-slate-50 border border-slate-200 hover:border-blue-400 hover:bg-white cursor-pointer transition-all">
+          <input type="checkbox" ${idx === 0 && data.progressPercent > 0 ? 'checked' : ''} class="mt-0.5 accent-blue-600 rounded" />
+          <div class="flex flex-col">
+            <span class="font-body-md text-xs text-slate-900 font-semibold">${task.label}</span>
+            <span class="font-body-sm text-[11px] text-slate-500">${task.desc}</span>
+          </div>
+        </label>
+      `).join('');
+
+      const completeBtnText = document.getElementById('btn-complete-text');
+      if (canvasState.completedNodes.has(nodeId)) {
+        completeBtnText.textContent = 'Completed (Undo)';
+      } else {
+        completeBtnText.textContent = 'Mark Module Complete';
+      }
+
+      bodyContainer.style.transition = 'opacity 250ms ease, transform 250ms ease';
+      bodyContainer.style.opacity = '1';
+      bodyContainer.style.transform = 'translateY(0)';
+    }, 100);
+
+    drawer.classList.remove('translate-x-full', 'opacity-0');
+    drawer.classList.add('translate-x-0', 'opacity-100');
+  }
+
+  function closeDrawer() {
+    const drawer = document.getElementById('node-drawer');
+    drawer.classList.remove('translate-x-0', 'opacity-100');
+    drawer.classList.add('translate-x-full', 'opacity-0');
+  }
+
+  function toggleNodeCompletion() {
+    const id = canvasState.activeNodeId;
+    if (canvasState.completedNodes.has(id)) {
+      canvasState.completedNodes.delete(id);
+    } else {
+      canvasState.completedNodes.add(id);
+    }
+
+    const completeCount = Math.max(1, canvasState.completedNodes.size);
+    const totalCount = 14;
+    const percentage = ((completeCount / totalCount) * 100).toFixed(1);
+
+    document.getElementById('mastery-percent').textContent = `${percentage}% (${completeCount}/${totalCount} Nodes)`;
+    document.getElementById('mastery-bar-fill').style.width = `${percentage}%`;
+    document.getElementById('header-progress-pct').textContent = `${percentage}%`;
+    document.getElementById('header-progress-bar').style.width = `${percentage}%`;
+    document.getElementById('header-node-count').textContent = `${completeCount}/${totalCount} Mastered`;
+
+    selectNode(id);
+  }
+
+  // Window resize handler
+  window.addEventListener('resize', () => {
+    updateMinimapLens();
+  });
+
+  // Automated intro zoom on load
+  window.addEventListener('DOMContentLoaded', () => {
+    triggerAutomatedFlyIn();
+  });
+</script>
+
+
+</body></html>

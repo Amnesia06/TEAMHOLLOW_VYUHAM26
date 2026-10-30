@@ -1,167 +1,109 @@
--- Pathwise PostgreSQL / Supabase Initial Schema Migration
--- Enables pgvector extension, establishes foreign keys, and configures Row Level Security (RLS)
+-- =============================================================================
+-- Pathwise PostgreSQL / Supabase Schema Migration (v2.0)
+-- Conforms strictly to README Section 16.
+-- Vector dimension: 384 (all-MiniLM-L6-v2)
+-- Chat tables and mock guest inserts are excluded.
+-- =============================================================================
 
 CREATE EXTENSION IF NOT EXISTS "uuid-ossp";
 CREATE EXTENSION IF NOT EXISTS "vector";
 
--- 1. Users Table (Supports guest mode demo users)
+-- 1. Users Table
 CREATE TABLE IF NOT EXISTS users (
     id UUID PRIMARY KEY DEFAULT uuid_generate_v4(),
     email TEXT UNIQUE,
-    full_name TEXT,
-    is_guest BOOLEAN DEFAULT FALSE,
-    created_at TIMESTAMPTZ DEFAULT NOW(),
-    updated_at TIMESTAMPTZ DEFAULT NOW()
+    created_at TIMESTAMPTZ DEFAULT NOW()
 );
 
--- Insert default demo guest user
-INSERT INTO users (id, email, full_name, is_guest)
-VALUES ('00000000-0000-0000-0000-000000000001', 'guest@pathwise.ai', 'Demo Student', TRUE)
-ON CONFLICT (id) DO NOTHING;
+-- 2. Skills Taxonomy Table (Embedding dimension 384)
+CREATE TABLE IF NOT EXISTS skills_taxonomy (
+    id TEXT PRIMARY KEY,
+    canonical_name TEXT NOT NULL,
+    aliases TEXT[] DEFAULT '{}',
+    category TEXT NOT NULL,
+    embedding vector(384),
+    created_at TIMESTAMPTZ DEFAULT NOW()
+);
 
--- 2. User Profiles
+-- 3. Job Postings Table (Embedding dimension 384)
+CREATE TABLE IF NOT EXISTS job_postings (
+    id UUID PRIMARY KEY DEFAULT uuid_generate_v4(),
+    role TEXT NOT NULL,
+    text TEXT NOT NULL,
+    source TEXT NOT NULL,
+    retrieved_at TIMESTAMPTZ DEFAULT NOW(),
+    embedding vector(384)
+);
+
+-- 4. Role Requirements Table
+CREATE TABLE IF NOT EXISTS role_requirements (
+    id UUID PRIMARY KEY DEFAULT uuid_generate_v4(),
+    role TEXT NOT NULL,
+    skill_id TEXT NOT NULL REFERENCES skills_taxonomy(id) ON DELETE CASCADE,
+    frequency NUMERIC(4, 3) NOT NULL,
+    required_level INT NOT NULL CHECK (required_level >= 0 AND required_level <= 3),
+    snapshot_date DATE DEFAULT CURRENT_DATE
+);
+
+-- 5. Courses Catalog Table
+CREATE TABLE IF NOT EXISTS courses (
+    id TEXT PRIMARY KEY,
+    title TEXT NOT NULL,
+    platform TEXT NOT NULL,
+    url TEXT NOT NULL,
+    cost NUMERIC(10, 2) DEFAULT 0.0,
+    currency TEXT DEFAULT 'USD' CHECK (currency IN ('USD', 'INR')),
+    hours NUMERIC(6, 1) NOT NULL,
+    level INT NOT NULL CHECK (level >= 1 AND level <= 3),
+    skills_covered TEXT[] DEFAULT '{}',
+    prerequisite_skills TEXT[] DEFAULT '{}',
+    verified BOOLEAN DEFAULT FALSE,
+    created_at TIMESTAMPTZ DEFAULT NOW()
+);
+
+-- 6. Profiles Table
 CREATE TABLE IF NOT EXISTS profiles (
     id UUID PRIMARY KEY DEFAULT uuid_generate_v4(),
     user_id UUID REFERENCES users(id) ON DELETE CASCADE,
-    education JSONB DEFAULT '[]'::jsonb,
-    experience JSONB DEFAULT '[]'::jsonb,
-    projects JSONB DEFAULT '[]'::jsonb,
-    interests TEXT[] DEFAULT '{}',
-    career_goals TEXT[] DEFAULT '{}',
-    learning_preferences JSONB DEFAULT '{"hours_per_week": 5, "budget_monthly": 0}'::jsonb,
-    completeness NUMERIC(3, 2) DEFAULT 0.0,
-    created_at TIMESTAMPTZ DEFAULT NOW(),
-    updated_at TIMESTAMPTZ DEFAULT NOW()
-);
-
--- 3. Conversations and Chat Messages
-CREATE TABLE IF NOT EXISTS conversations (
-    id UUID PRIMARY KEY DEFAULT uuid_generate_v4(),
-    user_id UUID REFERENCES users(id) ON DELETE CASCADE,
-    title TEXT DEFAULT 'Career Exploration',
-    created_at TIMESTAMPTZ DEFAULT NOW(),
-    updated_at TIMESTAMPTZ DEFAULT NOW()
-);
-
-CREATE TABLE IF NOT EXISTS messages (
-    id UUID PRIMARY KEY DEFAULT uuid_generate_v4(),
-    conversation_id UUID REFERENCES conversations(id) ON DELETE CASCADE,
-    role TEXT NOT NULL, -- 'user', 'assistant', 'system'
-    content TEXT NOT NULL,
-    ui_components JSONB DEFAULT '[]'::jsonb,
-    agent_activity JSONB DEFAULT '[]'::jsonb,
+    skills JSONB NOT NULL DEFAULT '[]'::jsonb,
+    years_of_experience NUMERIC(4, 1) DEFAULT 0.0,
+    years_per_skill JSONB DEFAULT '{}'::jsonb,
+    domain TEXT DEFAULT 'Software Engineering',
     created_at TIMESTAMPTZ DEFAULT NOW()
 );
 
--- 4. Standardized Skills and User Skills Evidence
-CREATE TABLE IF NOT EXISTS skills (
-    id UUID PRIMARY KEY DEFAULT uuid_generate_v4(),
-    name TEXT UNIQUE NOT NULL,
-    category TEXT NOT NULL,
-    difficulty TEXT DEFAULT 'intermediate',
-    prerequisites TEXT[] DEFAULT '{}',
-    embedding vector(1536)
-);
-
-CREATE TABLE IF NOT EXISTS user_skills (
-    id UUID PRIMARY KEY DEFAULT uuid_generate_v4(),
-    user_id UUID REFERENCES users(id) ON DELETE CASCADE,
-    skill_name TEXT NOT NULL,
-    proficiency TEXT DEFAULT 'beginner',
-    is_inferred BOOLEAN DEFAULT FALSE,
-    confidence TEXT DEFAULT 'medium',
-    updated_at TIMESTAMPTZ DEFAULT NOW()
-);
-
-CREATE TABLE IF NOT EXISTS skill_evidence (
-    id UUID PRIMARY KEY DEFAULT uuid_generate_v4(),
-    user_skill_id UUID REFERENCES user_skills(id) ON DELETE CASCADE,
-    evidence_type TEXT NOT NULL, -- 'project', 'education', 'certification', 'self_reported'
-    description TEXT NOT NULL,
-    confidence TEXT DEFAULT 'medium',
-    created_at TIMESTAMPTZ DEFAULT NOW()
-);
-
--- 5. Career Roles and Market Snapshots
-CREATE TABLE IF NOT EXISTS career_roles (
-    id UUID PRIMARY KEY DEFAULT uuid_generate_v4(),
-    role_id TEXT UNIQUE NOT NULL,
-    title TEXT NOT NULL,
-    category TEXT NOT NULL,
-    description TEXT NOT NULL,
-    salary_range TEXT,
-    growth_outlook TEXT,
-    data_source TEXT,
-    collected_at DATE DEFAULT CURRENT_DATE
-);
-
-CREATE TABLE IF NOT EXISTS job_requirements (
-    id UUID PRIMARY KEY DEFAULT uuid_generate_v4(),
-    role_id TEXT REFERENCES career_roles(role_id) ON DELETE CASCADE,
-    skill_name TEXT NOT NULL,
-    importance TEXT DEFAULT 'required', -- 'required', 'preferred', 'emerging'
-    min_proficiency TEXT DEFAULT 'intermediate',
-    weight NUMERIC(3, 2) DEFAULT 1.0
-);
-
--- 6. Roadmaps and Milestones
+-- 7. Roadmaps Table
 CREATE TABLE IF NOT EXISTS roadmaps (
     id UUID PRIMARY KEY DEFAULT uuid_generate_v4(),
     user_id UUID REFERENCES users(id) ON DELETE CASCADE,
-    target_role TEXT NOT NULL,
-    total_estimated_weeks NUMERIC(5, 1),
-    total_estimated_cost NUMERIC(8, 2),
-    feasibility JSONB,
-    explanation TEXT,
+    target_role TEXT,
+    constraints JSONB NOT NULL,
+    items JSONB NOT NULL DEFAULT '[]'::jsonb,
+    status TEXT DEFAULT 'active' CHECK (status IN ('active', 'completed', 'archived')),
     created_at TIMESTAMPTZ DEFAULT NOW()
 );
 
-CREATE TABLE IF NOT EXISTS roadmap_milestones (
+-- 8. Roadmap Progress Table
+CREATE TABLE IF NOT EXISTS roadmap_progress (
     id UUID PRIMARY KEY DEFAULT uuid_generate_v4(),
     roadmap_id UUID REFERENCES roadmaps(id) ON DELETE CASCADE,
-    step_order INT NOT NULL,
-    title TEXT NOT NULL,
-    description TEXT,
-    skills_covered TEXT[],
-    estimated_hours NUMERIC(5, 1),
-    estimated_weeks NUMERIC(5, 1),
-    estimated_cost NUMERIC(8, 2) DEFAULT 0.0,
-    schedule_window TEXT,
-    priority_explanation TEXT,
-    status TEXT DEFAULT 'not_started', -- 'not_started', 'in_progress', 'completed'
-    progress INT DEFAULT 0
+    item_id TEXT NOT NULL,
+    completed_at TIMESTAMPTZ DEFAULT NOW()
 );
 
--- 7. Learning Resources
-CREATE TABLE IF NOT EXISTS learning_resources (
+-- 9. Market Snapshots Table
+CREATE TABLE IF NOT EXISTS market_snapshots (
     id UUID PRIMARY KEY DEFAULT uuid_generate_v4(),
-    resource_id TEXT UNIQUE NOT NULL,
-    title TEXT NOT NULL,
-    provider TEXT NOT NULL,
-    url TEXT NOT NULL,
-    topic TEXT,
-    skills TEXT[],
-    cost NUMERIC(8, 2) DEFAULT 0.0,
-    currency TEXT DEFAULT 'USD',
-    difficulty TEXT,
-    estimated_hours INT,
-    prerequisites TEXT[],
-    resource_type TEXT,
-    last_verified DATE DEFAULT CURRENT_DATE
+    role TEXT NOT NULL,
+    skill_id TEXT NOT NULL,
+    frequency NUMERIC(4, 3) NOT NULL,
+    posting_count INT NOT NULL,
+    snapshot_date DATE DEFAULT CURRENT_DATE
 );
 
--- Row Level Security (RLS) Setup
-ALTER TABLE profiles ENABLE ROW LEVEL SECURITY;
-ALTER TABLE conversations ENABLE ROW LEVEL SECURITY;
-ALTER TABLE messages ENABLE ROW LEVEL SECURITY;
-ALTER TABLE user_skills ENABLE ROW LEVEL SECURITY;
-ALTER TABLE roadmaps ENABLE ROW LEVEL SECURITY;
-
-CREATE POLICY "Users can access their own profile" ON profiles
-    FOR ALL USING (auth.uid() = user_id OR user_id = '00000000-0000-0000-0000-000000000001');
-
-CREATE POLICY "Users can access their conversations" ON conversations
-    FOR ALL USING (auth.uid() = user_id OR user_id = '00000000-0000-0000-0000-000000000001');
-
-CREATE POLICY "Users can access their roadmaps" ON roadmaps
-    FOR ALL USING (auth.uid() = user_id OR user_id = '00000000-0000-0000-0000-000000000001');
+-- Indexes for vector similarity search
+CREATE INDEX IF NOT EXISTS idx_skills_taxonomy_embedding ON skills_taxonomy USING ivfflat (embedding vector_cosine_ops) WITH (lists = 100);
+CREATE INDEX IF NOT EXISTS idx_job_postings_embedding ON job_postings USING ivfflat (embedding vector_cosine_ops) WITH (lists = 100);
+CREATE INDEX IF NOT EXISTS idx_job_postings_role ON job_postings(role);
+CREATE INDEX IF NOT EXISTS idx_role_requirements_role ON role_requirements(role);
+CREATE INDEX IF NOT EXISTS idx_market_snapshots_role ON market_snapshots(role, snapshot_date);

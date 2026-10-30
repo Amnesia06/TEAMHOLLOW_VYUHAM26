@@ -1,0 +1,1650 @@
+[
+  {
+    "role": "Android Developer",
+    "skill_id": "skill_java",
+    "skill_name": "Java",
+    "frequency": 0.933,
+    "required_level": 2,
+    "snapshot_date": "2026-03-01"
+  },
+  {
+    "role": "Android Developer",
+    "skill_id": "skill_android_sdk",
+    "skill_name": "Android SDK",
+    "frequency": 0.867,
+    "required_level": 2,
+    "snapshot_date": "2026-03-01"
+  },
+  {
+    "role": "Android Developer",
+    "skill_id": "skill_rest_apis",
+    "skill_name": "REST APIs",
+    "frequency": 0.733,
+    "required_level": 2,
+    "snapshot_date": "2026-03-01"
+  },
+  {
+    "role": "Android Developer",
+    "skill_id": "skill_kotlin",
+    "skill_name": "Kotlin",
+    "frequency": 0.667,
+    "required_level": 2,
+    "snapshot_date": "2026-03-01"
+  },
+  {
+    "role": "Android Developer",
+    "skill_id": "skill_jetpack_compose",
+    "skill_name": "Jetpack Compose",
+    "frequency": 0.6,
+    "required_level": 2,
+    "snapshot_date": "2026-03-01"
+  },
+  {
+    "role": "Android Developer",
+    "skill_id": "skill_firebase",
+    "skill_name": "Firebase",
+    "frequency": 0.6,
+    "required_level": 2,
+    "snapshot_date": "2026-03-01"
+  },
+  {
+    "role": "QA Engineer",
+    "skill_id": "skill_python",
+    "skill_name": "Python",
+    "frequency": 0.933,
+    "required_level": 2,
+    "snapshot_date": "2026-03-01"
+  },
+  {
+    "role": "QA Engineer",
+    "skill_id": "skill_manual_testing",
+    "skill_name": "Manual Testing",
+    "frequency": 0.867,
+    "required_level": 2,
+    "snapshot_date": "2026-03-01"
+  },
+  {
+    "role": "QA Engineer",
+    "skill_id": "skill_postman",
+    "skill_name": "Postman",
+    "frequency": 0.867,
+    "required_level": 2,
+    "snapshot_date": "2026-03-01"
+  },
+  {
+    "role": "QA Engineer",
+    "skill_id": "skill_api_testing",
+    "skill_name": "API Testing",
+    "frequency": 0.867,
+    "required_level": 2,
+    "snapshot_date": "2026-03-01"
+  },
+  {
+    "role": "QA Engineer",
+    "skill_id": "skill_jira",
+    "skill_name": "JIRA",
+    "frequency": 0.867,
+    "required_level": 2,
+    "snapshot_date": "2026-03-01"
+  },
+  {
+    "role": "QA Engineer",
+    "skill_id": "skill_selenium",
+    "skill_name": "Selenium",
+    "frequency": 0.733,
+    "required_level": 2,
+    "snapshot_date": "2026-03-01"
+  },
+  {
+    "role": "Business Analyst",
+    "skill_id": "skill_power_bi",
+    "skill_name": "Power BI",
+    "frequency": 0.8,
+    "required_level": 2,
+    "snapshot_date": "2026-03-01"
+  },
+  {
+    "role": "Business Analyst",
+    "skill_id": "skill_agile",
+    "skill_name": "Agile",
+    "frequency": 0.733,
+    "required_level": 2,
+    "snapshot_date": "2026-03-01"
+  },
+  {
+    "role": "Business Analyst",
+    "skill_id": "skill_jira",
+    "skill_name": "JIRA",
+    "frequency": 0.667,
+    "required_level": 2,
+    "snapshot_date": "2026-03-01"
+  },
+  {
+    "role": "Business Analyst",
+    "skill_id": "skill_excel",
+    "skill_name": "Excel",
+    "frequency": 0.667,
+    "required_level": 2,
+    "snapshot_date": "2026-03-01"
+  },
+  {
+    "role": "Business Analyst",
+    "skill_id": "skill_sql",
+    "skill_name": "SQL",
+    "frequency": 0.6,
+    "required_level": 2,
+    "snapshot_date": "2026-03-01"
+  },
+  {
+    "role": "Business Analyst",
+    "skill_id": "skill_requirements_gathering",
+    "skill_name": "Requirements Gathering",
+    "frequency": 0.467,
+    "required_level": 2,
+    "snapshot_date": "2026-03-01"
+  },
+  {
+    "role": "Cybersecurity Analyst",
+    "skill_id": "skill_penetration_testing",
+    "skill_name": "Penetration Testing",
+    "frequency": 1.0,
+    "required_level": 2,
+    "snapshot_date": "2026-03-01"
+  },
+  {
+    "role": "Cybersecurity Analyst",
+    "skill_id": "skill_ethical_hacking",
+    "skill_name": "Ethical Hacking",
+    "frequency": 0.867,
+    "required_level": 2,
+    "snapshot_date": "2026-03-01"
+  },
+  {
+    "role": "Cybersecurity Analyst",
+    "skill_id": "skill_network_security",
+    "skill_name": "Network Security",
+    "frequency": 0.867,
+    "required_level": 2,
+    "snapshot_date": "2026-03-01"
+  },
+  {
+    "role": "Cybersecurity Analyst",
+    "skill_id": "skill_python",
+    "skill_name": "Python",
+    "frequency": 0.8,
+    "required_level": 2,
+    "snapshot_date": "2026-03-01"
+  },
+  {
+    "role": "Cybersecurity Analyst",
+    "skill_id": "skill_siem",
+    "skill_name": "SIEM",
+    "frequency": 0.8,
+    "required_level": 2,
+    "snapshot_date": "2026-03-01"
+  },
+  {
+    "role": "Python Developer",
+    "skill_id": "skill_aws",
+    "skill_name": "AWS",
+    "frequency": 0.733,
+    "required_level": 2,
+    "snapshot_date": "2026-03-01"
+  },
+  {
+    "role": "Python Developer",
+    "skill_id": "skill_django",
+    "skill_name": "Django",
+    "frequency": 0.733,
+    "required_level": 2,
+    "snapshot_date": "2026-03-01"
+  },
+  {
+    "role": "Python Developer",
+    "skill_id": "skill_docker",
+    "skill_name": "Docker",
+    "frequency": 0.667,
+    "required_level": 2,
+    "snapshot_date": "2026-03-01"
+  },
+  {
+    "role": "Python Developer",
+    "skill_id": "skill_rest_apis",
+    "skill_name": "REST APIs",
+    "frequency": 0.667,
+    "required_level": 2,
+    "snapshot_date": "2026-03-01"
+  },
+  {
+    "role": "Python Developer",
+    "skill_id": "skill_python",
+    "skill_name": "Python",
+    "frequency": 0.667,
+    "required_level": 2,
+    "snapshot_date": "2026-03-01"
+  },
+  {
+    "role": "Python Developer",
+    "skill_id": "skill_postgresql",
+    "skill_name": "PostgreSQL",
+    "frequency": 0.533,
+    "required_level": 2,
+    "snapshot_date": "2026-03-01"
+  },
+  {
+    "role": "Python Developer",
+    "skill_id": "skill_fastapi",
+    "skill_name": "FastAPI",
+    "frequency": 0.333,
+    "required_level": 2,
+    "snapshot_date": "2026-03-01"
+  },
+  {
+    "role": "Backend Developer",
+    "skill_id": "skill_redis",
+    "skill_name": "Redis",
+    "frequency": 0.533,
+    "required_level": 2,
+    "snapshot_date": "2026-03-01"
+  },
+  {
+    "role": "Backend Developer",
+    "skill_id": "skill_fastapi",
+    "skill_name": "FastAPI",
+    "frequency": 0.467,
+    "required_level": 2,
+    "snapshot_date": "2026-03-01"
+  },
+  {
+    "role": "Backend Developer",
+    "skill_id": "skill_django",
+    "skill_name": "Django",
+    "frequency": 0.4,
+    "required_level": 2,
+    "snapshot_date": "2026-03-01"
+  },
+  {
+    "role": "Backend Developer",
+    "skill_id": "skill_node",
+    "skill_name": "Node",
+    "frequency": 0.4,
+    "required_level": 2,
+    "snapshot_date": "2026-03-01"
+  },
+  {
+    "role": "Backend Developer",
+    "skill_id": "skill_java",
+    "skill_name": "Java",
+    "frequency": 0.333,
+    "required_level": 2,
+    "snapshot_date": "2026-03-01"
+  },
+  {
+    "role": "Backend Developer",
+    "skill_id": "skill_postgresql",
+    "skill_name": "PostgreSQL",
+    "frequency": 0.333,
+    "required_level": 2,
+    "snapshot_date": "2026-03-01"
+  },
+  {
+    "role": "Backend Developer",
+    "skill_id": "skill_docker",
+    "skill_name": "Docker",
+    "frequency": 0.267,
+    "required_level": 2,
+    "snapshot_date": "2026-03-01"
+  },
+  {
+    "role": "Backend Developer",
+    "skill_id": "skill_mongodb",
+    "skill_name": "MongoDB",
+    "frequency": 0.267,
+    "required_level": 2,
+    "snapshot_date": "2026-03-01"
+  },
+  {
+    "role": "Backend Developer",
+    "skill_id": "skill_python",
+    "skill_name": "Python",
+    "frequency": 0.267,
+    "required_level": 2,
+    "snapshot_date": "2026-03-01"
+  },
+  {
+    "role": "Power BI Developer",
+    "skill_id": "skill_data_modeling",
+    "skill_name": "Data Modeling",
+    "frequency": 0.8,
+    "required_level": 2,
+    "snapshot_date": "2026-03-01"
+  },
+  {
+    "role": "Power BI Developer",
+    "skill_id": "skill_power_bi",
+    "skill_name": "Power BI",
+    "frequency": 0.667,
+    "required_level": 2,
+    "snapshot_date": "2026-03-01"
+  },
+  {
+    "role": "Power BI Developer",
+    "skill_id": "skill_etl",
+    "skill_name": "ETL",
+    "frequency": 0.667,
+    "required_level": 2,
+    "snapshot_date": "2026-03-01"
+  },
+  {
+    "role": "Power BI Developer",
+    "skill_id": "skill_sql",
+    "skill_name": "SQL",
+    "frequency": 0.6,
+    "required_level": 2,
+    "snapshot_date": "2026-03-01"
+  },
+  {
+    "role": "Power BI Developer",
+    "skill_id": "skill_dax",
+    "skill_name": "DAX",
+    "frequency": 0.6,
+    "required_level": 2,
+    "snapshot_date": "2026-03-01"
+  },
+  {
+    "role": "Power BI Developer",
+    "skill_id": "skill_azure",
+    "skill_name": "Azure",
+    "frequency": 0.6,
+    "required_level": 2,
+    "snapshot_date": "2026-03-01"
+  },
+  {
+    "role": "Power BI Developer",
+    "skill_id": "skill_excel",
+    "skill_name": "Excel",
+    "frequency": 0.467,
+    "required_level": 2,
+    "snapshot_date": "2026-03-01"
+  },
+  {
+    "role": "Java Developer",
+    "skill_id": "skill_rest_apis",
+    "skill_name": "REST APIs",
+    "frequency": 0.8,
+    "required_level": 2,
+    "snapshot_date": "2026-03-01"
+  },
+  {
+    "role": "Java Developer",
+    "skill_id": "skill_hibernate",
+    "skill_name": "Hibernate",
+    "frequency": 0.8,
+    "required_level": 2,
+    "snapshot_date": "2026-03-01"
+  },
+  {
+    "role": "Java Developer",
+    "skill_id": "skill_maven",
+    "skill_name": "Maven",
+    "frequency": 0.667,
+    "required_level": 2,
+    "snapshot_date": "2026-03-01"
+  },
+  {
+    "role": "Java Developer",
+    "skill_id": "skill_spring_boot",
+    "skill_name": "Spring Boot",
+    "frequency": 0.6,
+    "required_level": 2,
+    "snapshot_date": "2026-03-01"
+  },
+  {
+    "role": "Java Developer",
+    "skill_id": "skill_sql",
+    "skill_name": "SQL",
+    "frequency": 0.6,
+    "required_level": 2,
+    "snapshot_date": "2026-03-01"
+  },
+  {
+    "role": "Java Developer",
+    "skill_id": "skill_java",
+    "skill_name": "Java",
+    "frequency": 0.6,
+    "required_level": 2,
+    "snapshot_date": "2026-03-01"
+  },
+  {
+    "role": "Java Developer",
+    "skill_id": "skill_microservices",
+    "skill_name": "Microservices",
+    "frequency": 0.533,
+    "required_level": 2,
+    "snapshot_date": "2026-03-01"
+  },
+  {
+    "role": "Technical Lead",
+    "skill_id": "skill_agile",
+    "skill_name": "Agile",
+    "frequency": 0.933,
+    "required_level": 2,
+    "snapshot_date": "2026-03-01"
+  },
+  {
+    "role": "Technical Lead",
+    "skill_id": "skill_team_leadership",
+    "skill_name": "Team Leadership",
+    "frequency": 0.8,
+    "required_level": 2,
+    "snapshot_date": "2026-03-01"
+  },
+  {
+    "role": "Technical Lead",
+    "skill_id": "skill_code_review",
+    "skill_name": "Code Review",
+    "frequency": 0.8,
+    "required_level": 2,
+    "snapshot_date": "2026-03-01"
+  },
+  {
+    "role": "Technical Lead",
+    "skill_id": "skill_system_design",
+    "skill_name": "System Design",
+    "frequency": 0.667,
+    "required_level": 2,
+    "snapshot_date": "2026-03-01"
+  },
+  {
+    "role": "Technical Lead",
+    "skill_id": "skill_microservices",
+    "skill_name": "Microservices",
+    "frequency": 0.4,
+    "required_level": 2,
+    "snapshot_date": "2026-03-01"
+  },
+  {
+    "role": "Technical Lead",
+    "skill_id": "skill_aws",
+    "skill_name": "AWS",
+    "frequency": 0.267,
+    "required_level": 2,
+    "snapshot_date": "2026-03-01"
+  },
+  {
+    "role": "UI/UX Designer",
+    "skill_id": "skill_wireframing",
+    "skill_name": "Wireframing",
+    "frequency": 0.867,
+    "required_level": 2,
+    "snapshot_date": "2026-03-01"
+  },
+  {
+    "role": "UI/UX Designer",
+    "skill_id": "skill_adobe_xd",
+    "skill_name": "Adobe XD",
+    "frequency": 0.867,
+    "required_level": 2,
+    "snapshot_date": "2026-03-01"
+  },
+  {
+    "role": "UI/UX Designer",
+    "skill_id": "skill_prototyping",
+    "skill_name": "Prototyping",
+    "frequency": 0.8,
+    "required_level": 2,
+    "snapshot_date": "2026-03-01"
+  },
+  {
+    "role": "UI/UX Designer",
+    "skill_id": "skill_html_css",
+    "skill_name": "HTML/CSS",
+    "frequency": 0.733,
+    "required_level": 2,
+    "snapshot_date": "2026-03-01"
+  },
+  {
+    "role": "UI/UX Designer",
+    "skill_id": "skill_figma",
+    "skill_name": "Figma",
+    "frequency": 0.733,
+    "required_level": 2,
+    "snapshot_date": "2026-03-01"
+  },
+  {
+    "role": "UI/UX Designer",
+    "skill_id": "skill_user_research",
+    "skill_name": "User Research",
+    "frequency": 0.667,
+    "required_level": 2,
+    "snapshot_date": "2026-03-01"
+  },
+  {
+    "role": "Data Analyst",
+    "skill_id": "skill_tableau",
+    "skill_name": "Tableau",
+    "frequency": 0.933,
+    "required_level": 2,
+    "snapshot_date": "2026-03-01"
+  },
+  {
+    "role": "Data Analyst",
+    "skill_id": "skill_power_bi",
+    "skill_name": "Power BI",
+    "frequency": 0.8,
+    "required_level": 2,
+    "snapshot_date": "2026-03-01"
+  },
+  {
+    "role": "Data Analyst",
+    "skill_id": "skill_excel",
+    "skill_name": "Excel",
+    "frequency": 0.733,
+    "required_level": 2,
+    "snapshot_date": "2026-03-01"
+  },
+  {
+    "role": "Data Analyst",
+    "skill_id": "skill_python",
+    "skill_name": "Python",
+    "frequency": 0.667,
+    "required_level": 2,
+    "snapshot_date": "2026-03-01"
+  },
+  {
+    "role": "Data Analyst",
+    "skill_id": "skill_data_visualization",
+    "skill_name": "Data Visualization",
+    "frequency": 0.667,
+    "required_level": 2,
+    "snapshot_date": "2026-03-01"
+  },
+  {
+    "role": "Data Analyst",
+    "skill_id": "skill_statistics",
+    "skill_name": "Statistics",
+    "frequency": 0.6,
+    "required_level": 2,
+    "snapshot_date": "2026-03-01"
+  },
+  {
+    "role": "Data Analyst",
+    "skill_id": "skill_sql",
+    "skill_name": "SQL",
+    "frequency": 0.467,
+    "required_level": 2,
+    "snapshot_date": "2026-03-01"
+  },
+  {
+    "role": "Software Engineer",
+    "skill_id": "skill_python",
+    "skill_name": "Python",
+    "frequency": 0.733,
+    "required_level": 2,
+    "snapshot_date": "2026-03-01"
+  },
+  {
+    "role": "Software Engineer",
+    "skill_id": "skill_system_design",
+    "skill_name": "System Design",
+    "frequency": 0.733,
+    "required_level": 2,
+    "snapshot_date": "2026-03-01"
+  },
+  {
+    "role": "Software Engineer",
+    "skill_id": "skill_cpp",
+    "skill_name": "C++",
+    "frequency": 0.733,
+    "required_level": 2,
+    "snapshot_date": "2026-03-01"
+  },
+  {
+    "role": "Software Engineer",
+    "skill_id": "skill_git",
+    "skill_name": "Git",
+    "frequency": 0.6,
+    "required_level": 2,
+    "snapshot_date": "2026-03-01"
+  },
+  {
+    "role": "Software Engineer",
+    "skill_id": "skill_algorithms",
+    "skill_name": "Algorithms",
+    "frequency": 0.6,
+    "required_level": 2,
+    "snapshot_date": "2026-03-01"
+  },
+  {
+    "role": "Software Engineer",
+    "skill_id": "skill_java",
+    "skill_name": "Java",
+    "frequency": 0.467,
+    "required_level": 2,
+    "snapshot_date": "2026-03-01"
+  },
+  {
+    "role": "Software Engineer",
+    "skill_id": "skill_dsa",
+    "skill_name": "Data Structures",
+    "frequency": 0.4,
+    "required_level": 2,
+    "snapshot_date": "2026-03-01"
+  },
+  {
+    "role": "Software Engineer",
+    "skill_id": "skill_rest_apis",
+    "skill_name": "REST APIs",
+    "frequency": 0.267,
+    "required_level": 2,
+    "snapshot_date": "2026-03-01"
+  },
+  {
+    "role": "Machine Learning Engineer",
+    "skill_id": "skill_docker",
+    "skill_name": "Docker",
+    "frequency": 0.867,
+    "required_level": 2,
+    "snapshot_date": "2026-03-01"
+  },
+  {
+    "role": "Machine Learning Engineer",
+    "skill_id": "skill_tensorflow",
+    "skill_name": "TensorFlow",
+    "frequency": 0.667,
+    "required_level": 2,
+    "snapshot_date": "2026-03-01"
+  },
+  {
+    "role": "Machine Learning Engineer",
+    "skill_id": "skill_scikit_learn",
+    "skill_name": "Scikit-learn",
+    "frequency": 0.667,
+    "required_level": 2,
+    "snapshot_date": "2026-03-01"
+  },
+  {
+    "role": "Machine Learning Engineer",
+    "skill_id": "skill_pytorch",
+    "skill_name": "PyTorch",
+    "frequency": 0.533,
+    "required_level": 2,
+    "snapshot_date": "2026-03-01"
+  },
+  {
+    "role": "Machine Learning Engineer",
+    "skill_id": "skill_mlops",
+    "skill_name": "MLOps",
+    "frequency": 0.533,
+    "required_level": 2,
+    "snapshot_date": "2026-03-01"
+  },
+  {
+    "role": "Machine Learning Engineer",
+    "skill_id": "skill_aws",
+    "skill_name": "AWS",
+    "frequency": 0.4,
+    "required_level": 2,
+    "snapshot_date": "2026-03-01"
+  },
+  {
+    "role": "Machine Learning Engineer",
+    "skill_id": "skill_python",
+    "skill_name": "Python",
+    "frequency": 0.333,
+    "required_level": 2,
+    "snapshot_date": "2026-03-01"
+  },
+  {
+    "role": "Machine Learning Engineer",
+    "skill_id": "skill_kubernetes",
+    "skill_name": "Kubernetes",
+    "frequency": 0.267,
+    "required_level": 2,
+    "snapshot_date": "2026-03-01"
+  },
+  {
+    "role": "Data Engineer",
+    "skill_id": "skill_python",
+    "skill_name": "Python",
+    "frequency": 0.733,
+    "required_level": 2,
+    "snapshot_date": "2026-03-01"
+  },
+  {
+    "role": "Data Engineer",
+    "skill_id": "skill_aws",
+    "skill_name": "AWS",
+    "frequency": 0.667,
+    "required_level": 2,
+    "snapshot_date": "2026-03-01"
+  },
+  {
+    "role": "Data Engineer",
+    "skill_id": "skill_spark",
+    "skill_name": "Spark",
+    "frequency": 0.667,
+    "required_level": 2,
+    "snapshot_date": "2026-03-01"
+  },
+  {
+    "role": "Data Engineer",
+    "skill_id": "skill_dbt",
+    "skill_name": "dbt",
+    "frequency": 0.6,
+    "required_level": 2,
+    "snapshot_date": "2026-03-01"
+  },
+  {
+    "role": "Data Engineer",
+    "skill_id": "skill_airflow",
+    "skill_name": "Airflow",
+    "frequency": 0.533,
+    "required_level": 2,
+    "snapshot_date": "2026-03-01"
+  },
+  {
+    "role": "Data Engineer",
+    "skill_id": "skill_etl",
+    "skill_name": "ETL",
+    "frequency": 0.533,
+    "required_level": 2,
+    "snapshot_date": "2026-03-01"
+  },
+  {
+    "role": "Data Engineer",
+    "skill_id": "skill_sql",
+    "skill_name": "SQL",
+    "frequency": 0.467,
+    "required_level": 2,
+    "snapshot_date": "2026-03-01"
+  },
+  {
+    "role": "Data Engineer",
+    "skill_id": "skill_kafka",
+    "skill_name": "Kafka",
+    "frequency": 0.133,
+    "required_level": 2,
+    "snapshot_date": "2026-03-01"
+  },
+  {
+    "role": "Node.js Developer",
+    "skill_id": "skill_express",
+    "skill_name": "Express",
+    "frequency": 0.6,
+    "required_level": 2,
+    "snapshot_date": "2026-03-01"
+  },
+  {
+    "role": "Node.js Developer",
+    "skill_id": "skill_rest_apis",
+    "skill_name": "REST APIs",
+    "frequency": 0.333,
+    "required_level": 2,
+    "snapshot_date": "2026-03-01"
+  },
+  {
+    "role": "Node.js Developer",
+    "skill_id": "skill_node",
+    "skill_name": "Node",
+    "frequency": 0.333,
+    "required_level": 2,
+    "snapshot_date": "2026-03-01"
+  },
+  {
+    "role": "Node.js Developer",
+    "skill_id": "skill_typescript",
+    "skill_name": "TypeScript",
+    "frequency": 0.333,
+    "required_level": 2,
+    "snapshot_date": "2026-03-01"
+  },
+  {
+    "role": "Node.js Developer",
+    "skill_id": "skill_javascript",
+    "skill_name": "JavaScript",
+    "frequency": 0.333,
+    "required_level": 2,
+    "snapshot_date": "2026-03-01"
+  },
+  {
+    "role": "Node.js Developer",
+    "skill_id": "skill_mongodb",
+    "skill_name": "MongoDB",
+    "frequency": 0.133,
+    "required_level": 2,
+    "snapshot_date": "2026-03-01"
+  },
+  {
+    "role": "Computer Vision Engineer",
+    "skill_id": "skill_deep_learning",
+    "skill_name": "Deep Learning",
+    "frequency": 0.867,
+    "required_level": 2,
+    "snapshot_date": "2026-03-01"
+  },
+  {
+    "role": "Computer Vision Engineer",
+    "skill_id": "skill_pytorch",
+    "skill_name": "PyTorch",
+    "frequency": 0.867,
+    "required_level": 2,
+    "snapshot_date": "2026-03-01"
+  },
+  {
+    "role": "Computer Vision Engineer",
+    "skill_id": "skill_tensorflow",
+    "skill_name": "TensorFlow",
+    "frequency": 0.8,
+    "required_level": 2,
+    "snapshot_date": "2026-03-01"
+  },
+  {
+    "role": "Computer Vision Engineer",
+    "skill_id": "skill_yolo",
+    "skill_name": "YOLO",
+    "frequency": 0.8,
+    "required_level": 2,
+    "snapshot_date": "2026-03-01"
+  },
+  {
+    "role": "Computer Vision Engineer",
+    "skill_id": "skill_opencv",
+    "skill_name": "OpenCV",
+    "frequency": 0.6,
+    "required_level": 2,
+    "snapshot_date": "2026-03-01"
+  },
+  {
+    "role": "Computer Vision Engineer",
+    "skill_id": "skill_python",
+    "skill_name": "Python",
+    "frequency": 0.6,
+    "required_level": 2,
+    "snapshot_date": "2026-03-01"
+  },
+  {
+    "role": "MLOps Engineer",
+    "skill_id": "skill_kubernetes",
+    "skill_name": "Kubernetes",
+    "frequency": 0.8,
+    "required_level": 2,
+    "snapshot_date": "2026-03-01"
+  },
+  {
+    "role": "MLOps Engineer",
+    "skill_id": "skill_python",
+    "skill_name": "Python",
+    "frequency": 0.8,
+    "required_level": 2,
+    "snapshot_date": "2026-03-01"
+  },
+  {
+    "role": "MLOps Engineer",
+    "skill_id": "skill_cicd",
+    "skill_name": "CI/CD",
+    "frequency": 0.733,
+    "required_level": 2,
+    "snapshot_date": "2026-03-01"
+  },
+  {
+    "role": "MLOps Engineer",
+    "skill_id": "skill_aws",
+    "skill_name": "AWS",
+    "frequency": 0.733,
+    "required_level": 2,
+    "snapshot_date": "2026-03-01"
+  },
+  {
+    "role": "MLOps Engineer",
+    "skill_id": "skill_airflow",
+    "skill_name": "Airflow",
+    "frequency": 0.667,
+    "required_level": 2,
+    "snapshot_date": "2026-03-01"
+  },
+  {
+    "role": "MLOps Engineer",
+    "skill_id": "skill_mlflow",
+    "skill_name": "MLflow",
+    "frequency": 0.6,
+    "required_level": 2,
+    "snapshot_date": "2026-03-01"
+  },
+  {
+    "role": "MLOps Engineer",
+    "skill_id": "skill_docker",
+    "skill_name": "Docker",
+    "frequency": 0.6,
+    "required_level": 2,
+    "snapshot_date": "2026-03-01"
+  },
+  {
+    "role": "DevOps Engineer",
+    "skill_id": "skill_kubernetes",
+    "skill_name": "Kubernetes",
+    "frequency": 0.8,
+    "required_level": 2,
+    "snapshot_date": "2026-03-01"
+  },
+  {
+    "role": "DevOps Engineer",
+    "skill_id": "skill_ansible",
+    "skill_name": "Ansible",
+    "frequency": 0.733,
+    "required_level": 2,
+    "snapshot_date": "2026-03-01"
+  },
+  {
+    "role": "DevOps Engineer",
+    "skill_id": "skill_cicd",
+    "skill_name": "CI/CD",
+    "frequency": 0.667,
+    "required_level": 2,
+    "snapshot_date": "2026-03-01"
+  },
+  {
+    "role": "DevOps Engineer",
+    "skill_id": "skill_jenkins",
+    "skill_name": "Jenkins",
+    "frequency": 0.6,
+    "required_level": 2,
+    "snapshot_date": "2026-03-01"
+  },
+  {
+    "role": "DevOps Engineer",
+    "skill_id": "skill_terraform",
+    "skill_name": "Terraform",
+    "frequency": 0.6,
+    "required_level": 2,
+    "snapshot_date": "2026-03-01"
+  },
+  {
+    "role": "DevOps Engineer",
+    "skill_id": "skill_docker",
+    "skill_name": "Docker",
+    "frequency": 0.467,
+    "required_level": 2,
+    "snapshot_date": "2026-03-01"
+  },
+  {
+    "role": "DevOps Engineer",
+    "skill_id": "skill_aws",
+    "skill_name": "AWS",
+    "frequency": 0.467,
+    "required_level": 2,
+    "snapshot_date": "2026-03-01"
+  },
+  {
+    "role": "DevOps Engineer",
+    "skill_id": "skill_linux",
+    "skill_name": "Linux",
+    "frequency": 0.267,
+    "required_level": 2,
+    "snapshot_date": "2026-03-01"
+  },
+  {
+    "role": "Product Manager",
+    "skill_id": "skill_agile",
+    "skill_name": "Agile",
+    "frequency": 0.8,
+    "required_level": 2,
+    "snapshot_date": "2026-03-01"
+  },
+  {
+    "role": "Product Manager",
+    "skill_id": "skill_user_research",
+    "skill_name": "User Research",
+    "frequency": 0.733,
+    "required_level": 2,
+    "snapshot_date": "2026-03-01"
+  },
+  {
+    "role": "Product Manager",
+    "skill_id": "skill_roadmapping",
+    "skill_name": "Roadmapping",
+    "frequency": 0.733,
+    "required_level": 2,
+    "snapshot_date": "2026-03-01"
+  },
+  {
+    "role": "Product Manager",
+    "skill_id": "skill_sql",
+    "skill_name": "SQL",
+    "frequency": 0.667,
+    "required_level": 2,
+    "snapshot_date": "2026-03-01"
+  },
+  {
+    "role": "Product Manager",
+    "skill_id": "skill_product_strategy",
+    "skill_name": "Product Strategy",
+    "frequency": 0.6,
+    "required_level": 2,
+    "snapshot_date": "2026-03-01"
+  },
+  {
+    "role": "Product Manager",
+    "skill_id": "skill_a_b_testing",
+    "skill_name": "A/B Testing",
+    "frequency": 0.6,
+    "required_level": 2,
+    "snapshot_date": "2026-03-01"
+  },
+  {
+    "role": "Product Manager",
+    "skill_id": "skill_jira",
+    "skill_name": "JIRA",
+    "frequency": 0.4,
+    "required_level": 2,
+    "snapshot_date": "2026-03-01"
+  },
+  {
+    "role": "Frontend Developer",
+    "skill_id": "skill_typescript",
+    "skill_name": "TypeScript",
+    "frequency": 0.6,
+    "required_level": 2,
+    "snapshot_date": "2026-03-01"
+  },
+  {
+    "role": "Frontend Developer",
+    "skill_id": "skill_next",
+    "skill_name": "Next",
+    "frequency": 0.6,
+    "required_level": 2,
+    "snapshot_date": "2026-03-01"
+  },
+  {
+    "role": "Frontend Developer",
+    "skill_id": "skill_javascript",
+    "skill_name": "JavaScript",
+    "frequency": 0.533,
+    "required_level": 2,
+    "snapshot_date": "2026-03-01"
+  },
+  {
+    "role": "Frontend Developer",
+    "skill_id": "skill_figma",
+    "skill_name": "Figma",
+    "frequency": 0.533,
+    "required_level": 2,
+    "snapshot_date": "2026-03-01"
+  },
+  {
+    "role": "Frontend Developer",
+    "skill_id": "skill_html_css",
+    "skill_name": "HTML/CSS",
+    "frequency": 0.467,
+    "required_level": 2,
+    "snapshot_date": "2026-03-01"
+  },
+  {
+    "role": "Frontend Developer",
+    "skill_id": "skill_react",
+    "skill_name": "React",
+    "frequency": 0.267,
+    "required_level": 2,
+    "snapshot_date": "2026-03-01"
+  },
+  {
+    "role": "Frontend Developer",
+    "skill_id": "skill_tailwind",
+    "skill_name": "Tailwind CSS",
+    "frequency": 0.267,
+    "required_level": 2,
+    "snapshot_date": "2026-03-01"
+  },
+  {
+    "role": "Full-Stack Developer",
+    "skill_id": "skill_docker",
+    "skill_name": "Docker",
+    "frequency": 0.667,
+    "required_level": 2,
+    "snapshot_date": "2026-03-01"
+  },
+  {
+    "role": "Full-Stack Developer",
+    "skill_id": "skill_node",
+    "skill_name": "Node",
+    "frequency": 0.6,
+    "required_level": 2,
+    "snapshot_date": "2026-03-01"
+  },
+  {
+    "role": "Full-Stack Developer",
+    "skill_id": "skill_mongodb",
+    "skill_name": "MongoDB",
+    "frequency": 0.467,
+    "required_level": 2,
+    "snapshot_date": "2026-03-01"
+  },
+  {
+    "role": "Full-Stack Developer",
+    "skill_id": "skill_postgresql",
+    "skill_name": "PostgreSQL",
+    "frequency": 0.4,
+    "required_level": 2,
+    "snapshot_date": "2026-03-01"
+  },
+  {
+    "role": "Full-Stack Developer",
+    "skill_id": "skill_rest_apis",
+    "skill_name": "REST APIs",
+    "frequency": 0.4,
+    "required_level": 2,
+    "snapshot_date": "2026-03-01"
+  },
+  {
+    "role": "Full-Stack Developer",
+    "skill_id": "skill_python",
+    "skill_name": "Python",
+    "frequency": 0.4,
+    "required_level": 2,
+    "snapshot_date": "2026-03-01"
+  },
+  {
+    "role": "Full-Stack Developer",
+    "skill_id": "skill_react",
+    "skill_name": "React",
+    "frequency": 0.333,
+    "required_level": 2,
+    "snapshot_date": "2026-03-01"
+  },
+  {
+    "role": "Full-Stack Developer",
+    "skill_id": "skill_aws",
+    "skill_name": "AWS",
+    "frequency": 0.2,
+    "required_level": 2,
+    "snapshot_date": "2026-03-01"
+  },
+  {
+    "role": "Cloud Engineer",
+    "skill_id": "skill_azure",
+    "skill_name": "Azure",
+    "frequency": 0.933,
+    "required_level": 2,
+    "snapshot_date": "2026-03-01"
+  },
+  {
+    "role": "Cloud Engineer",
+    "skill_id": "skill_gcp",
+    "skill_name": "GCP",
+    "frequency": 0.733,
+    "required_level": 2,
+    "snapshot_date": "2026-03-01"
+  },
+  {
+    "role": "Cloud Engineer",
+    "skill_id": "skill_terraform",
+    "skill_name": "Terraform",
+    "frequency": 0.667,
+    "required_level": 2,
+    "snapshot_date": "2026-03-01"
+  },
+  {
+    "role": "Cloud Engineer",
+    "skill_id": "skill_docker",
+    "skill_name": "Docker",
+    "frequency": 0.667,
+    "required_level": 2,
+    "snapshot_date": "2026-03-01"
+  },
+  {
+    "role": "Cloud Engineer",
+    "skill_id": "skill_aws",
+    "skill_name": "AWS",
+    "frequency": 0.6,
+    "required_level": 2,
+    "snapshot_date": "2026-03-01"
+  },
+  {
+    "role": "Cloud Engineer",
+    "skill_id": "skill_linux",
+    "skill_name": "Linux",
+    "frequency": 0.6,
+    "required_level": 2,
+    "snapshot_date": "2026-03-01"
+  },
+  {
+    "role": "Cloud Engineer",
+    "skill_id": "skill_kubernetes",
+    "skill_name": "Kubernetes",
+    "frequency": 0.533,
+    "required_level": 2,
+    "snapshot_date": "2026-03-01"
+  },
+  {
+    "role": "React Developer",
+    "skill_id": "skill_next",
+    "skill_name": "Next",
+    "frequency": 0.867,
+    "required_level": 2,
+    "snapshot_date": "2026-03-01"
+  },
+  {
+    "role": "React Developer",
+    "skill_id": "skill_redux",
+    "skill_name": "Redux",
+    "frequency": 0.6,
+    "required_level": 2,
+    "snapshot_date": "2026-03-01"
+  },
+  {
+    "role": "React Developer",
+    "skill_id": "skill_javascript",
+    "skill_name": "JavaScript",
+    "frequency": 0.533,
+    "required_level": 2,
+    "snapshot_date": "2026-03-01"
+  },
+  {
+    "role": "React Developer",
+    "skill_id": "skill_typescript",
+    "skill_name": "TypeScript",
+    "frequency": 0.467,
+    "required_level": 2,
+    "snapshot_date": "2026-03-01"
+  },
+  {
+    "role": "React Developer",
+    "skill_id": "skill_html_css",
+    "skill_name": "HTML/CSS",
+    "frequency": 0.333,
+    "required_level": 2,
+    "snapshot_date": "2026-03-01"
+  },
+  {
+    "role": "React Developer",
+    "skill_id": "skill_react",
+    "skill_name": "React",
+    "frequency": 0.267,
+    "required_level": 2,
+    "snapshot_date": "2026-03-01"
+  },
+  {
+    "role": "Blockchain Developer",
+    "skill_id": "skill_web3",
+    "skill_name": "Web3",
+    "frequency": 0.8,
+    "required_level": 2,
+    "snapshot_date": "2026-03-01"
+  },
+  {
+    "role": "Blockchain Developer",
+    "skill_id": "skill_ethereum",
+    "skill_name": "Ethereum",
+    "frequency": 0.6,
+    "required_level": 2,
+    "snapshot_date": "2026-03-01"
+  },
+  {
+    "role": "Blockchain Developer",
+    "skill_id": "skill_solidity",
+    "skill_name": "Solidity",
+    "frequency": 0.6,
+    "required_level": 2,
+    "snapshot_date": "2026-03-01"
+  },
+  {
+    "role": "Blockchain Developer",
+    "skill_id": "skill_smart_contracts",
+    "skill_name": "Smart Contracts",
+    "frequency": 0.533,
+    "required_level": 2,
+    "snapshot_date": "2026-03-01"
+  },
+  {
+    "role": "Blockchain Developer",
+    "skill_id": "skill_python",
+    "skill_name": "Python",
+    "frequency": 0.4,
+    "required_level": 2,
+    "snapshot_date": "2026-03-01"
+  },
+  {
+    "role": "AI Engineer",
+    "skill_id": "skill_prompt_engineering",
+    "skill_name": "Prompt Engineering",
+    "frequency": 0.867,
+    "required_level": 2,
+    "snapshot_date": "2026-03-01"
+  },
+  {
+    "role": "AI Engineer",
+    "skill_id": "skill_rag",
+    "skill_name": "RAG",
+    "frequency": 0.8,
+    "required_level": 2,
+    "snapshot_date": "2026-03-01"
+  },
+  {
+    "role": "AI Engineer",
+    "skill_id": "skill_openai_api",
+    "skill_name": "OpenAI API",
+    "frequency": 0.733,
+    "required_level": 2,
+    "snapshot_date": "2026-03-01"
+  },
+  {
+    "role": "AI Engineer",
+    "skill_id": "skill_vector_dbs",
+    "skill_name": "Vector DBs",
+    "frequency": 0.6,
+    "required_level": 2,
+    "snapshot_date": "2026-03-01"
+  },
+  {
+    "role": "AI Engineer",
+    "skill_id": "skill_nlp",
+    "skill_name": "Nlp",
+    "frequency": 0.467,
+    "required_level": 2,
+    "snapshot_date": "2026-03-01"
+  },
+  {
+    "role": "AI Engineer",
+    "skill_id": "skill_langchain",
+    "skill_name": "LangChain",
+    "frequency": 0.4,
+    "required_level": 2,
+    "snapshot_date": "2026-03-01"
+  },
+  {
+    "role": "AI Engineer",
+    "skill_id": "skill_llms",
+    "skill_name": "LLMs",
+    "frequency": 0.4,
+    "required_level": 2,
+    "snapshot_date": "2026-03-01"
+  },
+  {
+    "role": "AI Engineer",
+    "skill_id": "skill_python",
+    "skill_name": "Python",
+    "frequency": 0.333,
+    "required_level": 2,
+    "snapshot_date": "2026-03-01"
+  },
+  {
+    "role": "Research Scientist",
+    "skill_id": "skill_deep_learning",
+    "skill_name": "Deep Learning",
+    "frequency": 0.733,
+    "required_level": 2,
+    "snapshot_date": "2026-03-01"
+  },
+  {
+    "role": "Research Scientist",
+    "skill_id": "skill_pytorch",
+    "skill_name": "PyTorch",
+    "frequency": 0.733,
+    "required_level": 2,
+    "snapshot_date": "2026-03-01"
+  },
+  {
+    "role": "Research Scientist",
+    "skill_id": "skill_statistics",
+    "skill_name": "Statistics",
+    "frequency": 0.733,
+    "required_level": 2,
+    "snapshot_date": "2026-03-01"
+  },
+  {
+    "role": "Research Scientist",
+    "skill_id": "skill_python",
+    "skill_name": "Python",
+    "frequency": 0.667,
+    "required_level": 2,
+    "snapshot_date": "2026-03-01"
+  },
+  {
+    "role": "Research Scientist",
+    "skill_id": "skill_r",
+    "skill_name": "R",
+    "frequency": 0.667,
+    "required_level": 2,
+    "snapshot_date": "2026-03-01"
+  },
+  {
+    "role": "Research Scientist",
+    "skill_id": "skill_publications",
+    "skill_name": "Publications",
+    "frequency": 0.6,
+    "required_level": 2,
+    "snapshot_date": "2026-03-01"
+  },
+  {
+    "role": "Research Scientist",
+    "skill_id": "skill_nlp",
+    "skill_name": "Nlp",
+    "frequency": 0.467,
+    "required_level": 2,
+    "snapshot_date": "2026-03-01"
+  },
+  {
+    "role": "iOS Developer",
+    "skill_id": "skill_core_data",
+    "skill_name": "Core Data",
+    "frequency": 0.867,
+    "required_level": 2,
+    "snapshot_date": "2026-03-01"
+  },
+  {
+    "role": "iOS Developer",
+    "skill_id": "skill_firebase",
+    "skill_name": "Firebase",
+    "frequency": 0.867,
+    "required_level": 2,
+    "snapshot_date": "2026-03-01"
+  },
+  {
+    "role": "iOS Developer",
+    "skill_id": "skill_rest_apis",
+    "skill_name": "REST APIs",
+    "frequency": 0.8,
+    "required_level": 2,
+    "snapshot_date": "2026-03-01"
+  },
+  {
+    "role": "iOS Developer",
+    "skill_id": "skill_swift",
+    "skill_name": "Swift",
+    "frequency": 0.8,
+    "required_level": 2,
+    "snapshot_date": "2026-03-01"
+  },
+  {
+    "role": "iOS Developer",
+    "skill_id": "skill_xcode",
+    "skill_name": "Xcode",
+    "frequency": 0.733,
+    "required_level": 2,
+    "snapshot_date": "2026-03-01"
+  },
+  {
+    "role": "iOS Developer",
+    "skill_id": "skill_swiftui",
+    "skill_name": "SwiftUI",
+    "frequency": 0.733,
+    "required_level": 2,
+    "snapshot_date": "2026-03-01"
+  },
+  {
+    "role": "NLP Engineer",
+    "skill_id": "skill_huggingface",
+    "skill_name": "HuggingFace",
+    "frequency": 1.0,
+    "required_level": 2,
+    "snapshot_date": "2026-03-01"
+  },
+  {
+    "role": "NLP Engineer",
+    "skill_id": "skill_bert",
+    "skill_name": "BERT",
+    "frequency": 0.733,
+    "required_level": 2,
+    "snapshot_date": "2026-03-01"
+  },
+  {
+    "role": "NLP Engineer",
+    "skill_id": "skill_llms",
+    "skill_name": "LLMs",
+    "frequency": 0.733,
+    "required_level": 2,
+    "snapshot_date": "2026-03-01"
+  },
+  {
+    "role": "NLP Engineer",
+    "skill_id": "skill_tensorflow",
+    "skill_name": "TensorFlow",
+    "frequency": 0.667,
+    "required_level": 2,
+    "snapshot_date": "2026-03-01"
+  },
+  {
+    "role": "NLP Engineer",
+    "skill_id": "skill_python",
+    "skill_name": "Python",
+    "frequency": 0.6,
+    "required_level": 2,
+    "snapshot_date": "2026-03-01"
+  },
+  {
+    "role": "NLP Engineer",
+    "skill_id": "skill_spacy",
+    "skill_name": "SpaCy",
+    "frequency": 0.533,
+    "required_level": 2,
+    "snapshot_date": "2026-03-01"
+  },
+  {
+    "role": "Data Scientist",
+    "skill_id": "skill_deep_learning",
+    "skill_name": "Deep Learning",
+    "frequency": 0.8,
+    "required_level": 2,
+    "snapshot_date": "2026-03-01"
+  },
+  {
+    "role": "Data Scientist",
+    "skill_id": "skill_nlp",
+    "skill_name": "Nlp",
+    "frequency": 0.6,
+    "required_level": 2,
+    "snapshot_date": "2026-03-01"
+  },
+  {
+    "role": "Data Scientist",
+    "skill_id": "skill_scikit_learn",
+    "skill_name": "Scikit-learn",
+    "frequency": 0.6,
+    "required_level": 2,
+    "snapshot_date": "2026-03-01"
+  },
+  {
+    "role": "Data Scientist",
+    "skill_id": "skill_ml_fundamentals",
+    "skill_name": "Machine Learning Fundamentals",
+    "frequency": 0.467,
+    "required_level": 2,
+    "snapshot_date": "2026-03-01"
+  },
+  {
+    "role": "Data Scientist",
+    "skill_id": "skill_tensorflow",
+    "skill_name": "TensorFlow",
+    "frequency": 0.467,
+    "required_level": 2,
+    "snapshot_date": "2026-03-01"
+  },
+  {
+    "role": "Data Scientist",
+    "skill_id": "skill_tableau",
+    "skill_name": "Tableau",
+    "frequency": 0.4,
+    "required_level": 2,
+    "snapshot_date": "2026-03-01"
+  },
+  {
+    "role": "Data Scientist",
+    "skill_id": "skill_sql",
+    "skill_name": "SQL",
+    "frequency": 0.4,
+    "required_level": 2,
+    "snapshot_date": "2026-03-01"
+  },
+  {
+    "role": "Data Scientist",
+    "skill_id": "skill_statistics",
+    "skill_name": "Statistics",
+    "frequency": 0.333,
+    "required_level": 2,
+    "snapshot_date": "2026-03-01"
+  },
+  {
+    "role": "Data Scientist",
+    "skill_id": "skill_python",
+    "skill_name": "Python",
+    "frequency": 0.333,
+    "required_level": 2,
+    "snapshot_date": "2026-03-01"
+  },
+  {
+    "role": "Data Scientist",
+    "skill_id": "skill_pandas",
+    "skill_name": "Pandas",
+    "frequency": 0.267,
+    "required_level": 2,
+    "snapshot_date": "2026-03-01"
+  },
+  {
+    "role": "Engineering Manager",
+    "skill_id": "skill_hiring",
+    "skill_name": "Hiring",
+    "frequency": 0.933,
+    "required_level": 2,
+    "snapshot_date": "2026-03-01"
+  },
+  {
+    "role": "Engineering Manager",
+    "skill_id": "skill_system_design",
+    "skill_name": "System Design",
+    "frequency": 0.8,
+    "required_level": 2,
+    "snapshot_date": "2026-03-01"
+  },
+  {
+    "role": "Engineering Manager",
+    "skill_id": "skill_okrs",
+    "skill_name": "OKRs",
+    "frequency": 0.8,
+    "required_level": 2,
+    "snapshot_date": "2026-03-01"
+  },
+  {
+    "role": "Engineering Manager",
+    "skill_id": "skill_agile",
+    "skill_name": "Agile",
+    "frequency": 0.8,
+    "required_level": 2,
+    "snapshot_date": "2026-03-01"
+  },
+  {
+    "role": "Engineering Manager",
+    "skill_id": "skill_people_management",
+    "skill_name": "People Management",
+    "frequency": 0.8,
+    "required_level": 2,
+    "snapshot_date": "2026-03-01"
+  },
+  {
+    "role": "Engineering Manager",
+    "skill_id": "skill_roadmapping",
+    "skill_name": "Roadmapping",
+    "frequency": 0.667,
+    "required_level": 2,
+    "snapshot_date": "2026-03-01"
+  }
+]

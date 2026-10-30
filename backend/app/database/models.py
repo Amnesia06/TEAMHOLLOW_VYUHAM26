@@ -1,24 +1,15 @@
 """
-Database model definitions and table names for Supabase / PostgreSQL.
+Database table names and model definitions matching README Section 16.
 """
-
-from typing import Dict, Any
 
 TABLES = {
     "USERS": "users",
+    "SKILLS_TAXONOMY": "skills_taxonomy",
+    "JOB_POSTINGS": "job_postings",
+    "ROLE_REQUIREMENTS": "role_requirements",
+    "COURSES": "courses",
     "PROFILES": "profiles",
-    "CONVERSATIONS": "conversations",
-    "MESSAGES": "messages",
-    "SKILLS": "skills",
-    "USER_SKILLS": "user_skills",
-    "SKILL_EVIDENCE": "skill_evidence",
-    "CAREER_ROLES": "career_roles",
-    "JOB_REQUIREMENTS": "job_requirements",
-    "CAREER_RECOMMENDATIONS": "career_recommendations",
-    "SKILL_GAPS": "skill_gaps",
     "ROADMAPS": "roadmaps",
-    "ROADMAP_MILESTONES": "roadmap_milestones",
-    "LEARNING_RESOURCES": "learning_resources",
-    "USER_RESOURCE_PROGRESS": "user_resource_progress",
-    "ASSESSMENTS": "assessments"
+    "ROADMAP_PROGRESS": "roadmap_progress",
+    "MARKET_SNAPSHOTS": "market_snapshots"
 }

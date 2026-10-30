@@ -1,81 +1,49 @@
-﻿"""
-Integration tests for the 5 specialized AI agents in demo mode.
+"""
+Unit tests for specialized intelligence agents using fake clients (labeled as fake-client test).
 """
 
 import pytest
 from intelligence.agents.profile_agent import ProfileAgent
-from intelligence.agents.skill_agent import SkillIntelligenceAgent
 from intelligence.agents.market_agent import MarketIntelligenceAgent
-from intelligence.agents.roadmap_agent import RoadmapOptimizationAgent
-from intelligence.agents.coach_agent import LearningCoachAgent
+from intelligence.fakes import FakeTaxonomyLookup, FakeJobPostingSearch
+
+
+class FakeLLMClient:
+    async def generate(self, prompt: str, system_prompt: str = "") -> str:
+        return """{
+            "skills": [
+                {"name": "TypeScript", "level": 2},
+                {"name": "React", "level": 2}
+            ],
+            "unmapped_skills": ["InternalCompanyTool"],
+            "years_of_experience": 3.0,
+            "years_per_skill": {"TypeScript": 2.0},
+            "domain": "Full-Stack Web Development"
+        }"""
 
 
 @pytest.mark.asyncio
-async def test_profile_agent_extraction():
-    agent = ProfileAgent()
-    state = {
-        "messages": [
-            {"role": "user", "content": "I'm a computer science graduate interested in AI and robotics. I know Python and C++, and I built an autonomous GPS rover project."}
-        ]
-    }
-    result = await agent.run(state)
-    profile = result["profile"]
+async def test_m1_profiler_agent_fake_client():
+    """fake-client test: Profiler extraction with canonical taxonomy mapping."""
+    fake_llm = FakeLLMClient()
+    fake_tax = FakeTaxonomyLookup()
+    agent = ProfileAgent(llm_client=fake_llm, taxonomy=fake_tax)
 
-    assert "skills" in profile
-    assert len(profile["skills"]) >= 2
-    skills_names = [s["name"] for s in profile["skills"]]
-    assert "Python" in skills_names
-    assert "C++" in skills_names
-    assert profile["completeness"] > 0
+    res = await agent.run({"resume_text": "Software developer with 3 years experience in TypeScript and React."})
+    profile = res["profile"]
+
+    assert len(profile.skills) == 2
+    assert profile.skills[0].skill_id == "skill_typescript"
+    assert "InternalCompanyTool" in profile.unmapped_skills
+    assert profile.years_of_experience == 3.0
 
 
 @pytest.mark.asyncio
-async def test_skill_intelligence_transferable():
-    profile_agent = ProfileAgent()
-    skill_agent = SkillIntelligenceAgent()
+async def test_m2_market_intelligence_cached_postings_fake_client():
+    """fake-client test: Market intelligence retrieval for common role."""
+    fake_search = FakeJobPostingSearch()
+    agent = MarketIntelligenceAgent(posting_search=fake_search)
 
-    prof_res = await profile_agent.run({"messages": []})
-    skill_res = await skill_agent.run({"profile": prof_res["profile"]})
-
-    transferable = skill_res["transferable_skills"]
-    assert len(transferable) > 0
-    assert any(t["skill"] in ["Mathematical Optimization", "Graph Algorithms", "Computer Architecture"] for t in transferable)
-
-
-@pytest.mark.asyncio
-async def test_market_agent_recommendations():
-    market_agent = MarketIntelligenceAgent()
-    user_skills = [
-        {"name": "Python", "proficiency": "intermediate"},
-        {"name": "C++", "proficiency": "intermediate"}
-    ]
-    transferable = [
-        {"skill": "Graph Algorithms", "confidence": "high"}
-    ]
-
-    recs = market_agent.generate_recommendations(user_skills, transferable)
-    assert len(recs) > 0
-    top_rec = recs[0]
-    assert "match_score" in top_rec
-    assert "match_explanation" in top_rec
-    assert len(top_rec["matching_skills"]) > 0
-
-
-@pytest.mark.asyncio
-async def test_roadmap_agent_generation():
-    roadmap_agent = RoadmapOptimizationAgent()
-    state = {
-        "target_role": "Robotics Software Engineer",
-        "constraints": {"hours_per_week": 5, "monthly_budget": 0},
-        "profile": {
-            "skills": [{"name": "Python"}, {"name": "C++"}]
-        },
-        "skill_gaps": [{"skill": "ROS / ROS 2", "importance": "required"}]
-    }
-
-    result = await roadmap_agent.run(state)
-    assert "roadmap" in result
-    roadmap = result["roadmap"]
-    assert roadmap["total_estimated_cost"] == 0
-    assert len(roadmap["milestones"]) > 0
-
+    res = await agent.get_role_requirements(role="Full-Stack Developer")
+    assert res["source"] == "cache"
+    assert res["posting_count"] >= 5

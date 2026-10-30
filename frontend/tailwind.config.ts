@@ -2,10 +2,8 @@ import type { Config } from "tailwindcss";
 
 const config: Config = {
   content: [
-    "./pages/**/*.{js,ts,jsx,tsx,mdx}",
-    "./components/**/*.{js,ts,jsx,tsx,mdx}",
-    "./features/**/*.{js,ts,jsx,tsx,mdx}",
-    "./app/**/*.{js,ts,jsx,tsx,mdx}",
+    "./index.html",
+    "./src/**/*.{js,ts,jsx,tsx}",
   ],
   theme: {
     extend: {
@@ -42,26 +40,12 @@ const config: Config = {
         }
       },
       fontFamily: {
-        sans: ["var(--font-inter)", "Inter", "sans-serif"],
+        sans: ["Inter", "-apple-system", "BlinkMacSystemFont", "Segoe UI", "sans-serif"],
       },
       boxShadow: {
         card: "0 1px 3px 0 rgba(0, 0, 0, 0.05), 0 1px 2px 0 rgba(0, 0, 0, 0.02)",
         float: "0 10px 30px -5px rgba(116, 104, 245, 0.12), 0 4px 6px -2px rgba(0, 0, 0, 0.02)",
         subtle: "0 4px 20px -2px rgba(23, 25, 35, 0.04)",
-      },
-      keyframes: {
-        fadeIn: {
-          "0%": { opacity: "0", transform: "translateY(6px)" },
-          "100%": { opacity: "1", transform: "translateY(0)" },
-        },
-        pulseSlow: {
-          "0%, 100%": { opacity: "1" },
-          "50%": { opacity: "0.5" },
-        }
-      },
-      animation: {
-        fadeIn: "fadeIn 0.3s ease-out forwards",
-        pulseSlow: "pulseSlow 2s cubic-bezier(0.4, 0, 0.6, 1) infinite",
       }
     },
   },
