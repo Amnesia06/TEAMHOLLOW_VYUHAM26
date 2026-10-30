@@ -142,8 +142,7 @@ export const CATALOG_COURSES: Course[] = [
       "skill_linear_algebra"
     ],
     "prerequisite_skills": [
-      "skill_python",
-      "skill_linear_algebra"
+      "skill_python"
     ],
     "verified": false
   },
@@ -546,6 +545,1477 @@ export const CATALOG_COURSES: Course[] = [
     "prerequisite_skills": [
       "skill_cpp"
     ],
-    "verified": false
+    "verified": true
+  },
+  {
+    "id": "res_llm_01",
+    "title": "Generative AI with Large Language Models",
+    "platform": "Coursera / DeepLearning.AI",
+    "url": "https://www.coursera.org/learn/generative-ai-with-llms",
+    "cost": 0.0,
+    "currency": "USD",
+    "hours": 12.0,
+    "level": 2,
+    "skills_covered": [
+      "skill_llms"
+    ],
+    "prerequisite_skills": [
+      "skill_deep_learning",
+      "skill_python"
+    ],
+    "verified": true
+  },
+  {
+    "id": "res_js_01",
+    "title": "JavaScript Algorithms and Data Structures",
+    "platform": "freeCodeCamp",
+    "url": "https://www.freecodecamp.org/learn/javascript-algorithms-and-data-structures/",
+    "cost": 0.0,
+    "currency": "USD",
+    "hours": 25.0,
+    "level": 1,
+    "skills_covered": [
+      "skill_javascript"
+    ],
+    "prerequisite_skills": [],
+    "verified": true
+  },
+  {
+    "id": "res_web_01",
+    "title": "Responsive Web Design (HTML5 & CSS3)",
+    "platform": "freeCodeCamp",
+    "url": "https://www.freecodecamp.org/learn/2022/responsive-web-design/",
+    "cost": 0.0,
+    "currency": "USD",
+    "hours": 15.0,
+    "level": 1,
+    "skills_covered": [
+      "skill_html_css"
+    ],
+    "prerequisite_skills": [],
+    "verified": true
+  },
+  {
+    "id": "res_sd_01",
+    "title": "System Design Primer & Scalable Architecture",
+    "platform": "GitHub / Donne Martin",
+    "url": "https://github.com/donnemartin/system-design-primer",
+    "cost": 0.0,
+    "currency": "USD",
+    "hours": 15.0,
+    "level": 2,
+    "skills_covered": [
+      "skill_system_design"
+    ],
+    "prerequisite_skills": [
+      "skill_rest_apis"
+    ],
+    "verified": true
+  },
+  {
+    "id": "res_tw_01",
+    "title": "Modern Responsive Layouts with Tailwind CSS",
+    "platform": "Tailwind Labs",
+    "url": "https://tailwindcss.com/docs",
+    "cost": 0.0,
+    "currency": "USD",
+    "hours": 6.0,
+    "level": 1,
+    "skills_covered": [
+      "skill_tailwind"
+    ],
+    "prerequisite_skills": [
+      "skill_html_css"
+    ],
+    "verified": true
+  },
+  {
+    "id": "res_biz_01",
+    "title": "Strategic Management",
+    "platform": "SWAYAM / IIM Bangalore",
+    "url": "https://swayam.gov.in/explorer?category=Management",
+    "cost": 0.0,
+    "currency": "INR",
+    "hours": 30.0,
+    "level": 2,
+    "skills_covered": [
+      "skill_strategic_management"
+    ],
+    "prerequisite_skills": [],
+    "verified": true
+  },
+  {
+    "id": "res_biz_02",
+    "title": "Operations Management",
+    "platform": "NPTEL / IIT Roorkee",
+    "url": "https://nptel.ac.in/courses/110107141",
+    "cost": 0.0,
+    "currency": "INR",
+    "hours": 30.0,
+    "level": 2,
+    "skills_covered": [
+      "skill_operations_management"
+    ],
+    "prerequisite_skills": [],
+    "verified": true
+  },
+  {
+    "id": "res_biz_03",
+    "title": "Financial Accounting and Analysis",
+    "platform": "SWAYAM / IIT Kharagpur",
+    "url": "https://swayam.gov.in/explorer?category=Commerce",
+    "cost": 0.0,
+    "currency": "INR",
+    "hours": 25.0,
+    "level": 1,
+    "skills_covered": [
+      "skill_financial_accounting"
+    ],
+    "prerequisite_skills": [],
+    "verified": true
+  },
+  {
+    "id": "res_biz_04",
+    "title": "Leadership and Organizational Behavior",
+    "platform": "Wharton / Coursera (Free Audit)",
+    "url": "https://www.coursera.org/learn/wharton-leadership",
+    "cost": 0.0,
+    "currency": "INR",
+    "hours": 20.0,
+    "level": 2,
+    "skills_covered": [
+      "skill_organizational_leadership"
+    ],
+    "prerequisite_skills": [],
+    "verified": true
+  },
+  {
+    "id": "res_biz_05",
+    "title": "Business Analytics for Decision Making",
+    "platform": "NPTEL / IIT Madras",
+    "url": "https://nptel.ac.in/courses/110106050",
+    "cost": 0.0,
+    "currency": "INR",
+    "hours": 30.0,
+    "level": 2,
+    "skills_covered": [
+      "skill_business_analytics"
+    ],
+    "prerequisite_skills": [],
+    "verified": true
+  },
+  {
+    "id": "res_biz_06",
+    "title": "Product Strategy: Lifecycle & Roadmapping",
+    "platform": "Northwestern / Coursera",
+    "url": "https://www.coursera.org/learn/product-strategy",
+    "cost": 0.0,
+    "currency": "INR",
+    "hours": 18.0,
+    "level": 2,
+    "skills_covered": [
+      "skill_product_strategy"
+    ],
+    "prerequisite_skills": [],
+    "verified": true
+  },
+  {
+    "id": "res_biz_07",
+    "title": "Principles of Management",
+    "platform": "MIT OpenCourseWare",
+    "url": "https://ocw.mit.edu/courses/sloan-school-of-management/",
+    "cost": 0.0,
+    "currency": "INR",
+    "hours": 24.0,
+    "level": 1,
+    "skills_covered": [
+      "skill_strategic_management",
+      "skill_organizational_leadership"
+    ],
+    "prerequisite_skills": [],
+    "verified": true
+  },
+  {
+    "id": "res_biz_08",
+    "title": "Project Management & Agile Practice",
+    "platform": "Google / Coursera (Free Audit)",
+    "url": "https://www.coursera.org/learn/project-management-foundations",
+    "cost": 0.0,
+    "currency": "INR",
+    "hours": 22.0,
+    "level": 1,
+    "skills_covered": [
+      "skill_project_management"
+    ],
+    "prerequisite_skills": [],
+    "verified": true
+  },
+  {
+    "id": "res_biz_09",
+    "title": "Marketing Management",
+    "platform": "SWAYAM / IIT Kanpur",
+    "url": "https://swayam.gov.in/explorer?category=Management",
+    "cost": 0.0,
+    "currency": "INR",
+    "hours": 25.0,
+    "level": 1,
+    "skills_covered": [
+      "skill_marketing_management"
+    ],
+    "prerequisite_skills": [],
+    "verified": true
+  },
+  {
+    "id": "res_music_01",
+    "title": "Introduction to Music Theory & Ear Training",
+    "platform": "MIT OpenCourseWare",
+    "url": "https://ocw.mit.edu/courses/21m-051-fundamentals-of-music-fall-2011/",
+    "cost": 0.0,
+    "currency": "INR",
+    "hours": 18.0,
+    "level": 1,
+    "skills_covered": [
+      "skill_music_theory"
+    ],
+    "prerequisite_skills": [],
+    "verified": true
+  },
+  {
+    "id": "res_music_02",
+    "title": "Music Theory Comprehensive: Scales, Keys & Chords",
+    "platform": "edX / Berklee",
+    "url": "https://www.edx.org/learn/music-theory",
+    "cost": 0.0,
+    "currency": "INR",
+    "hours": 20.0,
+    "level": 1,
+    "skills_covered": [
+      "skill_music_theory"
+    ],
+    "prerequisite_skills": [],
+    "verified": true
+  },
+  {
+    "id": "res_music_03",
+    "title": "Foundations of Musical Composition",
+    "platform": "SWAYAM / IIT Roorkee",
+    "url": "https://swayam.gov.in/explorer?category=Humanities",
+    "cost": 0.0,
+    "currency": "INR",
+    "hours": 24.0,
+    "level": 1,
+    "skills_covered": [
+      "skill_music_theory",
+      "skill_instrument_technique"
+    ],
+    "prerequisite_skills": [],
+    "verified": true
+  },
+  {
+    "id": "res_music_04",
+    "title": "Audio Production & DAW Workstation Fundamentals",
+    "platform": "Coursera (Free Audit)",
+    "url": "https://www.coursera.org/learn/music-production",
+    "cost": 0.0,
+    "currency": "INR",
+    "hours": 16.0,
+    "level": 1,
+    "skills_covered": [
+      "skill_audio_production",
+      "skill_sound_design"
+    ],
+    "prerequisite_skills": [],
+    "verified": true
+  },
+  {
+    "id": "res_sec_01",
+    "title": "Foundations of Cybersecurity & Defense",
+    "platform": "Coursera / Google",
+    "url": "https://www.coursera.org/professional-certificates/google-cybersecurity",
+    "cost": 0.0,
+    "currency": "USD",
+    "hours": 20.0,
+    "level": 1,
+    "skills_covered": [
+      "skill_network_security"
+    ],
+    "prerequisite_skills": [],
+    "verified": true
+  },
+  {
+    "id": "res_sec_02",
+    "title": "Practical Ethical Hacking & Penetration Testing",
+    "platform": "freeCodeCamp / TCM Security",
+    "url": "https://www.freecodecamp.org/news/practical-ethical-hacking-course-for-beginners/",
+    "cost": 0.0,
+    "currency": "USD",
+    "hours": 25.0,
+    "level": 2,
+    "skills_covered": [
+      "skill_penetration_testing",
+      "skill_ethical_hacking"
+    ],
+    "prerequisite_skills": [
+      "skill_network_security"
+    ],
+    "verified": true
+  },
+  {
+    "id": "res_sec_03",
+    "title": "SIEM & SOC Analyst Hands-On Fundamentals",
+    "platform": "LetsDefend / Coursera",
+    "url": "https://www.coursera.org/learn/security-information-event-management",
+    "cost": 0.0,
+    "currency": "USD",
+    "hours": 18.0,
+    "level": 2,
+    "skills_covered": [
+      "skill_siem"
+    ],
+    "prerequisite_skills": [
+      "skill_network_security"
+    ],
+    "verified": true
+  },
+  {
+    "id": "res_de_01",
+    "title": "Apache Kafka Distributed Event Streaming",
+    "platform": "Confluent / freeCodeCamp",
+    "url": "https://www.freecodecamp.org/news/apache-kafka-handbook/",
+    "cost": 0.0,
+    "currency": "USD",
+    "hours": 15.0,
+    "level": 2,
+    "skills_covered": [
+      "skill_kafka"
+    ],
+    "prerequisite_skills": [
+      "skill_python"
+    ],
+    "verified": true
+  },
+  {
+    "id": "res_de_02",
+    "title": "dbt (Data Build Tool) Fundamentals & Analytics Engineering",
+    "platform": "dbt Labs",
+    "url": "https://courses.getdbt.com/courses/fundamentals",
+    "cost": 0.0,
+    "currency": "USD",
+    "hours": 12.0,
+    "level": 2,
+    "skills_covered": [
+      "skill_dbt"
+    ],
+    "prerequisite_skills": [
+      "skill_sql"
+    ],
+    "verified": true
+  },
+  {
+    "id": "res_de_03",
+    "title": "ETL Pipelines & Data Processing Architecture",
+    "platform": "freeCodeCamp",
+    "url": "https://www.freecodecamp.org/news/etl-data-pipelines-guide/",
+    "cost": 0.0,
+    "currency": "USD",
+    "hours": 18.0,
+    "level": 2,
+    "skills_covered": [
+      "skill_etl"
+    ],
+    "prerequisite_skills": [
+      "skill_sql",
+      "skill_python"
+    ],
+    "verified": true
+  },
+  {
+    "id": "res_ai_01",
+    "title": "LangChain & Vector DBs: Building Production RAG Apps",
+    "platform": "DeepLearning.AI",
+    "url": "https://www.deeplearning.ai/short-courses/langchain-for-llm-application-development/",
+    "cost": 0.0,
+    "currency": "USD",
+    "hours": 14.0,
+    "level": 2,
+    "skills_covered": [
+      "skill_langchain",
+      "skill_rag",
+      "skill_vector_dbs"
+    ],
+    "prerequisite_skills": [
+      "skill_python"
+    ],
+    "verified": true
+  },
+  {
+    "id": "res_ai_02",
+    "title": "Prompt Engineering & OpenAI API Integration",
+    "platform": "DeepLearning.AI",
+    "url": "https://www.deeplearning.ai/short-courses/chatgpt-prompt-engineering-for-developers/",
+    "cost": 0.0,
+    "currency": "USD",
+    "hours": 10.0,
+    "level": 1,
+    "skills_covered": [
+      "skill_prompt_engineering",
+      "skill_openai_api"
+    ],
+    "prerequisite_skills": [
+      "skill_python"
+    ],
+    "verified": true
+  },
+  {
+    "id": "res_ai_03",
+    "title": "Computer Vision with OpenCV and YOLO",
+    "platform": "freeCodeCamp",
+    "url": "https://www.freecodecamp.org/news/opencv-and-yolo-object-detection-tutorial/",
+    "cost": 0.0,
+    "currency": "USD",
+    "hours": 18.0,
+    "level": 2,
+    "skills_covered": [
+      "skill_opencv",
+      "skill_yolo"
+    ],
+    "prerequisite_skills": [
+      "skill_python"
+    ],
+    "verified": true
+  },
+  {
+    "id": "res_ai_04",
+    "title": "Hugging Face Transformers & BERT for NLP",
+    "platform": "Hugging Face / Coursera",
+    "url": "https://huggingface.co/learn/nlp-course/chapter1/1",
+    "cost": 0.0,
+    "currency": "USD",
+    "hours": 20.0,
+    "level": 2,
+    "skills_covered": [
+      "skill_huggingface",
+      "skill_bert",
+      "skill_nlp",
+      "skill_spacy"
+    ],
+    "prerequisite_skills": [
+      "skill_python"
+    ],
+    "verified": true
+  },
+  {
+    "id": "res_ai_05",
+    "title": "Deep Learning & Neural Networks with TensorFlow",
+    "platform": "Coursera / DeepLearning.AI",
+    "url": "https://www.coursera.org/specializations/deep-learning",
+    "cost": 0.0,
+    "currency": "USD",
+    "hours": 30.0,
+    "level": 2,
+    "skills_covered": [
+      "skill_deep_learning",
+      "skill_tensorflow"
+    ],
+    "prerequisite_skills": [
+      "skill_python",
+      "skill_ml_fundamentals"
+    ],
+    "verified": true
+  },
+  {
+    "id": "res_mob_01",
+    "title": "Android App Development with Kotlin & Jetpack Compose",
+    "platform": "Google Developers",
+    "url": "https://developer.android.com/courses/android-basics-compose/course",
+    "cost": 0.0,
+    "currency": "USD",
+    "hours": 30.0,
+    "level": 2,
+    "skills_covered": [
+      "skill_android_sdk",
+      "skill_kotlin",
+      "skill_jetpack_compose"
+    ],
+    "prerequisite_skills": [
+      "skill_java"
+    ],
+    "verified": true
+  },
+  {
+    "id": "res_mob_02",
+    "title": "iOS Development with Swift and SwiftUI",
+    "platform": "Apple Developer / freeCodeCamp",
+    "url": "https://developer.apple.com/tutorials/swiftui",
+    "cost": 0.0,
+    "currency": "USD",
+    "hours": 30.0,
+    "level": 2,
+    "skills_covered": [
+      "skill_swift",
+      "skill_swiftui",
+      "skill_xcode",
+      "skill_core_data"
+    ],
+    "prerequisite_skills": [],
+    "verified": true
+  },
+  {
+    "id": "res_be_01",
+    "title": "FastAPI & Async Python High-Performance Services",
+    "platform": "freeCodeCamp",
+    "url": "https://www.freecodecamp.org/news/fastapi-quickstart/",
+    "cost": 0.0,
+    "currency": "USD",
+    "hours": 12.0,
+    "level": 2,
+    "skills_covered": [
+      "skill_fastapi"
+    ],
+    "prerequisite_skills": [
+      "skill_python"
+    ],
+    "verified": true
+  },
+  {
+    "id": "res_be_02",
+    "title": "Java Spring Boot & Microservices Architecture",
+    "platform": "freeCodeCamp / Oracle",
+    "url": "https://www.freecodecamp.org/news/spring-boot-and-microservices-course/",
+    "cost": 0.0,
+    "currency": "USD",
+    "hours": 28.0,
+    "level": 2,
+    "skills_covered": [
+      "skill_java",
+      "skill_spring_boot",
+      "skill_microservices",
+      "skill_hibernate",
+      "skill_maven"
+    ],
+    "prerequisite_skills": [],
+    "verified": true
+  },
+  {
+    "id": "res_be_03",
+    "title": "MongoDB & Redis for Distributed Applications",
+    "platform": "MongoDB University",
+    "url": "https://learn.mongodb.com/",
+    "cost": 0.0,
+    "currency": "USD",
+    "hours": 14.0,
+    "level": 2,
+    "skills_covered": [
+      "skill_mongodb",
+      "skill_redis"
+    ],
+    "prerequisite_skills": [],
+    "verified": true
+  },
+  {
+    "id": "res_qa_01",
+    "title": "Automated Software Testing with Selenium & Postman",
+    "platform": "freeCodeCamp",
+    "url": "https://www.freecodecamp.org/news/api-testing-with-postman/",
+    "cost": 0.0,
+    "currency": "USD",
+    "hours": 16.0,
+    "level": 2,
+    "skills_covered": [
+      "skill_selenium",
+      "skill_postman",
+      "skill_api_testing",
+      "skill_manual_testing"
+    ],
+    "prerequisite_skills": [],
+    "verified": true
+  },
+  {
+    "id": "res_pm_01",
+    "title": "Product Strategy, Roadmapping & User Research",
+    "platform": "Coursera / Google",
+    "url": "https://www.coursera.org/professional-certificates/google-project-management",
+    "cost": 0.0,
+    "currency": "USD",
+    "hours": 20.0,
+    "level": 2,
+    "skills_covered": [
+      "skill_product_strategy",
+      "skill_roadmapping",
+      "skill_user_research",
+      "skill_a_b_testing",
+      "skill_jira",
+      "skill_agile"
+    ],
+    "prerequisite_skills": [],
+    "verified": true
+  },
+  {
+    "id": "res_ux_01",
+    "title": "UI/UX Design Mastery with Figma & Wireframing",
+    "platform": "freeCodeCamp",
+    "url": "https://www.freecodecamp.org/news/ui-ux-design-tutorial-from-scratch/",
+    "cost": 0.0,
+    "currency": "USD",
+    "hours": 18.0,
+    "level": 1,
+    "skills_covered": [
+      "skill_figma",
+      "skill_wireframing",
+      "skill_prototyping",
+      "skill_adobe_xd"
+    ],
+    "prerequisite_skills": [],
+    "verified": true
+  },
+  {
+    "id": "res_da_01",
+    "title": "Power BI & DAX Business Intelligence Analytics",
+    "platform": "Microsoft Learn",
+    "url": "https://learn.microsoft.com/en-us/training/paths/create-use-analytics-reports-power-bi/",
+    "cost": 0.0,
+    "currency": "USD",
+    "hours": 16.0,
+    "level": 2,
+    "skills_covered": [
+      "skill_power_bi",
+      "skill_dax",
+      "skill_excel",
+      "skill_data_visualization",
+      "skill_data_modeling"
+    ],
+    "prerequisite_skills": [
+      "skill_sql"
+    ],
+    "verified": true
+  },
+  {
+    "id": "yt_py_01",
+    "title": "Python Tutorial for Beginners - Full Course [2024]",
+    "platform": "YouTube / Programming with Mosh",
+    "url": "https://www.youtube.com/watch?v=_uQrJ0TkZlc",
+    "cost": 0.0,
+    "currency": "USD",
+    "hours": 6.0,
+    "level": 1,
+    "skills_covered": [
+      "skill_python"
+    ],
+    "prerequisite_skills": [],
+    "verified": true
+  },
+  {
+    "id": "yt_py_02",
+    "title": "Python Full Course for Free (12 Hours)",
+    "platform": "YouTube / Bro Code",
+    "url": "https://www.youtube.com/watch?v=XKHEz6vpxg8",
+    "cost": 0.0,
+    "currency": "USD",
+    "hours": 12.0,
+    "level": 1,
+    "skills_covered": [
+      "skill_python"
+    ],
+    "prerequisite_skills": [],
+    "verified": true
+  },
+  {
+    "id": "yt_react_01",
+    "title": "React Course 2024 - Learn React from Scratch",
+    "platform": "YouTube / freeCodeCamp",
+    "url": "https://www.youtube.com/watch?v=x4rFhOI7978",
+    "cost": 0.0,
+    "currency": "USD",
+    "hours": 12.0,
+    "level": 1,
+    "skills_covered": [
+      "skill_react"
+    ],
+    "prerequisite_skills": [
+      "skill_html_css",
+      "skill_javascript"
+    ],
+    "verified": true
+  },
+  {
+    "id": "yt_react_02",
+    "title": "React Full Course for Beginners",
+    "platform": "YouTube / Bro Code",
+    "url": "https://www.youtube.com/watch?v=CgkZ7MvWUAA",
+    "cost": 0.0,
+    "currency": "USD",
+    "hours": 4.5,
+    "level": 1,
+    "skills_covered": [
+      "skill_react"
+    ],
+    "prerequisite_skills": [
+      "skill_html_css",
+      "skill_javascript"
+    ],
+    "verified": true
+  },
+  {
+    "id": "yt_ts_01",
+    "title": "TypeScript Full Course for Beginners",
+    "platform": "YouTube / freeCodeCamp",
+    "url": "https://www.youtube.com/watch?v=30LWjhZzg50",
+    "cost": 0.0,
+    "currency": "USD",
+    "hours": 5.0,
+    "level": 1,
+    "skills_covered": [
+      "skill_typescript"
+    ],
+    "prerequisite_skills": [
+      "skill_javascript"
+    ],
+    "verified": true
+  },
+  {
+    "id": "yt_ts_02",
+    "title": "TypeScript Crash Course",
+    "platform": "YouTube / Traversy Media",
+    "url": "https://www.youtube.com/watch?v=BCg4U1FzODs",
+    "cost": 0.0,
+    "currency": "USD",
+    "hours": 2.0,
+    "level": 1,
+    "skills_covered": [
+      "skill_typescript"
+    ],
+    "prerequisite_skills": [
+      "skill_javascript"
+    ],
+    "verified": true
+  },
+  {
+    "id": "yt_node_01",
+    "title": "Node.js and Express.js Full Course",
+    "platform": "YouTube / freeCodeCamp",
+    "url": "https://www.youtube.com/watch?v=Oe421EPjeBE",
+    "cost": 0.0,
+    "currency": "USD",
+    "hours": 8.0,
+    "level": 2,
+    "skills_covered": [
+      "skill_nodejs",
+      "skill_rest_apis"
+    ],
+    "prerequisite_skills": [
+      "skill_javascript"
+    ],
+    "verified": true
+  },
+  {
+    "id": "yt_next_01",
+    "title": "Next.js 14 Full Course - App Router, Server Actions, Auth",
+    "platform": "YouTube / freeCodeCamp",
+    "url": "https://www.youtube.com/watch?v=wm5gMKuwSYk",
+    "cost": 0.0,
+    "currency": "USD",
+    "hours": 8.0,
+    "level": 2,
+    "skills_covered": [
+      "skill_nextjs",
+      "skill_react"
+    ],
+    "prerequisite_skills": [
+      "skill_html_css",
+      "skill_typescript",
+      "skill_javascript"
+    ],
+    "verified": true
+  },
+  {
+    "id": "yt_pg_01",
+    "title": "PostgreSQL Tutorial for Beginners",
+    "platform": "YouTube / freeCodeCamp",
+    "url": "https://www.youtube.com/watch?v=qw--VYLpxG4",
+    "cost": 0.0,
+    "currency": "USD",
+    "hours": 4.0,
+    "level": 1,
+    "skills_covered": [
+      "skill_postgresql",
+      "skill_sql"
+    ],
+    "prerequisite_skills": [],
+    "verified": true
+  },
+  {
+    "id": "yt_docker_01",
+    "title": "Docker Tutorial for Beginners [Full Course]",
+    "platform": "YouTube / TechWorld with Nana",
+    "url": "https://www.youtube.com/watch?v=3c-iBn73dDE",
+    "cost": 0.0,
+    "currency": "USD",
+    "hours": 3.0,
+    "level": 1,
+    "skills_covered": [
+      "skill_docker"
+    ],
+    "prerequisite_skills": [
+      "skill_linux"
+    ],
+    "verified": true
+  },
+  {
+    "id": "yt_k8s_01",
+    "title": "Kubernetes Crash Course for Absolute Beginners",
+    "platform": "YouTube / TechWorld with Nana",
+    "url": "https://www.youtube.com/watch?v=X48VuDVv0do",
+    "cost": 0.0,
+    "currency": "USD",
+    "hours": 4.0,
+    "level": 2,
+    "skills_covered": [
+      "skill_kubernetes"
+    ],
+    "prerequisite_skills": [
+      "skill_docker"
+    ],
+    "verified": true
+  },
+  {
+    "id": "yt_aws_01",
+    "title": "AWS Certified Solutions Architect Associate (SAA-C03) - Full Course",
+    "platform": "YouTube / freeCodeCamp",
+    "url": "https://www.youtube.com/watch?v=Ia-UEYYR44s",
+    "cost": 0.0,
+    "currency": "USD",
+    "hours": 10.0,
+    "level": 2,
+    "skills_covered": [
+      "skill_cloud_aws_gcp"
+    ],
+    "prerequisite_skills": [
+      "skill_linux"
+    ],
+    "verified": true
+  },
+  {
+    "id": "yt_dsa_01",
+    "title": "Data Structures and Algorithms for Beginners",
+    "platform": "YouTube / NeetCode",
+    "url": "https://www.youtube.com/watch?v=BBpAmxU_NQo",
+    "cost": 0.0,
+    "currency": "USD",
+    "hours": 6.0,
+    "level": 2,
+    "skills_covered": [
+      "skill_dsa",
+      "skill_algorithms"
+    ],
+    "prerequisite_skills": [
+      "skill_python"
+    ],
+    "verified": true
+  },
+  {
+    "id": "yt_sys_01",
+    "title": "System Design Course for Beginners",
+    "platform": "YouTube / freeCodeCamp",
+    "url": "https://www.youtube.com/watch?v=m8Icp_Cid5o",
+    "cost": 0.0,
+    "currency": "USD",
+    "hours": 5.0,
+    "level": 2,
+    "skills_covered": [
+      "skill_system_design"
+    ],
+    "prerequisite_skills": [
+      "skill_rest_apis"
+    ],
+    "verified": true
+  },
+  {
+    "id": "yt_pytorch_01",
+    "title": "PyTorch for Deep Learning & Machine Learning Bootcamp",
+    "platform": "YouTube / freeCodeCamp",
+    "url": "https://www.youtube.com/watch?v=V_xro1bcAuA",
+    "cost": 0.0,
+    "currency": "USD",
+    "hours": 25.0,
+    "level": 2,
+    "skills_covered": [
+      "skill_pytorch",
+      "skill_deep_learning"
+    ],
+    "prerequisite_skills": [
+      "skill_python",
+      "skill_ml_fundamentals"
+    ],
+    "verified": true
+  },
+  {
+    "id": "yt_git_01",
+    "title": "Git and GitHub for Beginners - Crash Course",
+    "platform": "YouTube / freeCodeCamp",
+    "url": "https://www.youtube.com/watch?v=RGOj5yH7evk",
+    "cost": 0.0,
+    "currency": "USD",
+    "hours": 1.5,
+    "level": 1,
+    "skills_covered": [
+      "skill_git"
+    ],
+    "prerequisite_skills": [],
+    "verified": true
+  },
+  {
+    "id": "yt_cicd_01",
+    "title": "CI/CD Pipeline with GitHub Actions Tutorial",
+    "platform": "YouTube / TechWorld with Nana",
+    "url": "https://www.youtube.com/watch?v=R8_veQiYBjI",
+    "cost": 0.0,
+    "currency": "USD",
+    "hours": 2.5,
+    "level": 2,
+    "skills_covered": [
+      "skill_cicd"
+    ],
+    "prerequisite_skills": [
+      "skill_git",
+      "skill_linux"
+    ],
+    "verified": true
+  },
+  {
+    "id": "yt_tf_01",
+    "title": "Terraform Course - Automate Your AWS Infrastructure",
+    "platform": "YouTube / freeCodeCamp",
+    "url": "https://www.youtube.com/watch?v=SLB_c_yyR2A",
+    "cost": 0.0,
+    "currency": "USD",
+    "hours": 2.5,
+    "level": 2,
+    "skills_covered": [
+      "skill_terraform"
+    ],
+    "prerequisite_skills": [
+      "skill_cloud_aws_gcp"
+    ],
+    "verified": true
+  },
+  {
+    "id": "yt_linux_01",
+    "title": "Linux Command Line Basics",
+    "platform": "YouTube / freeCodeCamp",
+    "url": "https://www.youtube.com/watch?v=ZtqBQ68cfJc",
+    "cost": 0.0,
+    "currency": "USD",
+    "hours": 5.0,
+    "level": 1,
+    "skills_covered": [
+      "skill_linux",
+      "skill_bash"
+    ],
+    "prerequisite_skills": [],
+    "verified": true
+  },
+  {
+    "id": "yt_spark_01",
+    "title": "Apache Spark Full Course - Learn Spark in 8 Hours",
+    "platform": "YouTube / edureka!",
+    "url": "https://www.youtube.com/watch?v=QaoJNXW6dQw",
+    "cost": 0.0,
+    "currency": "USD",
+    "hours": 8.0,
+    "level": 2,
+    "skills_covered": [
+      "skill_spark",
+      "skill_data_pipelines"
+    ],
+    "prerequisite_skills": [
+      "skill_sql",
+      "skill_python"
+    ],
+    "verified": true
+  },
+  {
+    "id": "edx_cs50p",
+    "title": "CS50's Introduction to Programming with Python (Free Audit)",
+    "platform": "edX / Harvard University",
+    "url": "https://www.edx.org/learn/python/harvard-university-cs50-s-introduction-to-programming-with-python",
+    "cost": 0.0,
+    "currency": "USD",
+    "hours": 40.0,
+    "level": 1,
+    "skills_covered": [
+      "skill_python"
+    ],
+    "prerequisite_skills": [],
+    "verified": true
+  },
+  {
+    "id": "edx_mit_py",
+    "title": "Introduction to Computer Science and Programming Using Python",
+    "platform": "edX / MITx",
+    "url": "https://www.edx.org/learn/computer-science/massachusetts-institute-of-technology-introduction-to-computer-science-and-programming-using-python",
+    "cost": 0.0,
+    "currency": "USD",
+    "hours": 75.0,
+    "level": 1,
+    "skills_covered": [
+      "skill_python"
+    ],
+    "prerequisite_skills": [],
+    "verified": true
+  },
+  {
+    "id": "edx_cs50x",
+    "title": "CS50's Introduction to Computer Science (Free Audit)",
+    "platform": "edX / Harvard University",
+    "url": "https://www.edx.org/learn/computer-science/harvard-university-cs50-s-introduction-to-computer-science",
+    "cost": 0.0,
+    "currency": "USD",
+    "hours": 60.0,
+    "level": 1,
+    "skills_covered": [
+      "skill_dsa",
+      "skill_algorithms"
+    ],
+    "prerequisite_skills": [
+      "skill_python"
+    ],
+    "verified": true
+  },
+  {
+    "id": "edx_k8s_01",
+    "title": "Introduction to Kubernetes (LFS158x - Free Audit)",
+    "platform": "edX / The Linux Foundation",
+    "url": "https://www.edx.org/learn/kubernetes/the-linux-foundation-introduction-to-kubernetes",
+    "cost": 0.0,
+    "currency": "USD",
+    "hours": 15.0,
+    "level": 2,
+    "skills_covered": [
+      "skill_kubernetes",
+      "skill_docker"
+    ],
+    "prerequisite_skills": [
+      "skill_linux"
+    ],
+    "verified": true
+  },
+  {
+    "id": "edx_linux_01",
+    "title": "Introduction to Linux (LFS101x - Free Audit)",
+    "platform": "edX / The Linux Foundation",
+    "url": "https://www.edx.org/learn/linux/the-linux-foundation-introduction-to-linux",
+    "cost": 0.0,
+    "currency": "USD",
+    "hours": 20.0,
+    "level": 1,
+    "skills_covered": [
+      "skill_linux",
+      "skill_bash"
+    ],
+    "prerequisite_skills": [],
+    "verified": true
+  },
+  {
+    "id": "edx_w3c_front",
+    "title": "Frontend Web Developer - HTML5 & CSS Fundamentals (Free Audit)",
+    "platform": "edX / W3Cx",
+    "url": "https://www.edx.org/learn/html/world-wide-web-consortium-w3c-html5-and-css-fundamentals",
+    "cost": 0.0,
+    "currency": "USD",
+    "hours": 25.0,
+    "level": 1,
+    "skills_covered": [
+      "skill_html_css",
+      "skill_javascript"
+    ],
+    "prerequisite_skills": [],
+    "verified": true
+  },
+  {
+    "id": "edx_data_eng",
+    "title": "Introduction to Data Engineering (Free Audit)",
+    "platform": "edX / Databricks",
+    "url": "https://www.edx.org/learn/data-engineering/databricks-introduction-to-data-engineering",
+    "cost": 0.0,
+    "currency": "USD",
+    "hours": 20.0,
+    "level": 2,
+    "skills_covered": [
+      "skill_data_pipelines",
+      "skill_spark"
+    ],
+    "prerequisite_skills": [
+      "skill_sql",
+      "skill_python"
+    ],
+    "verified": true
+  },
+  {
+    "id": "fcc_front_end",
+    "title": "Front End Development Libraries Certification",
+    "platform": "freeCodeCamp",
+    "url": "https://www.freecodecamp.org/learn/front-end-development-libraries/",
+    "cost": 0.0,
+    "currency": "USD",
+    "hours": 40.0,
+    "level": 2,
+    "skills_covered": [
+      "skill_react"
+    ],
+    "prerequisite_skills": [
+      "skill_html_css",
+      "skill_javascript"
+    ],
+    "verified": true
+  },
+  {
+    "id": "fcc_relational_db",
+    "title": "Relational Database Certification (PostgreSQL & Bash)",
+    "platform": "freeCodeCamp",
+    "url": "https://www.freecodecamp.org/learn/relational-database/",
+    "cost": 0.0,
+    "currency": "USD",
+    "hours": 35.0,
+    "level": 2,
+    "skills_covered": [
+      "skill_postgresql",
+      "skill_sql",
+      "skill_bash"
+    ],
+    "prerequisite_skills": [],
+    "verified": true
+  },
+  {
+    "id": "fcc_backend_api",
+    "title": "Back End Development and APIs Certification (Node.js & Express)",
+    "platform": "freeCodeCamp",
+    "url": "https://www.freecodecamp.org/learn/back-end-development-and-apis/",
+    "cost": 0.0,
+    "currency": "USD",
+    "hours": 40.0,
+    "level": 2,
+    "skills_covered": [
+      "skill_nodejs",
+      "skill_rest_apis",
+      "skill_mongodb"
+    ],
+    "prerequisite_skills": [
+      "skill_javascript"
+    ],
+    "verified": true
+  },
+  {
+    "id": "fcc_ml_python",
+    "title": "Machine Learning with Python Certification",
+    "platform": "freeCodeCamp",
+    "url": "https://www.freecodecamp.org/learn/machine-learning-with-python/",
+    "cost": 0.0,
+    "currency": "USD",
+    "hours": 40.0,
+    "level": 2,
+    "skills_covered": [
+      "skill_ml_fundamentals",
+      "skill_tensorflow"
+    ],
+    "prerequisite_skills": [],
+    "verified": true
+  },
+  {
+    "id": "paid_meta_front",
+    "title": "Meta Front-End Developer Professional Certificate",
+    "platform": "Coursera / Meta",
+    "url": "https://www.coursera.org/professional-certificates/meta-front-end-developer",
+    "cost": 49.0,
+    "currency": "USD",
+    "hours": 60.0,
+    "level": 2,
+    "skills_covered": [
+      "skill_react",
+      "skill_javascript",
+      "skill_html_css"
+    ],
+    "prerequisite_skills": [],
+    "verified": true
+  },
+  {
+    "id": "paid_meta_back",
+    "title": "Meta Back-End Developer Professional Certificate",
+    "platform": "Coursera / Meta",
+    "url": "https://www.coursera.org/professional-certificates/meta-back-end-developer",
+    "cost": 49.0,
+    "currency": "USD",
+    "hours": 65.0,
+    "level": 2,
+    "skills_covered": [
+      "skill_python",
+      "skill_rest_apis",
+      "skill_sql"
+    ],
+    "prerequisite_skills": [],
+    "verified": true
+  },
+  {
+    "id": "paid_google_it_py",
+    "title": "Google IT Automation with Python Professional Certificate",
+    "platform": "Coursera / Google",
+    "url": "https://www.coursera.org/professional-certificates/google-it-automation",
+    "cost": 49.0,
+    "currency": "USD",
+    "hours": 45.0,
+    "level": 2,
+    "skills_covered": [
+      "skill_python",
+      "skill_git",
+      "skill_bash"
+    ],
+    "prerequisite_skills": [],
+    "verified": true
+  },
+  {
+    "id": "paid_pcap_cert",
+    "title": "PCAP\u2122 \u2013 Certified Associate in Python Programming Exam",
+    "platform": "OpenEDG Python Institute",
+    "url": "https://pythoninstitute.org/pcap",
+    "cost": 295.0,
+    "currency": "USD",
+    "hours": 50.0,
+    "level": 2,
+    "skills_covered": [
+      "skill_python"
+    ],
+    "prerequisite_skills": [],
+    "verified": true
+  },
+  {
+    "id": "paid_aws_saa",
+    "title": "AWS Certified Solutions Architect - Associate (SAA-C03)",
+    "platform": "Amazon Web Services (AWS Official)",
+    "url": "https://aws.amazon.com/certification/certified-solutions-architect-associate/",
+    "cost": 150.0,
+    "currency": "USD",
+    "hours": 50.0,
+    "level": 2,
+    "skills_covered": [
+      "skill_cloud_aws_gcp"
+    ],
+    "prerequisite_skills": [
+      "skill_linux"
+    ],
+    "verified": true
+  },
+  {
+    "id": "paid_aws_dva",
+    "title": "AWS Certified Developer - Associate (DVA-C02)",
+    "platform": "Amazon Web Services (AWS Official)",
+    "url": "https://aws.amazon.com/certification/certified-developer-associate/",
+    "cost": 150.0,
+    "currency": "USD",
+    "hours": 45.0,
+    "level": 2,
+    "skills_covered": [
+      "skill_cloud_aws_gcp",
+      "skill_rest_apis"
+    ],
+    "prerequisite_skills": [
+      "skill_linux"
+    ],
+    "verified": true
+  },
+  {
+    "id": "paid_gcp_ace",
+    "title": "Google Cloud Associate Cloud Engineer Certification",
+    "platform": "Google Cloud Official",
+    "url": "https://cloud.google.com/learn/certification/cloud-engineer",
+    "cost": 125.0,
+    "currency": "USD",
+    "hours": 40.0,
+    "level": 2,
+    "skills_covered": [
+      "skill_cloud_aws_gcp",
+      "skill_kubernetes"
+    ],
+    "prerequisite_skills": [
+      "skill_docker",
+      "skill_linux"
+    ],
+    "verified": true
+  },
+  {
+    "id": "paid_k8s_cka",
+    "title": "Certified Kubernetes Administrator (CKA) Exam & Prep",
+    "platform": "The Linux Foundation",
+    "url": "https://training.linuxfoundation.org/certification/certified-kubernetes-administrator-cka/",
+    "cost": 395.0,
+    "currency": "USD",
+    "hours": 40.0,
+    "level": 3,
+    "skills_covered": [
+      "skill_kubernetes",
+      "skill_docker"
+    ],
+    "prerequisite_skills": [
+      "skill_linux"
+    ],
+    "verified": true
+  },
+  {
+    "id": "paid_hashi_tf",
+    "title": "HashiCorp Certified: Terraform Associate (003)",
+    "platform": "HashiCorp Official",
+    "url": "https://www.hashicorp.com/certification/terraform-associate",
+    "cost": 70.0,
+    "currency": "USD",
+    "hours": 25.0,
+    "level": 2,
+    "skills_covered": [
+      "skill_terraform",
+      "skill_cloud_aws_gcp"
+    ],
+    "prerequisite_skills": [
+      "skill_linux"
+    ],
+    "verified": true
+  },
+  {
+    "id": "paid_dl_andrew",
+    "title": "Deep Learning Specialization by Andrew Ng",
+    "platform": "Coursera / DeepLearning.AI",
+    "url": "https://www.coursera.org/specializations/deep-learning",
+    "cost": 49.0,
+    "currency": "USD",
+    "hours": 60.0,
+    "level": 2,
+    "skills_covered": [
+      "skill_deep_learning",
+      "skill_pytorch",
+      "skill_tensorflow"
+    ],
+    "prerequisite_skills": [
+      "skill_python",
+      "skill_ml_fundamentals"
+    ],
+    "verified": true
+  },
+  {
+    "id": "paid_ml_andrew",
+    "title": "Machine Learning Specialization by Andrew Ng",
+    "platform": "Coursera / DeepLearning.AI",
+    "url": "https://www.coursera.org/specializations/machine-learning-introduction",
+    "cost": 49.0,
+    "currency": "USD",
+    "hours": 45.0,
+    "level": 2,
+    "skills_covered": [
+      "skill_ml_fundamentals",
+      "skill_scikit_learn"
+    ],
+    "prerequisite_skills": [],
+    "verified": true
+  },
+  {
+    "id": "paid_google_data",
+    "title": "Google Data Analytics Professional Certificate",
+    "platform": "Coursera / Google",
+    "url": "https://www.coursera.org/professional-certificates/google-data-analytics",
+    "cost": 49.0,
+    "currency": "USD",
+    "hours": 70.0,
+    "level": 2,
+    "skills_covered": [
+      "skill_sql",
+      "skill_data_modeling",
+      "skill_data_visualization"
+    ],
+    "prerequisite_skills": [],
+    "verified": true
+  },
+  {
+    "id": "paid_ibm_de",
+    "title": "IBM Data Engineering Professional Certificate",
+    "platform": "Coursera / IBM",
+    "url": "https://www.coursera.org/professional-certificates/ibm-data-engineer",
+    "cost": 49.0,
+    "currency": "USD",
+    "hours": 75.0,
+    "level": 2,
+    "skills_covered": [
+      "skill_spark",
+      "skill_airflow",
+      "skill_data_pipelines",
+      "skill_sql"
+    ],
+    "prerequisite_skills": [
+      "skill_python"
+    ],
+    "verified": true
+  },
+  {
+    "id": "paid_mongo_dev",
+    "title": "MongoDB Certified Developer Associate Exam",
+    "platform": "MongoDB University",
+    "url": "https://www.mongodb.com/basics/certification",
+    "cost": 150.0,
+    "currency": "USD",
+    "hours": 30.0,
+    "level": 2,
+    "skills_covered": [
+      "skill_mongodb"
+    ],
+    "prerequisite_skills": [],
+    "verified": true
+  },
+  {
+    "id": "paid_databricks_de",
+    "title": "Databricks Certified Data Engineer Associate Exam",
+    "platform": "Databricks Official",
+    "url": "https://www.databricks.com/learn/certification/data-engineer-associate",
+    "cost": 200.0,
+    "currency": "USD",
+    "hours": 35.0,
+    "level": 2,
+    "skills_covered": [
+      "skill_spark",
+      "skill_data_pipelines"
+    ],
+    "prerequisite_skills": [
+      "skill_sql",
+      "skill_python"
+    ],
+    "verified": true
+  },
+  {
+    "id": "paid_edx_cs50",
+    "title": "Harvard CS50 Verified Certificate of Completion",
+    "platform": "edX / HarvardX",
+    "url": "https://www.edx.org/learn/computer-science/harvard-university-cs50-s-introduction-to-computer-science",
+    "cost": 149.0,
+    "currency": "USD",
+    "hours": 60.0,
+    "level": 1,
+    "skills_covered": [
+      "skill_dsa",
+      "skill_algorithms"
+    ],
+    "prerequisite_skills": [
+      "skill_python"
+    ],
+    "verified": true
   }
 ];
+
+export function findCoursesForSkills(skillIds: string[]): Course[] {
+  const skillSet = new Set(skillIds);
+  return CATALOG_COURSES.filter((course) =>
+    course.skills_covered.some((skill) => skillSet.has(skill))
+  );
+}
+
+export function getFreeCourses(skillIds?: string[]): Course[] {
+  const courses = skillIds && skillIds.length > 0 ? findCoursesForSkills(skillIds) : CATALOG_COURSES;
+  return courses.filter((c) => c.cost === 0);
+}
+
+export function getPaidCourses(skillIds?: string[]): Course[] {
+  const courses = skillIds && skillIds.length > 0 ? findCoursesForSkills(skillIds) : CATALOG_COURSES;
+  return courses.filter((c) => c.cost > 0);
+}

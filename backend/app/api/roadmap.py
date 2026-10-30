@@ -304,6 +304,40 @@ async def save_user_roadmap(roadmap: Roadmap, user_id: str = "guest"):
     return APIResponse(data={"status": "saved", "user_id": user_id})
 
 
+@router.get("/catalog/courses", response_model=APIResponse[List[dict]])
+async def get_catalog_courses(
+    skills: Optional[str] = Query(None, description="Comma-separated skill IDs"),
+    filter_type: Optional[str] = Query("all", description="Filter type: all, free, or paid"),
+    platform: Optional[str] = Query(None, description="Platform filter (youtube, edx, freecodecamp, etc.)")
+):
+    """
+    Retrieves learning resources from the course catalog, supporting filtering
+    by skill IDs, pricing tier (free vs paid certifications), and platform.
+    """
+    try:
+        from backend.app.catalog.catalog_db import catalog_db
+        all_courses = catalog_db.get_all_courses()
+
+        if skills:
+            skill_set = {s.strip().lower() for s in skills.split(",") if s.strip()}
+            courses = [c for c in all_courses if any(s.lower() in skill_set for s in c.skills_covered)]
+        else:
+            courses = all_courses
+
+        if filter_type == "free":
+            courses = [c for c in courses if c.cost == 0.0]
+        elif filter_type == "paid":
+            courses = [c for c in courses if c.cost > 0.0]
+
+        if platform:
+            plat_q = platform.strip().lower()
+            courses = [c for c in courses if plat_q in c.platform.lower()]
+
+        return APIResponse(data=[c.model_dump() for c in courses])
+    except Exception as e:
+        raise HTTPException(status_code=500, detail=str(e))
+
+
 @router.get("/roadmaps", response_model=APIResponse[Optional[Roadmap]])
 async def get_user_roadmaps(user_id: str = "guest"):
     rm = roadmap_service.get_roadmap(user_id=user_id)

@@ -363,5 +363,25 @@ export const api = {
     } catch {
       return null;
     }
+  },
+
+  getCatalogCourses: async (params?: { skills?: string[]; filterType?: "all" | "free" | "paid"; platform?: string }) => {
+    try {
+      const queryParts: string[] = [];
+      if (params?.skills && params.skills.length > 0) {
+        queryParts.push(`skills=${encodeURIComponent(params.skills.join(","))}`);
+      }
+      if (params?.filterType) {
+        queryParts.push(`filter_type=${encodeURIComponent(params.filterType)}`);
+      }
+      if (params?.platform) {
+        queryParts.push(`platform=${encodeURIComponent(params.platform)}`);
+      }
+      const qs = queryParts.length > 0 ? `?${queryParts.join("&")}` : "";
+      return await fetchJson<any[]>(`/catalog/courses${qs}`);
+    } catch (e) {
+      console.warn("Catalog fetch fallback to local:", e);
+      return null;
+    }
   }
 };

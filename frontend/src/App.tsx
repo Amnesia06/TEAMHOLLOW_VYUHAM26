@@ -402,6 +402,7 @@ export const App: React.FC = () => {
                 <StudyModulesView
                   roadmap={roadmap}
                   targetRole={constraints.target_role || undefined}
+                  currency={constraints.currency || "INR"}
                   onNavigateToChat={() => setActiveTab("chat")}
                 />
               </div>

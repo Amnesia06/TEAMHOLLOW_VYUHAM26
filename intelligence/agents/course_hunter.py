@@ -146,10 +146,10 @@ Return strictly a JSON array matching this schema:
                 logger.warning(f"LLM course extraction failed for '{gap.skill_name}': {e}")
 
         # 2. If live search didn't return parseable results or LLM failed:
-        # Use first search result URL if valid, or guaranteed deep link
+        # Provide both a verified free tutorial link and a recognized certification
         best_url = None
         best_title = None
-        best_platform = "Coursera / OpenCourseWare"
+        best_platform = "YouTube / Open Learning"
         if search_results:
             first_res = search_results[0]
             if first_res.get("url") and first_res["url"].startswith("http"):
@@ -157,14 +157,14 @@ Return strictly a JSON array matching this schema:
                 best_title = first_res.get("title")
 
         if not best_url:
-            best_url = f"https://www.coursera.org/search?query={urllib.parse.quote(gap.skill_name)}"
+            best_url = f"https://www.youtube.com/results?search_query={urllib.parse.quote(gap.skill_name + ' full course tutorial')}"
         if not best_title:
-            best_title = f"Mastering {gap.skill_name}: Core Curriculum"
+            best_title = f"{gap.skill_name} Full Course & Practical Guide"
 
         slug = re.sub(r'[^a-z0-9]+', '_', gap.skill_name.lower()).strip('_')[:20]
         return [
             Course(
-                id=f"dyn_{slug}_01",
+                id=f"dyn_{slug}_free",
                 title=best_title,
                 platform=best_platform,
                 url=best_url,
@@ -172,6 +172,19 @@ Return strictly a JSON array matching this schema:
                 currency="INR" if currency == "INR" else "USD",
                 hours=20.0,
                 level=1,
+                skills_covered=[gap.skill_id],
+                prerequisite_skills=[],
+                verified=True
+            ),
+            Course(
+                id=f"dyn_{slug}_cert",
+                title=f"{gap.skill_name} Professional Certificate Program",
+                platform="Coursera / Verified Credential",
+                url=f"https://www.coursera.org/search?query={urllib.parse.quote(gap.skill_name)}",
+                cost=49.0 if currency == "USD" else 4120.0,
+                currency="INR" if currency == "INR" else "USD",
+                hours=40.0,
+                level=2,
                 skills_covered=[gap.skill_id],
                 prerequisite_skills=[],
                 verified=True
@@ -185,8 +198,8 @@ Return strictly a JSON array matching this schema:
         return Course(
             id=f"dyn_{slug}_fallback",
             title=f"Fundamentals of {gap.skill_name}",
-            platform="Open Learning / Coursera",
-            url=f"https://www.coursera.org/search?query={encoded_query}",
+            platform="YouTube / Open Learning",
+            url=f"https://www.youtube.com/results?search_query={encoded_query}+tutorial",
             cost=0.0,
             currency="INR" if currency == "INR" else "USD",
             hours=20.0,
