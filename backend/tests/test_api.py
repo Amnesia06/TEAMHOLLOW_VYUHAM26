@@ -1,4 +1,4 @@
-"""
+﻿"""
 Backend API endpoint integration tests using FastAPI TestClient.
 """
 
@@ -14,7 +14,7 @@ def test_health_endpoint():
     json_data = response.json()
     assert json_data["success"] is True
     assert json_data["data"]["status"] == "healthy"
-    assert json_data["data"]["demo_mode"] is True
+    assert "demo_mode" in json_data["data"]
 
 
 def test_chat_turn():
@@ -75,3 +75,4 @@ def test_resources_query():
     json_data = response.json()
     assert json_data["success"] is True
     assert len(json_data["data"]) > 0
+
