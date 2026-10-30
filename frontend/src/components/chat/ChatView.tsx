@@ -443,9 +443,9 @@ export const ChatView: React.FC<ChatViewProps> = ({
               </div>
 
               {/* Progress Bar */}
-              <div className="w-full bg-slate-100 rounded-full h-1.5 overflow-hidden">
+              <div className="w-full bg-slate-100 rounded-full h-2 overflow-hidden">
                 <div
-                  className="bg-gradient-to-r from-[#4648d4] to-indigo-500 h-full rounded-full transition-all duration-500 ease-out"
+                  className="bg-gradient-to-r from-[#4648d4] via-indigo-500 to-[#4648d4] h-full rounded-full transition-all duration-700 ease-out"
                   style={{
                     width: `${
                       progressEvents.length === 0
@@ -468,7 +468,7 @@ export const ChatView: React.FC<ChatViewProps> = ({
                   return (
                     <div
                       key={stepInfo.step}
-                      className={`flex items-start gap-2.5 text-xs transition-all duration-300 ${
+                      className={`flex items-start gap-2.5 text-xs transition-all duration-300 ease-out ${
                         isDone
                           ? "text-slate-800"
                           : isCurrent
@@ -518,7 +518,7 @@ export const ChatView: React.FC<ChatViewProps> = ({
 
       {/* Bottom Docked Floating Input Bar from DESIGN.md */}
       <div
-        className={`fixed bottom-0 right-0 z-30 pb-5 pt-3 bg-gradient-to-t from-[#faf8ff] via-[#faf8ff]/90 to-transparent pointer-events-none transition-all duration-300 ease-in-out ${
+        className={`fixed bottom-0 right-0 z-30 pb-5 pt-3 bg-gradient-to-t from-[#faf8ff] via-[#faf8ff]/95 to-transparent pointer-events-none transition-all duration-[400ms] ease-[cubic-bezier(0.4,0,0.2,1)] ${
           isSidebarOpen ? "left-[280px]" : "left-0"
         }`}
       >
@@ -528,13 +528,13 @@ export const ChatView: React.FC<ChatViewProps> = ({
               e.preventDefault();
               handleSend();
             }}
-            className="flex items-center gap-3 bg-white/95 backdrop-blur-md border border-slate-200/80 rounded-full px-4 py-2.5 shadow-[0_2px_12px_rgba(0,0,0,0.06)] hover:border-[#4648d4]/40 focus-within:border-[#4648d4]/60 focus-within:shadow-[0_4px_20px_rgba(70,72,212,0.12)] transition-all"
+            className="flex items-center gap-3 bg-white/98 backdrop-blur-xl border border-slate-200/70 rounded-full px-4 py-2.5 shadow-[0_3px_16px_rgba(0,0,0,0.08)] hover:border-[#4648d4]/50 focus-within:border-[#4648d4]/70 focus-within:shadow-[0_4px_24px_rgba(70,72,212,0.15)] transition-all duration-200 ease-out"
           >
             {/* Attachment Button */}
             <button
               type="button"
               onClick={() => fileInputRef.current?.click()}
-              className="flex items-center justify-center text-slate-500 hover:text-slate-900 hover:bg-slate-100 rounded-full w-9 h-9 transition-colors cursor-pointer shrink-0"
+              className="flex items-center justify-center text-slate-500 hover:text-slate-900 hover:bg-slate-100 rounded-full w-9 h-9 transition-all duration-200 ease-out cursor-pointer shrink-0 active:scale-95"
               title="Upload resume or document"
             >
               <Plus className="w-5 h-5 text-slate-600" />
@@ -568,7 +568,7 @@ export const ChatView: React.FC<ChatViewProps> = ({
               <button
                 type="button"
                 disabled={isProcessing}
-                className="flex items-center gap-0.5 px-2 py-1.5 rounded-full hover:bg-slate-100 hover:text-slate-900 transition-colors cursor-pointer disabled:opacity-40"
+                className="flex items-center gap-0.5 px-2 py-1.5 rounded-full hover:bg-slate-100 hover:text-slate-900 transition-all duration-200 ease-out cursor-pointer disabled:opacity-40 active:scale-95"
                 title="Voice input"
               >
                 <Mic className="w-4 h-4 text-slate-600" />
@@ -578,7 +578,7 @@ export const ChatView: React.FC<ChatViewProps> = ({
               <button
                 type="submit"
                 disabled={(!inputText.trim() && !pendingResumeText) || isProcessing}
-                className="flex items-center justify-center w-8 h-8 rounded-full bg-[#4648d4] text-white hover:bg-[#393bb3] transition-all disabled:opacity-30 disabled:hover:bg-[#4648d4] cursor-pointer shadow-xs"
+                className="flex items-center justify-center w-8 h-8 rounded-full bg-[#4648d4] text-white hover:bg-[#393bb3] hover:shadow-lg transition-all duration-200 ease-out disabled:opacity-30 disabled:hover:bg-[#4648d4] cursor-pointer shadow-md active:scale-95"
                 title="Send message"
               >
                 {isProcessing ? (

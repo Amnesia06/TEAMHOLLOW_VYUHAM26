@@ -37,11 +37,11 @@ export const AuthModal: React.FC<AuthModalProps> = ({
   };
 
   return (
-    <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/50 backdrop-blur-sm p-4 animate-fade-in">
-      <Card className="w-full max-w-md bg-white border border-border shadow-2xl p-6 relative">
+    <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/50 backdrop-blur-md p-4 fade-in">
+      <Card className="w-full max-w-md bg-white border border-border shadow-2xl p-6 relative hover-lift">
         <button
           onClick={onClose}
-          className="absolute right-4 top-4 p-1 rounded-lg text-text-subtle hover:text-text hover:bg-gray-100 transition-all"
+          className="absolute right-4 top-4 p-1 rounded-lg text-text-subtle hover:text-text hover:bg-gray-100 transition-all duration-200 ease-out active:scale-95"
         >
           <X className="w-5 h-5" />
         </button>

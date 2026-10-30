@@ -688,3 +688,5 @@ If asked about classifiers: proficiency level and role fit use zero-shot LLM cla
 - Thresholds and model names are recorded in the owning track's config file.
 - No catalog or job data is marked UNVERIFIED without a human review decision.
 - README technique claims match what is implemented.
+
+--------------------------
