@@ -258,7 +258,7 @@ export const App: React.FC = () => {
   };
 
   return (
-    <div className="flex min-h-screen bg-[#faf8ff] font-sans antialiased text-[#131b2e]">
+    <div className="flex min-h-screen bg-[#faf8ff] antialiased text-[#131b2e]">
       {/* Left Navigation Sidebar */}
       <Sidebar
         isOpen={isSidebarOpen}
@@ -272,21 +272,21 @@ export const App: React.FC = () => {
 
       {/* Main Content Area */}
       <div
-        className={`flex-1 flex flex-col min-w-0 min-h-screen transition-all duration-300 ease-in-out ${
+        className={`flex-1 flex flex-col min-w-0 min-h-screen transition-all duration-[400ms] ease-[cubic-bezier(0.4,0,0.2,1)] ${
           isSidebarOpen ? "md:pl-[280px]" : "pl-0"
         }`}
       >
         {/* Top Header */}
-        <header className="h-16 border-b border-slate-200/80 bg-white/95 backdrop-blur-md px-6 flex items-center justify-between sticky top-0 z-20 shadow-xs">
+        <header className="h-16 border-b border-slate-200/70 bg-white/98 backdrop-blur-xl px-6 flex items-center justify-between sticky top-0 z-20 shadow-[0_1px_3px_rgba(0,0,0,0.04)]">
           <div className="flex items-center gap-3">
             <button
               onClick={() => setIsSidebarOpen((prev) => !prev)}
-              className="p-2 rounded-xl text-slate-500 hover:text-slate-900 hover:bg-slate-100 transition-colors cursor-pointer"
+              className="p-2 rounded-xl text-slate-500 hover:text-slate-900 hover:bg-slate-100 transition-all duration-200 ease-out cursor-pointer active:scale-95"
               title={isSidebarOpen ? "Collapse sidebar" : "Expand sidebar"}
             >
               {isSidebarOpen ? <PanelLeftClose className="w-5 h-5" /> : <PanelLeft className="w-5 h-5" />}
             </button>
-            <h2 className="text-sm font-bold text-slate-800 tracking-tight">
+            <h2 className="text-sm font-semibold text-slate-800 tracking-tight">
               {activeTab === "chat" && "AI Career Assistant"}
               {activeTab === "careers" && "Target Role Benchmarks"}
               {activeTab === "roadmap" && "Personalized Learning Roadmap"}
@@ -297,7 +297,7 @@ export const App: React.FC = () => {
           <div className="flex items-center gap-3">
             <button
               onClick={handleNewChat}
-              className="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-full bg-[#e1e0ff] text-[#07006c] hover:bg-[#d0bcff] font-semibold text-xs transition-colors cursor-pointer shadow-xs"
+              className="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-full bg-[#e1e0ff] text-[#07006c] hover:bg-[#d0bcff] font-semibold text-xs transition-all duration-200 ease-out cursor-pointer shadow-sm hover:shadow-md active:scale-[0.97]"
               title="Start a fresh chat conversation"
             >
               <Plus className="w-3.5 h-3.5" />
@@ -307,9 +307,9 @@ export const App: React.FC = () => {
             {/* User Auth (M14) */}
             <button
               onClick={() => setIsAuthOpen(true)}
-              className="flex items-center gap-2 px-3 py-1.5 rounded-xl border border-slate-200 bg-slate-50 hover:bg-slate-100 text-xs font-semibold text-slate-700 transition-all cursor-pointer"
+              className="flex items-center gap-2 px-3 py-1.5 rounded-xl border border-slate-200/80 bg-slate-50 hover:bg-slate-100 hover:border-slate-300 text-xs font-semibold text-slate-700 transition-all duration-200 ease-out cursor-pointer active:scale-[0.97]"
             >
-              <span className="w-2 h-2 rounded-full bg-emerald-500 shrink-0" />
+              <span className="w-2 h-2 rounded-full bg-emerald-500 shrink-0 animate-pulse" />
               <User className="w-3.5 h-3.5 text-[#4648d4]" />
               <span>{currentUser.isGuest ? "Guest Mode" : currentUser.email}</span>
             </button>

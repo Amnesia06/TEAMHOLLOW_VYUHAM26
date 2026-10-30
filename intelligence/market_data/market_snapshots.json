@@ -1328,5 +1328,145 @@
     "frequency": 0.25,
     "snapshot_date": "2026-03-01",
     "posting_count": 250
+  },
+  {
+    "role": "DevOps Engineer",
+    "skill": "Modern Devops Engineer Technologies",
+    "frequency": 0.4,
+    "snapshot_date": "2024-11-01",
+    "posting_count": 150
+  },
+  {
+    "role": "DevOps Engineer",
+    "skill": "Modern Devops Engineer Technologies",
+    "frequency": 0.82,
+    "snapshot_date": "2026-03-01",
+    "posting_count": 250
+  },
+  {
+    "role": "DevOps Engineer",
+    "skill": "Core Devops Engineer Methodology",
+    "frequency": 0.68,
+    "snapshot_date": "2024-11-01",
+    "posting_count": 150
+  },
+  {
+    "role": "DevOps Engineer",
+    "skill": "Core Devops Engineer Methodology",
+    "frequency": 0.75,
+    "snapshot_date": "2026-03-01",
+    "posting_count": 250
+  },
+  {
+    "role": "DevOps Engineer",
+    "skill": "Data & Automation in Devops Engineer",
+    "frequency": 0.35,
+    "snapshot_date": "2024-11-01",
+    "posting_count": 150
+  },
+  {
+    "role": "DevOps Engineer",
+    "skill": "Data & Automation in Devops Engineer",
+    "frequency": 0.7,
+    "snapshot_date": "2026-03-01",
+    "posting_count": 250
+  },
+  {
+    "role": "DevOps Engineer",
+    "skill": "Industry Best Practices",
+    "frequency": 0.6,
+    "snapshot_date": "2024-11-01",
+    "posting_count": 150
+  },
+  {
+    "role": "DevOps Engineer",
+    "skill": "Industry Best Practices",
+    "frequency": 0.65,
+    "snapshot_date": "2026-03-01",
+    "posting_count": 250
+  },
+  {
+    "role": "DevOps Engineer",
+    "skill": "Legacy Manual Techniques",
+    "frequency": 0.65,
+    "snapshot_date": "2024-11-01",
+    "posting_count": 150
+  },
+  {
+    "role": "DevOps Engineer",
+    "skill": "Legacy Manual Techniques",
+    "frequency": 0.25,
+    "snapshot_date": "2026-03-01",
+    "posting_count": 250
+  },
+  {
+    "role": "Business Analyst",
+    "skill": "Business Analytics & BI",
+    "frequency": 0.45,
+    "snapshot_date": "2024-11-01",
+    "posting_count": 150
+  },
+  {
+    "role": "Business Analyst",
+    "skill": "Business Analytics & BI",
+    "frequency": 0.84,
+    "snapshot_date": "2026-03-01",
+    "posting_count": 250
+  },
+  {
+    "role": "Business Analyst",
+    "skill": "Strategic Planning & Execution",
+    "frequency": 0.62,
+    "snapshot_date": "2024-11-01",
+    "posting_count": 150
+  },
+  {
+    "role": "Business Analyst",
+    "skill": "Strategic Planning & Execution",
+    "frequency": 0.8,
+    "snapshot_date": "2026-03-01",
+    "posting_count": 250
+  },
+  {
+    "role": "Business Analyst",
+    "skill": "Operations Management",
+    "frequency": 0.58,
+    "snapshot_date": "2024-11-01",
+    "posting_count": 150
+  },
+  {
+    "role": "Business Analyst",
+    "skill": "Operations Management",
+    "frequency": 0.66,
+    "snapshot_date": "2026-03-01",
+    "posting_count": 250
+  },
+  {
+    "role": "Business Analyst",
+    "skill": "Financial Modeling",
+    "frequency": 0.52,
+    "snapshot_date": "2024-11-01",
+    "posting_count": 150
+  },
+  {
+    "role": "Business Analyst",
+    "skill": "Financial Modeling",
+    "frequency": 0.55,
+    "snapshot_date": "2026-03-01",
+    "posting_count": 250
+  },
+  {
+    "role": "Business Analyst",
+    "skill": "Manual Document Auditing",
+    "frequency": 0.58,
+    "snapshot_date": "2024-11-01",
+    "posting_count": 150
+  },
+  {
+    "role": "Business Analyst",
+    "skill": "Manual Document Auditing",
+    "frequency": 0.2,
+    "snapshot_date": "2026-03-01",
+    "posting_count": 250
   }
 ]
