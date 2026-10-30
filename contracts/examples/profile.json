@@ -1,0 +1,29 @@
+{
+  "skills": [
+    {
+      "skill_id": "skill_ts_01",
+      "name": "TypeScript",
+      "level": 2
+    },
+    {
+      "skill_id": "skill_react_02",
+      "name": "React",
+      "level": 2
+    },
+    {
+      "skill_id": "skill_node_03",
+      "name": "Node.js",
+      "level": 1
+    }
+  ],
+  "unmapped_skills": [
+    "InternalDeploymentTooling"
+  ],
+  "years_of_experience": 2.5,
+  "years_per_skill": {
+    "TypeScript": 2.0,
+    "React": 2.0,
+    "Node.js": 1.0
+  },
+  "domain": "Full-Stack Web Development"
+}

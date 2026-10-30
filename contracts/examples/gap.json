@@ -1,0 +1,10 @@
+{
+  "skill_id": "skill_pg_04",
+  "skill_name": "PostgreSQL",
+  "gap_size": 2,
+  "frequency": 0.82,
+  "transferable": true,
+  "supporting_skill": "SQL",
+  "trend": "rising",
+  "priority_score": 0.984
+}

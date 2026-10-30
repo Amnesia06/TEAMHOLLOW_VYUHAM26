@@ -1,4 +1,18 @@
 """Agent prompt templates."""
-from intelligence.prompts.templates import PROMPTS
+from intelligence.prompts.templates import (
+    PROFILER_SYSTEM_PROMPT,
+    PROFILER_EXTRACTION_PROMPT,
+    EXPLAINER_SYSTEM_PROMPT,
+    EXPLAINER_ITEM_PROMPT,
+    QUIZ_SYSTEM_PROMPT,
+    QUIZ_GENERATION_PROMPT,
+)
 
-__all__ = ["PROMPTS"]
+__all__ = [
+    "PROFILER_SYSTEM_PROMPT",
+    "PROFILER_EXTRACTION_PROMPT",
+    "EXPLAINER_SYSTEM_PROMPT",
+    "EXPLAINER_ITEM_PROMPT",
+    "QUIZ_SYSTEM_PROMPT",
+    "QUIZ_GENERATION_PROMPT",
+]

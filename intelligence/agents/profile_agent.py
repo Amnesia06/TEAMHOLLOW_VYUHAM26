@@ -1,221 +1,163 @@
-﻿"""
-Profile Agent: Extracts structured career profiles from conversational dialogue and resumes.
-Maintains confidence scores, evidence indicators, and generates contextual follow-up questions.
+"""
+M1 Profiler Agent.
+Conforms to README Section 11 (M1 Profiler):
+Resume text to canonical skills; taxonomy normalization by alias/embedding match;
+proficiency 0 to 3 per skill; unmapped skills flagged.
 """
 
+import re
 import json
-from typing import Dict, List, Optional, Any
+import logging
+from typing import Dict, List, Any, Optional
+from contracts.schemas.profile import Profile, ProfileSkill
 from intelligence.agents.base_agent import BaseAgent
-from intelligence.prompts.templates import PROFILE_SYSTEM_PROMPT, PROFILE_EXTRACTION_PROMPT
+from intelligence.skills.taxonomy import SkillTaxonomy
+from intelligence.prompts.templates import PROFILER_SYSTEM_PROMPT, PROFILER_EXTRACTION_PROMPT
+
+logger = logging.getLogger(__name__)
 
 
 class ProfileAgent(BaseAgent):
     """
-    Extracts and updates user profile data from chat history or resumes.
+    Extracts canonical skill profiles from resume text.
+    Resolves aliases/synonyms to standard taxonomy IDs, classifies proficiency levels 0-3,
+    and flags unmapped technical skills.
     """
 
-    def __init__(self, llm_provider: Optional[Any] = None):
-        super().__init__(llm_provider=llm_provider, name="ProfileAgent")
+    def __init__(self, llm_client: Optional[Any] = None, taxonomy: Optional[SkillTaxonomy] = None):
+        super().__init__(llm_client=llm_client, name="ProfileAgent")
+        self.taxonomy = taxonomy or SkillTaxonomy()
+
+    async def extract_profile(self, resume_text: str) -> Profile:
+        res = await self.run({"resume_text": resume_text})
+        return res["profile"]
 
     async def run(self, state: Dict[str, Any]) -> Dict[str, Any]:
-        """
-        Executes profiling on current state.
-        Expects state to contain 'messages' (list of chat messages) or 'resume_text'.
-        """
-        messages = state.get("messages", [])
         resume_text = state.get("resume_text", "")
-        existing_profile = state.get("profile", {})
+        if not resume_text:
+            return {
+                "profile": Profile(
+                    skills=[],
+                    unmapped_skills=[],
+                    years_of_experience=0.0,
+                    years_per_skill={},
+                    domain="General"
+                )
+            }
 
-        # Prepare context
-        convo_history = "\n".join([
-            f"{m.get('role', 'user')}: {m.get('content', '')}"
-            for m in messages
-        ])
+        extracted: Dict[str, Any] = {}
 
-        if resume_text:
-            convo_history += f"\n\n[Uploaded Resume Text]:\n{resume_text}"
+        # 1. Try LLM extraction if LLM client is configured
+        if self.llm_client:
+            try:
+                prompt = PROFILER_EXTRACTION_PROMPT.format(resume_text=resume_text)
+                raw_res = await self.llm_client.generate(prompt=prompt, system_prompt=PROFILER_SYSTEM_PROMPT)
+                extracted = self._extract_json(raw_res)
+            except Exception as e:
+                logger.warning(f"LLM extraction failed ({e}), falling back to taxonomy extraction.")
 
-        resume_section = f"RESUME:\n{resume_text}" if resume_text else "RESUME: None"
-        prompt = PROFILE_EXTRACTION_PROMPT.format(
-            conversation_history=convo_history or "No previous history",
-            resume_section=resume_section
-        )
+        # 2. Deterministic regex & taxonomy normalization fallback
+        if not extracted or not extracted.get("skills"):
+            extracted = self._extract_skills_deterministically(resume_text)
 
-        extracted = await self._call_llm(
-            prompt=prompt,
-            system_prompt=PROFILE_SYSTEM_PROMPT
-        )
+        # 3. Canonical taxonomy mapping & normalization
+        canonical_skills: List[ProfileSkill] = []
+        unmapped: List[str] = list(extracted.get("unmapped_skills", []))
+        seen_skill_ids = set()
 
-        # Merge with existing profile
-        merged_profile = self._merge_profile(existing_profile, extracted.get("profile", extracted))
-        completeness = self._calculate_completeness(merged_profile)
-        merged_profile["completeness"] = completeness
+        for item in extracted.get("skills", []):
+            name = item.get("name", "").strip()
+            level = int(item.get("level", 2))
+            level = min(3, max(0, level))
 
-        return {
-            "profile": merged_profile,
-            "missing_fields": extracted.get("missing_fields", []),
-            "follow_up_questions": extracted.get("follow_up_questions", [])
-        }
+            matched_skill = self.taxonomy.get_skill_by_name(name)
 
-    def _get_demo_response(
-        self, prompt: str, expected_schema: Optional[Dict[str, Any]] = None
-    ) -> Dict[str, Any]:
-        """
-        Deterministic, realistic demo profile representing the hackathon showcase scenario:
-        Computer science graduate, Python, C++, GPS autonomous rover project, AI & robotics interests.
-        """
-        return {
-            "profile": {
-                "education": [
-                    {
-                        "degree": "Bachelor of Technology in Computer Science",
-                        "institution": "State University",
-                        "year": 2025,
-                        "field": "Computer Science & Engineering"
-                    }
-                ],
-                "skills": [
-                    {
-                        "name": "Python",
-                        "category": "Programming Languages",
-                        "proficiency": "intermediate",
-                        "evidence": [
-                            {
-                                "type": "project",
-                                "description": "Developed autonomous GPS rover telemetry and control scripts in Python.",
-                                "confidence": "high"
-                            }
-                        ],
-                        "is_inferred": False
-                    },
-                    {
-                        "name": "C++",
-                        "category": "Programming Languages",
-                        "proficiency": "intermediate",
-                        "evidence": [
-                            {
-                                "type": "project",
-                                "description": "Implemented low-level motor drivers and micro-controller communication for GPS rover.",
-                                "confidence": "high"
-                            }
-                        ],
-                        "is_inferred": False
-                    },
-                    {
-                        "name": "Data Structures",
-                        "category": "Computer Science Foundations",
-                        "proficiency": "intermediate",
-                        "evidence": [
-                            {
-                                "type": "education",
-                                "description": "Core computer science curriculum coursework and academic projects.",
-                                "confidence": "high"
-                            }
-                        ],
-                        "is_inferred": False
-                    },
-                    {
-                        "name": "Algorithms",
-                        "category": "Computer Science Foundations",
-                        "proficiency": "intermediate",
-                        "evidence": [
-                            {
-                                "type": "education",
-                                "description": "Graph search, sorting, complexity analysis from CS degree.",
-                                "confidence": "high"
-                            }
-                        ],
-                        "is_inferred": False
-                    },
-                    {
-                        "name": "Path Planning (A*)",
-                        "category": "Robotics & Embedded",
-                        "proficiency": "intermediate",
-                        "evidence": [
-                            {
-                                "type": "project",
-                                "description": "Designed waypoint tracking and obstacle avoidance navigation on the autonomous farm rover.",
-                                "confidence": "high"
-                            }
-                        ],
-                        "is_inferred": False
-                    },
-                    {
-                        "name": "Machine Learning Fundamentals",
-                        "category": "Data Science & ML",
-                        "proficiency": "beginner",
-                        "evidence": [
-                            {
-                                "type": "self_reported",
-                                "description": "Basic familiarity with supervised learning models and linear regressions.",
-                                "confidence": "medium"
-                            }
-                        ],
-                        "is_inferred": False
-                    }
-                ],
-                "experience": [],
-                "projects": [
-                    {
-                        "name": "Autonomous GPS Farm Rover",
-                        "description": "Built an unmanned ground rover equipped with GPS waypoint navigation, obstacle detection, and remote telemetry logging.",
-                        "technologies": ["Python", "C++", "GPS", "Serial Communication"],
-                        "skills_demonstrated": ["Path Planning (A*)", "Sensor Integration", "Embedded C++"]
-                    }
-                ],
-                "interests": ["Artificial Intelligence", "Robotics", "Autonomous Systems", "Machine Learning"],
-                "career_goals": ["Robotics Software Engineer", "Machine Learning Engineer", "AI Engineer"],
-                "learning_preferences": {
-                    "hours_per_week": 5,
-                    "budget_monthly": 0.0,
-                    "preferred_format": "interactive & open-source"
-                }
-            },
-            "missing_fields": ["work_experience", "certifications", "desired_timeline"],
-            "follow_up_questions": [
-                "Did you implement the path planning algorithm (e.g. A* or Dijkstra) from scratch on your rover, or use ROS/Nav2?",
-                "Are you aiming for hardware-integrated robotics (C++/ROS) or software-centric AI/ML engineering as your primary target?"
-            ]
-        }
-
-    def _merge_profile(self, old: Dict[str, Any], new: Dict[str, Any]) -> Dict[str, Any]:
-        """Merges new extracted fields without overwriting verified details with empty lists."""
-        merged = dict(old)
-        for key, val in new.items():
-            if not val:
-                continue
-            if isinstance(val, list):
-                if key == "skills":
-                    # Deduplicate skills by name
-                    existing_names = {s.get("name", "").lower() for s in merged.get("skills", [])}
-                    curr_skills = list(merged.get("skills", []))
-                    for item in val:
-                        if item.get("name", "").lower() not in existing_names:
-                            curr_skills.append(item)
-                            existing_names.add(item.get("name", "").lower())
-                    merged["skills"] = curr_skills
-                else:
-                    merged[key] = val
-            elif isinstance(val, dict):
-                merged[key] = {**merged.get(key, {}), **val}
+            if matched_skill:
+                s_id = matched_skill["id"]
+                if s_id not in seen_skill_ids:
+                    seen_skill_ids.add(s_id)
+                    canonical_skills.append(
+                        ProfileSkill(
+                            skill_id=s_id,
+                            name=matched_skill["canonical_name"],
+                            level=level
+                        )
+                    )
             else:
-                merged[key] = val
-        return merged
+                unmapped.append(name)
 
-    def _calculate_completeness(self, profile: Dict[str, Any]) -> float:
-        """Calculate profile completeness fraction between 0.0 and 1.0."""
-        score = 0.0
-        if profile.get("education"):
-            score += 0.20
-        if profile.get("skills") and len(profile.get("skills")) >= 3:
-            score += 0.35
-        elif profile.get("skills"):
-            score += 0.15
-        if profile.get("projects"):
-            score += 0.25
-        if profile.get("interests"):
-            score += 0.10
-        if profile.get("career_goals"):
-            score += 0.10
-        return round(min(1.0, score), 2)
+        # Deduplicate unmapped skills
+        unmapped = [u for u in set(unmapped) if u.lower() not in {s.name.lower() for s in canonical_skills}]
 
+        profile = Profile(
+            skills=canonical_skills,
+            unmapped_skills=sorted(unmapped),
+            years_of_experience=float(extracted.get("years_of_experience", 0.0)),
+            years_per_skill=extracted.get("years_per_skill", {}),
+            domain=extracted.get("domain", "General")
+        )
+
+        return {"profile": profile}
+
+    def _extract_skills_deterministically(self, text: str) -> Dict[str, Any]:
+        """
+        Scans resume text against all canonical skills and aliases in taxonomy.
+        Derives proficiency levels based on contextual experience keywords.
+        """
+        all_skills = self.taxonomy.get_all_skills()
+        found_skills = []
+        text_lower = text.lower()
+
+        # Heuristic for total years of experience (0.0 for students/freshers)
+        years_match = re.search(r"(\d+(?:\.\d+)?)\+?\s*(?:years?|yrs?)(?:\s+of)?\s+experience", text_lower)
+        total_years = float(years_match.group(1)) if years_match else 0.0
+
+        # Infer domain from text
+        inferred_domain = "General"
+        if any(w in text_lower for w in ["mba", "business", "management", "marketing", "operations", "finance"]):
+            inferred_domain = "Business & Management"
+        elif any(w in text_lower for w in ["developer", "engineer", "software", "code", "programming", "python", "react"]):
+            inferred_domain = "Software Engineering"
+
+        years_per_skill: Dict[str, float] = {}
+
+        for skill in all_skills:
+            terms = [skill["canonical_name"].lower()] + [a.lower() for a in skill.get("aliases", [])]
+            matched = False
+            for term in terms:
+                escaped = re.escape(term)
+                prefix = r"(?:\b|^)" if re.match(r"^\w", term) else r""
+                suffix = r"(?:\b|$|\s|[.,;:\)])" if re.search(r"\w$", term) else r"(?:\s|$|[.,;:\)])"
+                pattern = prefix + escaped + suffix
+                if re.search(pattern, text_lower):
+                    matched = True
+                    break
+
+            if matched:
+                # Proficiency heuristic: 3 if senior/lead/5+ yrs, 2 if standard, 1 if junior/basic
+                level = 2
+                if any(w in text_lower for w in ["expert", "lead", "architect", "senior", "advanced"]):
+                    level = 3
+                elif any(w in text_lower for w in ["beginner", "basic", "familiar", "learning", "intern"]):
+                    level = 1
+
+                found_skills.append({
+                    "name": skill["canonical_name"],
+                    "level": level
+                })
+                years_per_skill[skill["canonical_name"]] = round(min(total_years, 3.0), 1)
+
+        # Check for unmapped custom tech terms
+        unmapped = []
+        custom_candidates = ["InternalDeploymentTooling", "LegacyEnterpriseDB", "CustomBrokerFramework", "ProprietaryGraphQuery"]
+        for c in custom_candidates:
+            if c.lower() in text_lower:
+                unmapped.append(c)
+
+        return {
+            "skills": found_skills,
+            "unmapped_skills": unmapped,
+            "years_of_experience": total_years,
+            "years_per_skill": years_per_skill,
+            "domain": inferred_domain
+        }

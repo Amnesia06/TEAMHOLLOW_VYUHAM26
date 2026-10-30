@@ -1,8 +1,8 @@
 """
-Core application settings and environment variable configuration.
+Core application settings and environment variable configuration for Backend.
+Conforms strictly to README Section 12 and Section 18.
 """
 
-import os
 from typing import Optional
 from pydantic_settings import BaseSettings, SettingsConfigDict
 
@@ -10,6 +10,7 @@ from pydantic_settings import BaseSettings, SettingsConfigDict
 class Settings(BaseSettings):
     """
     Application configuration loaded from environment or .env file.
+    Only secrets and URLs live in environment variables.
     """
     model_config = SettingsConfigDict(
         env_file=".env",
@@ -18,38 +19,19 @@ class Settings(BaseSettings):
     )
 
     APP_ENV: str = "development"
-    BACKEND_URL: str = "http://localhost:8000"
-    FRONTEND_URL: str = "http://localhost:3000"
-    SECRET_KEY: str = "pathwise-secret-key-development"
-    DEMO_MODE: bool = True
+    FRONTEND_URL: str = "http://localhost:5173"  # Default Vite dev server URL
 
-    # LLM Settings
-    LLM_PROVIDER: str = "gemini"  # "gemini" or "anthropic"
-    GEMINI_API_KEY: Optional[str] = None
-    ANTHROPIC_API_KEY: Optional[str] = None
-    LLM_MODEL_NAME: Optional[str] = None
-
-    # Embeddings
-    EMBEDDING_PROVIDER: str = "gemini"
-    EMBEDDING_MODEL_NAME: Optional[str] = None
-
-    # Supabase / Postgres
+    # Supabase / Database (Backend only)
     SUPABASE_URL: Optional[str] = None
-    SUPABASE_ANON_KEY: Optional[str] = None
     SUPABASE_SERVICE_ROLE_KEY: Optional[str] = None
+    DATABASE_URL: Optional[str] = None
 
-    # Search
-    TAVILY_API_KEY: Optional[str] = None
+    # Deterministic verifier retry limit (README Section 9.9)
+    VERIFIER_RETRY_LIMIT: int = 3
 
-    @property
-    def is_demo(self) -> bool:
-        if self.DEMO_MODE:
-            return True
-        if self.LLM_PROVIDER == "gemini" and not self.GEMINI_API_KEY:
-            return True
-        if self.LLM_PROVIDER == "anthropic" and not self.ANTHROPIC_API_KEY:
-            return True
-        return False
+    # Multi-currency conversion rate (README Section 12, M13)
+    # Fixed documented approximate exchange rate as of 2026-10-30: 1 USD = 85.0 INR
+    USD_TO_INR_RATE: float = 85.0
 
 
 settings = Settings()

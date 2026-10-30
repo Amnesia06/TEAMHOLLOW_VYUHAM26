@@ -1,0 +1,38 @@
+{
+  "order": 1,
+  "course": {
+    "id": "course_pg_01",
+    "title": "PostgreSQL Tutorial for Beginners",
+    "platform": "freeCodeCamp",
+    "url": "https://www.freecodecamp.org/news/postgresql-tutorial/",
+    "cost": 0.0,
+    "currency": "USD",
+    "hours": 12.0,
+    "level": 2,
+    "skills_covered": [
+      "skill_pg_04"
+    ],
+    "prerequisite_skills": [
+      "skill_sql_01"
+    ],
+    "verified": false
+  },
+  "gaps_covered": [
+    {
+      "skill_id": "skill_pg_04",
+      "skill_name": "PostgreSQL",
+      "gap_size": 2,
+      "frequency": 0.82,
+      "transferable": true,
+      "supporting_skill": "SQL",
+      "trend": "rising",
+      "priority_score": 0.984
+    }
+  ],
+  "start_week": 1.0,
+  "end_week": 2.0,
+  "cost": 0.0,
+  "hours": 12.0,
+  "added_for_prerequisite": false,
+  "explanation": "PostgreSQL is required in 82% of Full-Stack Developer postings. With your existing SQL experience, this 12-hour free tutorial covers your level 2 gap in weeks 1-2."
+}
