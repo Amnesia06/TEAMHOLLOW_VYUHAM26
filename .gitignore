@@ -1,0 +1,119 @@
+# ==========================================
+# Python / FastAPI / LangGraph Backend
+# ==========================================
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# C extensions
+*.so
+
+# Distribution / packaging
+bin/
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+share/python-wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+MANIFEST
+
+# Virtual Environments
+venv/
+ENV/
+env/
+.venv/
+
+# Unit test / coverage reports
+htmlcov/
+.tox/
+.nox/
+.coverage
+.coverage.*
+.cache
+nosetests.xml
+coverage.xml
+*.cover
+*.py,cover
+.hypothesis/
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+
+# ==========================================
+# Node.js / React / Next.js Frontend
+# ==========================================
+# Dependencies
+node_modules/
+jspm_packages/
+
+# Next.js build output
+.next/
+out/
+
+# Production builds
+build/
+dist/
+
+# TypeScript cache
+*.tsbuildinfo
+.eslintcache
+
+# ==========================================
+# Environment Variables & Secrets (CRITICAL)
+# ==========================================
+# Never expose your API keys, Supabase service keys, or Google AI Studio keys!
+.env
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+*.env
+
+# ==========================================
+# IDEs, Editors & Operating Systems
+# ==========================================
+# VS Code
+.vscode/
+!.vscode/extensions.json
+
+# JetBrains IDEs (.idea)
+.idea/
+*.iml
+*.iws
+
+# OS-generated files
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+
+# ==========================================
+# Logs, Databases & Temporary Files
+# ==========================================
+logs/
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+lerna-debug.log*
+
+# Local SQLite databases (if any local testing is done)
+*.sqlite
+*.sqlite3
+*.db
