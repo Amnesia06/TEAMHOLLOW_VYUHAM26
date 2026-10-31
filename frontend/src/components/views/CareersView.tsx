@@ -240,16 +240,20 @@ export const CareersView: React.FC<CareersViewProps> = ({
     const originXPercent = (barCenterX / stageWidth) * 100;
     const originYPercent = (barCenterY / stageHeight) * 100;
 
-    // Keep shards contained within viewport boundaries
+    // Keep shards completely contained within stage boundaries (preventing edge clipping)
+    // Leftmost shard reaches anchorX - 185px; rightmost shard reaches anchorX + 285px
+    const minX = 210;
+    const maxX = Math.max(minX, stageWidth - 310);
     let anchorX = barCenterX;
-    const minX = 180;
-    const maxX = stageWidth - 180;
     if (anchorX < minX) anchorX = minX;
     if (anchorX > maxX) anchorX = maxX;
 
+    // Topmost shard reaches anchorY - 170px; bottommost shard reaches anchorY + 175px
+    const minY = 190;
+    const maxY = Math.max(minY, stageHeight - 195);
     let anchorY = barCenterY - 10;
-    if (anchorY < 210) anchorY = 210;
-    if (anchorY > stageHeight - 140) anchorY = stageHeight - 140;
+    if (anchorY < minY) anchorY = minY;
+    if (anchorY > maxY) anchorY = maxY;
 
     setActiveRoleKey(roleKey);
     setStageOrigin(`${originXPercent}% ${originYPercent}%`);
@@ -361,7 +365,7 @@ export const CareersView: React.FC<CareersViewProps> = ({
           position: absolute;
           inset: 0;
           pointer-events: none;
-          z-index: 40;
+          z-index: 30;
         }
 
         .shard-piece {
@@ -444,7 +448,7 @@ export const CareersView: React.FC<CareersViewProps> = ({
           className="w-full p-8 md:p-10 rounded-2xl bg-white border-2 border-blue-600 shadow-xl shadow-blue-500/5 flex flex-col gap-6 relative overflow-hidden"
         >
           {/* Card Header */}
-          <div className="border-b border-slate-200 pb-4 flex items-start justify-between relative z-20">
+          <div className="border-b border-slate-200 pb-4 flex items-start justify-between relative z-10">
             <div>
               <h1 className="text-[24px] md:text-[28px] text-slate-900 font-bold tracking-tight">
                 Highest In-Demand Careers &amp; Skill Alignment
@@ -477,7 +481,7 @@ export const CareersView: React.FC<CareersViewProps> = ({
           </div>
 
           {/* Interactive Bar Chart Stage Area */}
-          <div className="relative w-full h-[480px] rounded-xl overflow-hidden bg-slate-50/70 border border-blue-100">
+          <div className="relative w-full h-[510px] rounded-xl overflow-hidden bg-slate-50/70 border border-blue-100">
             {/* Inner Zoomable Stage */}
             <div
               ref={stageRef}
