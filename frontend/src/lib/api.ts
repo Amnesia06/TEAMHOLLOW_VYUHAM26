@@ -28,7 +28,6 @@ export function apiUrl(path: string): string {
   }
   return `${API_BASE}${path}`;
 }
-}
 
 function getDynamicMockRoadmap(targetRole?: string | null, resumeText?: string): { profile: Profile; roadmap: Roadmap } {
   const roleLower = (targetRole || resumeText || "").toLowerCase();
