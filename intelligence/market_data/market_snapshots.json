@@ -1468,5 +1468,75 @@
     "frequency": 0.2,
     "snapshot_date": "2026-03-01",
     "posting_count": 250
+  },
+  {
+    "role": "Music Producer",
+    "skill": "Digital Audio Workstations (DAW)",
+    "frequency": 0.55,
+    "snapshot_date": "2024-11-01",
+    "posting_count": 150
+  },
+  {
+    "role": "Music Producer",
+    "skill": "Digital Audio Workstations (DAW)",
+    "frequency": 0.88,
+    "snapshot_date": "2026-03-01",
+    "posting_count": 250
+  },
+  {
+    "role": "Music Producer",
+    "skill": "AI Music Co-Production Tools",
+    "frequency": 0.15,
+    "snapshot_date": "2024-11-01",
+    "posting_count": 150
+  },
+  {
+    "role": "Music Producer",
+    "skill": "AI Music Co-Production Tools",
+    "frequency": 0.65,
+    "snapshot_date": "2026-03-01",
+    "posting_count": 250
+  },
+  {
+    "role": "Music Producer",
+    "skill": "Music Theory & Harmony",
+    "frequency": 0.7,
+    "snapshot_date": "2024-11-01",
+    "posting_count": 150
+  },
+  {
+    "role": "Music Producer",
+    "skill": "Music Theory & Harmony",
+    "frequency": 0.74,
+    "snapshot_date": "2026-03-01",
+    "posting_count": 250
+  },
+  {
+    "role": "Music Producer",
+    "skill": "Acoustic Mixing & Mastering",
+    "frequency": 0.6,
+    "snapshot_date": "2024-11-01",
+    "posting_count": 150
+  },
+  {
+    "role": "Music Producer",
+    "skill": "Acoustic Mixing & Mastering",
+    "frequency": 0.62,
+    "snapshot_date": "2026-03-01",
+    "posting_count": 250
+  },
+  {
+    "role": "Music Producer",
+    "skill": "Analog Tape Recording",
+    "frequency": 0.45,
+    "snapshot_date": "2024-11-01",
+    "posting_count": 150
+  },
+  {
+    "role": "Music Producer",
+    "skill": "Analog Tape Recording",
+    "frequency": 0.12,
+    "snapshot_date": "2026-03-01",
+    "posting_count": 250
   }
 ]
