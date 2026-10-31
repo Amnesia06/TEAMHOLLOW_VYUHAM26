@@ -268,7 +268,7 @@ export const ChatView: React.FC<ChatViewProps> = ({
       };
       reader.readAsText(file);
     } else {
-      const mockText = `[Uploaded Resume: ${file.name}]\nEducational background and tech interest.\nSkills: Python, SQL, REST APIs, Git.\nExperience: Fresher.`;
+      const mockText = `[Uploaded Resume: ${file.name}]\nEducational background and professional goals.\nSkills: Python, SQL, REST APIs, Git.\nExperience: Fresher.`;
       handleSend(`Uploaded: ${file.name}`, mockText);
     }
   };
@@ -291,7 +291,7 @@ export const ChatView: React.FC<ChatViewProps> = ({
 
             <div className="space-y-2">
               <h1 className="text-2xl md:text-3xl font-extrabold text-slate-900 tracking-tight">
-                Where do you want to take your tech career?
+                Where do you want to take your career?
               </h1>
               <p className="text-sm text-slate-500 leading-relaxed">
                 Paste your resume, describe your goals, or type your target role. Pathwise analyzes your skills, derives live market demand, and crafts a verified topological roadmap.
