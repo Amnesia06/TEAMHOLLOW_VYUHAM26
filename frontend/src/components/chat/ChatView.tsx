@@ -1,11 +1,9 @@
 import React, { useState, useRef, useEffect } from "react";
 import {
   Plus,
-  Mic,
   ArrowUp,
   Bot,
   FileText,
-  ChevronDown,
   Sparkles,
   CheckCircle2,
   Loader2
@@ -565,16 +563,6 @@ export const ChatView: React.FC<ChatViewProps> = ({
 
             {/* Right Quick Controls: Mic & Submit */}
             <div className="flex items-center gap-1.5 shrink-0 text-slate-500">
-              <button
-                type="button"
-                disabled={isProcessing}
-                className="flex items-center gap-0.5 px-2 py-1.5 rounded-full hover:bg-slate-100 hover:text-slate-900 transition-all duration-200 ease-out cursor-pointer disabled:opacity-40 active:scale-95"
-                title="Voice input"
-              >
-                <Mic className="w-4 h-4 text-slate-600" />
-                <ChevronDown className="w-3 h-3 text-slate-400" />
-              </button>
-
               <button
                 type="submit"
                 disabled={(!inputText.trim() && !pendingResumeText) || isProcessing}

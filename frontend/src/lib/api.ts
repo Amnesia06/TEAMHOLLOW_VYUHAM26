@@ -15,9 +15,142 @@ import {
   MOCK_ROADMAP,
   MOCK_PROGRESS_EVENTS
 } from "../mocks/mockData";
+import { CATALOG_COURSES } from "../mocks/catalogData";
 
-const API_BASE = import.meta.env.VITE_API_BASE_URL || "";
+const API_BASE =
+  import.meta.env.VITE_API_BASE_URL !== undefined
+    ? import.meta.env.VITE_API_BASE_URL
+    : typeof window !== "undefined" && window.location.port === "5173"
+    ? `http://${window.location.hostname || "127.0.0.1"}:8000`
+    : "";
 export const IS_MOCK_MODE = false; // Live backend enabled via Vite proxy
+
+function getDynamicMockRoadmap(targetRole?: string | null, resumeText?: string): { profile: Profile; roadmap: Roadmap } {
+  const roleLower = (targetRole || resumeText || "").toLowerCase();
+
+  // 1. Data Engineer
+  if (roleLower.includes("data")) {
+    const dataCourses = [
+      CATALOG_COURSES.find((c) => c.id === "yt_pg_01") || CATALOG_COURSES[0],
+      CATALOG_COURSES.find((c) => c.id === "yt_linux_01") || CATALOG_COURSES[1],
+      CATALOG_COURSES.find((c) => c.id === "yt_py_01") || CATALOG_COURSES[2],
+      CATALOG_COURSES.find((c) => c.id === "yt_spark_01") || CATALOG_COURSES[3],
+      CATALOG_COURSES.find((c) => c.id === "yt_airflow_01") || CATALOG_COURSES[4],
+      CATALOG_COURSES.find((c) => c.id === "yt_kafka_01") || CATALOG_COURSES[5],
+    ];
+    return {
+      profile: {
+        skills: [{ skill_id: "skill_python", name: "Python", level: 2 }, { skill_id: "skill_sql", name: "SQL", level: 2 }],
+        unmapped_skills: [],
+        years_of_experience: 2.0,
+        years_per_skill: { "Python": 2.0, "SQL": 2.0 },
+        domain: "Data Engineering"
+      },
+      roadmap: {
+        items: dataCourses.map((c, i) => ({
+          order: i + 1,
+          course: c,
+          gaps_covered: [{ skill_id: c.skills_covered[0] || "skill_data", skill_name: c.title, gap_size: 2, frequency: 0.85, transferable: false, supporting_skill: null, trend: "rising" as const, priority_score: 1.7 }],
+          start_week: i * 2 + 1,
+          end_week: (i + 1) * 2,
+          cost: c.cost,
+          hours: c.hours,
+          added_for_prerequisite: false,
+          explanation: `Essential milestone for ${targetRole || "Data Engineering"}: covers core data pipeline, relational querying, and distributed architecture.`
+        })),
+        total_cost: dataCourses.reduce((sum, c) => sum + c.cost, 0),
+        total_hours: dataCourses.reduce((sum, c) => sum + c.hours, 0),
+        total_weeks: dataCourses.length * 2,
+        uncovered_gaps: [],
+        verifier_status: "pass",
+        violations: []
+      }
+    };
+  }
+
+  // 2. Machine Learning Engineer / AI
+  if (roleLower.includes("machine") || roleLower.includes("ml") || roleLower.includes("ai")) {
+    const mlCourses = [
+      CATALOG_COURSES.find((c) => c.id === "yt_py_01") || CATALOG_COURSES[0],
+      CATALOG_COURSES.find((c) => c.id === "yt_git_01") || CATALOG_COURSES[1],
+      CATALOG_COURSES.find((c) => c.id === "res_scikit_01") || CATALOG_COURSES[2],
+      CATALOG_COURSES.find((c) => c.id === "res_pytorch_01") || CATALOG_COURSES[3],
+      CATALOG_COURSES.find((c) => c.id === "res_mlops_01") || CATALOG_COURSES[4],
+      CATALOG_COURSES.find((c) => c.id === "cert_aws_ml") || CATALOG_COURSES[5],
+    ];
+    return {
+      profile: {
+        skills: [{ skill_id: "skill_python", name: "Python", level: 2 }, { skill_id: "skill_linear_algebra", name: "Math", level: 2 }],
+        unmapped_skills: [],
+        years_of_experience: 1.5,
+        years_per_skill: { "Python": 1.5 },
+        domain: "Artificial Intelligence & Data"
+      },
+      roadmap: {
+        items: mlCourses.map((c, i) => ({
+          order: i + 1,
+          course: c,
+          gaps_covered: [{ skill_id: c.skills_covered[0] || "skill_ml", skill_name: c.title, gap_size: 2, frequency: 0.88, transferable: false, supporting_skill: null, trend: "rising" as const, priority_score: 1.8 }],
+          start_week: i * 2 + 1,
+          end_week: (i + 1) * 2,
+          cost: c.cost,
+          hours: c.hours,
+          added_for_prerequisite: false,
+          explanation: `Essential milestone for ${targetRole || "Machine Learning"}: covers predictive modeling, deep learning architectures, and production MLOps.`
+        })),
+        total_cost: mlCourses.reduce((sum, c) => sum + c.cost, 0),
+        total_hours: mlCourses.reduce((sum, c) => sum + c.hours, 0),
+        total_weeks: mlCourses.length * 2,
+        uncovered_gaps: [],
+        verifier_status: "pass",
+        violations: []
+      }
+    };
+  }
+
+  // 3. Cloud / DevOps Engineer
+  if (roleLower.includes("cloud") || roleLower.includes("devops") || roleLower.includes("infra")) {
+    const devopsCourses = [
+      CATALOG_COURSES.find((c) => c.id === "yt_linux_01") || CATALOG_COURSES[0],
+      CATALOG_COURSES.find((c) => c.id === "yt_git_01") || CATALOG_COURSES[1],
+      CATALOG_COURSES.find((c) => c.id === "yt_docker_01") || CATALOG_COURSES[2],
+      CATALOG_COURSES.find((c) => c.id === "yt_cicd_01") || CATALOG_COURSES[3],
+      CATALOG_COURSES.find((c) => c.id === "yt_aws_01") || CATALOG_COURSES[4],
+      CATALOG_COURSES.find((c) => c.id === "cert_k8s_cka") || CATALOG_COURSES[5],
+    ];
+    return {
+      profile: {
+        skills: [{ skill_id: "skill_linux", name: "Linux", level: 2 }, { skill_id: "skill_bash", name: "Bash", level: 2 }],
+        unmapped_skills: [],
+        years_of_experience: 2.0,
+        years_per_skill: { "Linux": 2.0 },
+        domain: "Cloud & Infrastructure"
+      },
+      roadmap: {
+        items: devopsCourses.map((c, i) => ({
+          order: i + 1,
+          course: c,
+          gaps_covered: [{ skill_id: c.skills_covered[0] || "skill_cloud", skill_name: c.title, gap_size: 2, frequency: 0.90, transferable: false, supporting_skill: null, trend: "rising" as const, priority_score: 1.8 }],
+          start_week: i * 2 + 1,
+          end_week: (i + 1) * 2,
+          cost: c.cost,
+          hours: c.hours,
+          added_for_prerequisite: false,
+          explanation: `Essential milestone for ${targetRole || "Cloud & DevOps"}: covers containerization, CI/CD pipelines, and cloud orchestration.`
+        })),
+        total_cost: devopsCourses.reduce((sum, c) => sum + c.cost, 0),
+        total_hours: devopsCourses.reduce((sum, c) => sum + c.hours, 0),
+        total_weeks: devopsCourses.length * 2,
+        uncovered_gaps: [],
+        verifier_status: "pass",
+        violations: []
+      }
+    };
+  }
+
+  // 4. Default / Full-Stack
+  return { profile: MOCK_PROFILE, roadmap: MOCK_ROADMAP };
+}
 
 async function fetchJson<T>(endpoint: string, options?: RequestInit): Promise<T> {
   const url = `${API_BASE}/api/v1${endpoint}`;
@@ -202,7 +335,7 @@ export const api = {
         onProgress(evt);
       }
     }
-    return { profile: MOCK_PROFILE, roadmap: MOCK_ROADMAP };
+    return getDynamicMockRoadmap(constraints.target_role, resumeText);
   },
 
   suggestRoles: async (profile: Profile) => {

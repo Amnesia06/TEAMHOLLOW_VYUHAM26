@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from "react";
 import { UserConstraints, Profile, Roadmap, ProgressEvent } from "./types/contracts";
-import { MOCK_PROFILE, MOCK_ROADMAP } from "./mocks/mockData";
 import { api } from "./lib/api";
 import { Sidebar, TabKey } from "./components/layout/Sidebar";
 import { ChatView, ChatMessage } from "./components/chat/ChatView";
@@ -48,16 +47,11 @@ export const App: React.FC = () => {
         const u = JSON.parse(savedUser);
         if (!u.isGuest && u.email) {
           const raw = localStorage.getItem(`pathwise_user_session_${u.email}`);
-          if (raw) {
-            const parsed = JSON.parse(raw).profile;
-            if (parsed && Array.isArray(parsed.skills) && parsed.skills.length > 0) {
-              return parsed;
-            }
-          }
+          if (raw) return JSON.parse(raw).profile || null;
         }
       } catch {}
     }
-    return MOCK_PROFILE;
+    return null;
   });
 
   const [roadmap, setRoadmap] = useState<Roadmap | null>(() => {
@@ -67,17 +61,11 @@ export const App: React.FC = () => {
         const u = JSON.parse(savedUser);
         if (!u.isGuest && u.email) {
           const raw = localStorage.getItem(`pathwise_user_session_${u.email}`);
-          if (raw) {
-            const parsed = JSON.parse(raw).roadmap;
-            // Upgrade legacy single-item mock to full 6-module MOCK_ROADMAP
-            if (parsed && Array.isArray(parsed.items) && parsed.items.length > 1) {
-              return parsed;
-            }
-          }
+          if (raw) return JSON.parse(raw).roadmap || null;
         }
       } catch {}
     }
-    return MOCK_ROADMAP;
+    return null;
   });
 
   const [constraints, setConstraints] = useState<UserConstraints>(() => {
@@ -97,9 +85,9 @@ export const App: React.FC = () => {
     return {
       budget: 0,
       currency: "INR",
-      weekly_hours: 15,
+      weekly_hours: 0,
       target_timeline: null,
-      target_role: "Full-Stack Developer",
+      target_role: "",
     };
   });
 
@@ -154,15 +142,7 @@ export const App: React.FC = () => {
     if (savedSession) {
       if (savedSession.messages) setMessages(savedSession.messages);
       if (savedSession.profile) setProfile(savedSession.profile);
-      if (savedSession.roadmap) {
-        if (Array.isArray(savedSession.roadmap.items) && savedSession.roadmap.items.length > 1) {
-          setRoadmap(savedSession.roadmap);
-        } else {
-          setRoadmap(MOCK_ROADMAP);
-        }
-      } else {
-        setRoadmap(MOCK_ROADMAP);
-      }
+      if (savedSession.roadmap) setRoadmap(savedSession.roadmap);
       if (savedSession.constraints) setConstraints(savedSession.constraints);
     } else {
       // Migrate active work to new account if present
@@ -180,16 +160,16 @@ export const App: React.FC = () => {
   };
 
   const handleSignOut = () => {
-    // Clear active in-memory session back to fresh Guest state with standard demo defaults
+    // Clear active in-memory session back to fresh Guest state
     setMessages([]);
-    setProfile(MOCK_PROFILE);
-    setRoadmap(MOCK_ROADMAP);
+    setProfile(null);
+    setRoadmap(null);
     setConstraints({
       budget: 0,
       currency: "INR",
-      weekly_hours: 15,
+      weekly_hours: 0,
       target_timeline: null,
-      target_role: "Full-Stack Developer",
+      target_role: "",
     });
     const guest = { isGuest: true };
     setCurrentUser(guest);
@@ -264,14 +244,14 @@ export const App: React.FC = () => {
 
   const handleNewChat = () => {
     setMessages([]);
-    setProfile(MOCK_PROFILE);
-    setRoadmap(MOCK_ROADMAP);
+    setProfile(null);
+    setRoadmap(null);
     setConstraints({
       budget: 0,
       currency: "INR",
-      weekly_hours: 15,
+      weekly_hours: 0,
       target_timeline: null,
-      target_role: "Full-Stack Developer",
+      target_role: "",
     });
     setChatInputPrompt("");
     setActiveTab("chat");

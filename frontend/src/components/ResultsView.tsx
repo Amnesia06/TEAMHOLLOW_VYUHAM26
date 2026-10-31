@@ -418,15 +418,43 @@ export const ResultsView: React.FC<ResultsViewProps> = ({
                         </span>
                       </div>
 
-                      {/* Course Title & Platform */}
-                      <h3 className="text-sm font-bold text-slate-900 leading-snug line-clamp-2">
-                        {item.course.title}
-                      </h3>
+                      {/* Course Title & Platform with Clickable Links */}
+                      {item.course.url ? (
+                        <a
+                          href={item.course.url}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          onClick={(e) => e.stopPropagation()}
+                          className="text-sm font-bold text-slate-900 hover:text-blue-600 hover:underline leading-snug line-clamp-2 flex items-start justify-between gap-1 group/title cursor-pointer"
+                          title="Open course resource in new tab"
+                        >
+                          <span>{item.course.title}</span>
+                          <ExternalLink className="w-3.5 h-3.5 text-slate-400 group-hover/title:text-blue-600 shrink-0 mt-0.5" />
+                        </a>
+                      ) : (
+                        <h3 className="text-sm font-bold text-slate-900 leading-snug line-clamp-2">
+                          {item.course.title}
+                        </h3>
+                      )}
 
                       <div className="flex items-center gap-2 mt-1.5 text-xs text-slate-500 font-mono">
-                        <span className="font-semibold text-blue-700 bg-blue-50 px-2 py-0.5 rounded border border-blue-200/80">
-                          {item.course.platform}
-                        </span>
+                        {item.course.url ? (
+                          <a
+                            href={item.course.url}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            onClick={(e) => e.stopPropagation()}
+                            className="font-semibold text-blue-700 bg-blue-50 hover:bg-blue-100 hover:text-blue-900 px-2 py-0.5 rounded border border-blue-200/80 transition-colors inline-flex items-center gap-1 cursor-pointer"
+                            title={`Open ${item.course.platform} link`}
+                          >
+                            <span>{item.course.platform}</span>
+                            <ExternalLink className="w-2.5 h-2.5" />
+                          </a>
+                        ) : (
+                          <span className="font-semibold text-blue-700 bg-blue-50 px-2 py-0.5 rounded border border-blue-200/80">
+                            {item.course.platform}
+                          </span>
+                        )}
                         <span>•</span>
                         <span>{item.hours.toFixed(0)} hrs</span>
                         <span>•</span>
@@ -485,10 +513,11 @@ export const ResultsView: React.FC<ResultsViewProps> = ({
                               target="_blank"
                               rel="noopener noreferrer"
                               onClick={(e) => e.stopPropagation()}
-                              className="text-slate-400 hover:text-blue-600 transition-colors p-1"
-                              title="Go to course"
+                              className="inline-flex items-center gap-1 px-2.5 py-1 rounded-md text-[11px] font-semibold bg-blue-600 hover:bg-blue-700 text-white shadow-xs transition-colors cursor-pointer"
+                              title="Open course website / video"
                             >
-                              <ExternalLink className="w-3.5 h-3.5" />
+                              <span>Visit Course</span>
+                              <ExternalLink className="w-3 h-3" />
                             </a>
                           )}
                         </div>
@@ -549,12 +578,38 @@ export const ResultsView: React.FC<ResultsViewProps> = ({
 
                         <div className="space-y-1">
                           <div className="flex flex-wrap items-center gap-2">
-                            <h3 className="text-base font-bold text-slate-900 leading-snug">
-                              {item.course.title}
-                            </h3>
-                            <span className="font-mono text-xs font-semibold px-2 py-0.5 rounded bg-blue-50 text-blue-700 border border-blue-200/80">
-                              {item.course.platform}
-                            </span>
+                            {item.course.url ? (
+                              <a
+                                href={item.course.url}
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                className="text-base font-bold text-slate-900 hover:text-blue-600 hover:underline leading-snug flex items-center gap-1.5"
+                                title="Open course in new tab"
+                              >
+                                <span>{item.course.title}</span>
+                                <ExternalLink className="w-3.5 h-3.5 text-blue-500" />
+                              </a>
+                            ) : (
+                              <h3 className="text-base font-bold text-slate-900 leading-snug">
+                                {item.course.title}
+                              </h3>
+                            )}
+                            {item.course.url ? (
+                              <a
+                                href={item.course.url}
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                className="font-mono text-xs font-semibold px-2 py-0.5 rounded bg-blue-50 hover:bg-blue-100 text-blue-700 border border-blue-200/80 flex items-center gap-1"
+                                title={`Open ${item.course.platform} link`}
+                              >
+                                <span>{item.course.platform}</span>
+                                <ExternalLink className="w-2.5 h-2.5" />
+                              </a>
+                            ) : (
+                              <span className="font-mono text-xs font-semibold px-2 py-0.5 rounded bg-blue-50 text-blue-700 border border-blue-200/80">
+                                {item.course.platform}
+                              </span>
+                            )}
                           </div>
 
                           <div className="flex items-center gap-3 text-xs text-slate-500 font-mono">
@@ -571,6 +626,19 @@ export const ResultsView: React.FC<ResultsViewProps> = ({
 
                       {/* Actions */}
                       <div className="flex items-center gap-2 self-end md:self-center shrink-0">
+                        {item.course.url && (
+                          <a
+                            href={item.course.url}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-xs font-semibold bg-blue-600 hover:bg-blue-700 text-white shadow-xs transition-all"
+                            title="Open course in new tab"
+                          >
+                            <span>Visit Course</span>
+                            <ExternalLink className="w-3.5 h-3.5" />
+                          </a>
+                        )}
+
                         <Button
                           variant="outline"
                           size="sm"
