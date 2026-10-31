@@ -1538,5 +1538,75 @@
     "frequency": 0.12,
     "snapshot_date": "2026-03-01",
     "posting_count": 250
+  },
+  {
+    "role": "Security & Systems Engineer",
+    "skill": "Cloud Security & Zero Trust",
+    "frequency": 0.42,
+    "snapshot_date": "2024-11-01",
+    "posting_count": 150
+  },
+  {
+    "role": "Security & Systems Engineer",
+    "skill": "Cloud Security & Zero Trust",
+    "frequency": 0.85,
+    "snapshot_date": "2026-03-01",
+    "posting_count": 250
+  },
+  {
+    "role": "Security & Systems Engineer",
+    "skill": "SIEM & AI Threat Hunting",
+    "frequency": 0.48,
+    "snapshot_date": "2024-11-01",
+    "posting_count": 150
+  },
+  {
+    "role": "Security & Systems Engineer",
+    "skill": "SIEM & AI Threat Hunting",
+    "frequency": 0.82,
+    "snapshot_date": "2026-03-01",
+    "posting_count": 250
+  },
+  {
+    "role": "Security & Systems Engineer",
+    "skill": "Network Penetration Testing",
+    "frequency": 0.6,
+    "snapshot_date": "2024-11-01",
+    "posting_count": 150
+  },
+  {
+    "role": "Security & Systems Engineer",
+    "skill": "Network Penetration Testing",
+    "frequency": 0.68,
+    "snapshot_date": "2026-03-01",
+    "posting_count": 250
+  },
+  {
+    "role": "Security & Systems Engineer",
+    "skill": "Python for Security Automation",
+    "frequency": 0.52,
+    "snapshot_date": "2024-11-01",
+    "posting_count": 150
+  },
+  {
+    "role": "Security & Systems Engineer",
+    "skill": "Python for Security Automation",
+    "frequency": 0.6,
+    "snapshot_date": "2026-03-01",
+    "posting_count": 250
+  },
+  {
+    "role": "Security & Systems Engineer",
+    "skill": "Legacy Perimeter Firewalls",
+    "frequency": 0.68,
+    "snapshot_date": "2024-11-01",
+    "posting_count": 150
+  },
+  {
+    "role": "Security & Systems Engineer",
+    "skill": "Legacy Perimeter Firewalls",
+    "frequency": 0.32,
+    "snapshot_date": "2026-03-01",
+    "posting_count": 250
   }
 ]
