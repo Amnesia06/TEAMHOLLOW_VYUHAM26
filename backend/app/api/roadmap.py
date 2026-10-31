@@ -5,7 +5,9 @@ Roadmap generation, analysis, persistence, streaming, role suggestions, and mark
 import json
 from typing import List, Optional, Dict, Any
 from pydantic import BaseModel, Field
-from fastapi import APIRouter, Query, HTTPException, Request
+from fastapi import APIRouter, Query, HTTPException, Request, UploadFile, File
+import io
+from pypdf import PdfReader
 from fastapi.responses import StreamingResponse
 from contracts.schemas.common import APIResponse
 from contracts.schemas.roadmap import Roadmap
@@ -57,6 +59,48 @@ class ReplanRequest(BaseModel):
 
 class RefreshTrendsRequest(BaseModel):
     role: str = Field(default="Full-Stack Developer")
+
+
+@router.post("/upload-resume", response_model=APIResponse[dict])
+async def upload_resume(file: UploadFile = File(...)):
+    """
+    Upload and parse PDF resumes using pypdf.
+    Strictly validates that the file is a PDF, extracts text from all pages,
+    and returns the extracted text for downstream agent analysis.
+    """
+    if not file.filename.lower().endswith(".pdf"):
+        raise HTTPException(
+            status_code=400,
+            detail="Invalid file format. Only PDF files (.pdf) are supported."
+        )
+
+    try:
+        file_bytes = await file.read()
+        if not file_bytes:
+            raise HTTPException(status_code=400, detail="The uploaded PDF file is empty.")
+
+        reader = PdfReader(io.BytesIO(file_bytes))
+        extracted_pages = []
+        for i, page in enumerate(reader.pages):
+            text = page.extract_text()
+            if text and text.strip():
+                extracted_pages.append(text.strip())
+
+        full_text = "\n\n".join(extracted_pages).strip()
+        if not full_text:
+            raise HTTPException(
+                status_code=422,
+                detail="No readable text found in this PDF. Please ensure it is a digital text PDF, not a flat raster image scan."
+            )
+
+        return APIResponse(data={
+            "filename": file.filename,
+            "extracted_text": full_text
+        })
+    except HTTPException:
+        raise
+    except Exception as e:
+        raise HTTPException(status_code=500, detail=f"Failed to parse PDF resume: {str(e)}")
 
 
 @router.post("/chat/intake", response_model=APIResponse[dict])
