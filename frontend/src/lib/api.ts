@@ -17,13 +17,18 @@ import {
 } from "../mocks/mockData";
 import { CATALOG_COURSES } from "../mocks/catalogData";
 
-const API_BASE =
-  import.meta.env.VITE_API_BASE_URL !== undefined
-    ? import.meta.env.VITE_API_BASE_URL
-    : typeof window !== "undefined" && window.location.port === "5173"
-    ? `http://${window.location.hostname || "127.0.0.1"}:8000`
-    : "";
-export const IS_MOCK_MODE = false; // Live backend enabled via Vite proxy
+const API_BASE = (import.meta.env.VITE_API_BASE_URL || "")
+  .trim()
+  .replace(/\/+$/, "");
+export const IS_MOCK_MODE = false; // Live backend enabled via Vite proxy or Render URL
+
+export function apiUrl(path: string): string {
+  if (!API_BASE && import.meta.env.PROD) {
+    throw new Error("VITE_API_BASE_URL is required in the production frontend environment.");
+  }
+  return `${API_BASE}${path}`;
+}
+}
 
 function getDynamicMockRoadmap(targetRole?: string | null, resumeText?: string): { profile: Profile; roadmap: Roadmap } {
   const roleLower = (targetRole || resumeText || "").toLowerCase();
@@ -153,7 +158,7 @@ function getDynamicMockRoadmap(targetRole?: string | null, resumeText?: string):
 }
 
 async function fetchJson<T>(endpoint: string, options?: RequestInit): Promise<T> {
-  const url = `${API_BASE}/api/v1${endpoint}`;
+  const url = apiUrl(`/api/v1${endpoint}`);
   try {
     const res = await fetch(url, {
       ...options,
@@ -193,7 +198,7 @@ export const api = {
     const formData = new FormData();
     formData.append("file", file);
     try {
-      const res = await fetch(`${API_BASE}/api/v1/upload-resume`, {
+      const res = await fetch(apiUrl("/api/v1/upload-resume"), {
         method: "POST",
         body: formData,
       });
@@ -211,7 +216,7 @@ export const api = {
   ): Promise<{ profile: Profile; roadmap: Roadmap }> => {
     // 1. Attempt SSE real-time streaming from backend
     try {
-      const response = await fetch(`${API_BASE}/api/v1/analyze/stream`, {
+      const response = await fetch(apiUrl("/api/v1/analyze/stream"), {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
